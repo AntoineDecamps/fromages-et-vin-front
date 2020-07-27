@@ -1,0 +1,9 @@
+.blurb {
+  display: flex;
+  &__cheeses, &__wines {
+    border: 1px solid black;
+    width: 100%;
+  }
+  &__cheeses {
+  }
+}
