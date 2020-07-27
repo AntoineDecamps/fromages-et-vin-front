@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Nav from 'src/components/Nav';
+import Connexion from 'src/components/Connexion';
+
 import './styles.scss';
 
 const MainHeader = () => (
   <div className="mainHeader">
     <img src="" alt="" className="mainHeader__image" />
-    <button type="button" className="mainHeader__button">Connexion</button>
-    <nav className="mainHeader__nav">
-      <li className="mainHeader__navItems">Accueil</li>
-      <li className="mainHeader__navItems">Vins</li>
-      <li className="mainHeader__navItems">Fromages</li>
-      <li className="mainHeader__navItems">Contacts</li>
-    </nav>
+    <Connexion />
+    <Nav />
   </div>
 );
 
