@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-console */
 /* eslint-disable max-len */
@@ -9,13 +10,38 @@ import './styles.scss';
 const Blurb = () => {
   let open = false;
 
-  const handleOnClick = () => {
+  const handleOnClick = (event) => {
     open = !open;
-    // console.log(open);
+    const buttonClicked = event.target;
+    console.log(buttonClicked);
+    buttonClicked.textContent = open === false ? 'Lire plus' : 'Réduire';
+
+    const textToDisplay = buttonClicked.nextSibling;
+    console.log(textToDisplay);
+    // textToDisplay.className = open === false ? 'blurb__article--text' : 'blurb__article--text-active';
+
+    if (open === false) {
+      textToDisplay.textContent = '';
+    }
+    else {
+      textToDisplay.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque, laboriosam ipsam magni qui! Distinctio, corporis quibusdam!';
+    }
+
+    // let textToDisplay = '';
+    // if (open === false) {
+    //   buttonClicked.removeChild(textToDisplay.textContent);
+    // }
+    // else {
+    //   textToDisplay = buttonClicked.insertAdjacentHTML('afterend', '<p class="blurb__article--text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque, laboriosam ipsam magni qui! Distinctio, corporis quibusdam!</p>');
+    // }
   };
 
-  console.log(handleOnClick);
-  const className = open ? 'blurb__article--text-active' : 'blurb__article--text';
+  // /!\ if one button is active after a click, then open will change in true value
+  // in this case, if we click on the second button, it will not work until we click again
+  // Solution (?) : split both the handleOnClick events just to have one event by button. /!\
+
+  // Two options : 1) we change the className of p to display the text by the click
+  // 2) we change the textContent of p
 
   return (
     <div className="blurb">
@@ -29,9 +55,7 @@ const Blurb = () => {
           >
             Lire plus
           </button>
-          <p className={className}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque, laboriosam ipsam magni qui! Distinctio, corporis quibusdam!
-          </p>
+          <p className="blurb__article--text"></p>
         </article>
       </div>
 
@@ -45,9 +69,7 @@ const Blurb = () => {
           >
             Lire plus
           </button>
-          <p className={className}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque, laboriosam ipsam magni qui! Distinctio, corporis quibusdam!
-          </p>
+          <p className="blurb__article--text"></p>
         </article>
       </div>
     </div>

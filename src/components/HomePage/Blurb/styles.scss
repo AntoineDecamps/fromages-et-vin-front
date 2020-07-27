@@ -36,10 +36,6 @@ $wines: url('bouchons-small.jpg');
       padding-top: 0.5em;
       width: 80%;
       height: 100%;
-      display: none;
-      &-active {
-        display: block;
-      }
     }
   }
   &__button {
