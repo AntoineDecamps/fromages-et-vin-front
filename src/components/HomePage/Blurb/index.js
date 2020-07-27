@@ -1,31 +1,39 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
-import cheeses from 'src/assets/images/cheeses-small.jpg';
-import tonneaux from 'src/assets/images/tonneaux-small.jpg';
 
 const Blurb = () => (
   <div className="blurb">
     <div className="blurb__cheeses">
-      <h3 className="blurb__cheeses--title">Fromages de France</h3>
-      <button
-        type="button"
-        className="blurb__button blurb__cheeses--button"
-      >
-        Lire plus
-      </button>
-      <img src={cheeses} alt="Fromages de France" className="blurb__cheeses--img" />
+      <article className="blurb__article">
+        <h3 className="blurb__article--title">Fromages de France</h3>
+        <button
+          type="button"
+          className="blurb__button"
+        >
+          Lire plus
+        </button>
+        <p className="blurb__article--text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque, laboriosam ipsam magni qui! Distinctio, corporis quibusdam!
+        </p>
+      </article>
     </div>
+
     <div className="blurb__wines">
-      <h3 className="blurb__wines--title">Vins de France</h3>
-      <button
-        type="button"
-        className="blurb__button blurb__wines--button"
-      >
-        Lire plus
-      </button>
-      <img src={tonneaux} alt="Vins de France" className="blurb__wines--img" />
+      <article className="blurb__article">
+        <h3 className="blurb__article--title">Vins de France</h3>
+        <button
+          type="button"
+          className="blurb__button"
+        >
+          Lire plus
+        </button>
+        {/* <p className="blurb__article--text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque, laboriosam ipsam magni qui! Distinctio, corporis quibusdam!
+        </p> */}
+      </article>
     </div>
   </div>
 );
