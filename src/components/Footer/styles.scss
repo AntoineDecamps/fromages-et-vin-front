@@ -1,0 +1,41 @@
+@use 'src/styles/vars';
+
+.footer {
+  width: 100vh;
+  margin-top: 5rem;
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #2C3E50;
+    height: 100px;
+  }
+  &__logo {
+    width: 100px;
+    justify-self: center;
+    align-self: center;
+  }
+  &__div {
+    color: white;
+    justify-self: center;
+    align-self: center;
+  }
+  &__div__title {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__div__content {
+    font-size: 1rem;
+    text-align: center;
+  }
+  &__information {
+    background-color: #233140;
+    height: 50px;
+  }
+  &__information__content {
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 12px;
+  }
+}

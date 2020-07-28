@@ -1,4 +1,43 @@
+@use 'src/styles/vars';
+
 .mainHeader {
   width: 100vh;
-  height: 150px;
+  height: 400px;
+  background-image: url("./glass-plate-small.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__connexion {
+    justify-self: end;
+    margin: 1rem 1rem 0 0;
+  }
+  &__logoImage {
+    width: 180px;
+    padding-top: 10px; 
+    justify-self: center;
+    text-align: center;
+  }
+  &__nav {
+    color: white;
+    align-self: end;
+    justify-self: center;
+    padding-bottom: 2rem;
+  }
+  &__link {
+    margin-left: 30px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &__link--active {
+    text-decoration: underline;
+  }
+}
+.test {
+  background-color: rgba(124, 118, 118, 0.5);
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
 }
