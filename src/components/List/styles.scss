@@ -1,0 +1,10 @@
+@use 'src/styles/vars';
+
+.list {
+  padding: vars.$gutter 0;
+  background-color: #233140;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
