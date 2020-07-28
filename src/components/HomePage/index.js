@@ -11,8 +11,8 @@ import './styles.scss';
 const HomePage = () => (
   <div className="homepage">
     <MainHeader />
-    <Blurb />
     <Concept />
+    <Blurb />
     <Footer />
   </div>
 );

@@ -6,25 +6,16 @@
   background-image: url("./glass-plate-small.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+
   &__connexion {
     justify-self: end;
     margin: 1rem 1rem 0 0;
   }
-  &__logo {
-    width: 130px;
-    height: 90px;
-    border: 1px solid rgb(131, 131, 131);
-    border-radius: 20%;
-    background-color: rgba(255, 253, 253, 0.336);
-    box-shadow: inset 2px 2px 15px black;
+  &__logoImage {
+    width: 180px;
+    padding-top: 10px; 
     justify-self: center;
     text-align: center;
-  }
-  &__logoImage {
-    width: 100px;
-    padding-top: 10px; 
   }
   &__nav {
     color: white;
@@ -39,4 +30,14 @@
     font-weight: bold;
     text-transform: uppercase;
   }
+  &__link--active {
+    text-decoration: underline;
+  }
+}
+.test {
+  background-color: rgba(124, 118, 118, 0.5);
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
 }
