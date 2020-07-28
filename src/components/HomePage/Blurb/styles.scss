@@ -2,7 +2,7 @@ $cheeses: url('cheese-bread-small.jpg');
 $wines: url('bouchons-small.jpg');
 
 .blurb {
-  width: 100vh;
+  width: 100%;
   color: #fff;
   &__cheeses, &__wines {
     width: 100%;
