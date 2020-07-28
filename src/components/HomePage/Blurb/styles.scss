@@ -7,9 +7,10 @@ $wines: url('bouchons-small.jpg');
   &__cheeses, &__wines {
     width: 100%;
     height: 20vh;
+    // position: relative;
+    // z-index: 0;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #2D343C;
     background-position: 0 15%;
   }
   &__cheeses {
@@ -31,19 +32,46 @@ $wines: url('bouchons-small.jpg');
     &--title {
       font-weight: bold;
       text-transform: uppercase;
+      margin-bottom: 0.5em;
     }
     &--text {
       padding-top: 0.5em;
       width: 80%;
       height: 100%;
+      display: none;
     }
   }
   &__button {
-    border: none;
-    border-radius: 5px;
+    border: 2px solid #fff;
     padding: 0.5em;
-    margin-top: 0.5em;
     color: #fff;
-    background-color: #31bb24;
+    background-color: transparent;
+    &:hover {
+      border: 2px solid rgb(27, 180, 27);
+      color: rgb(27, 180, 27);
+    }
+  }
+}
+
+// div.opened {
+//   height: 40vh;
+//   position: absolute;
+//   z-index: 1;
+// }
+
+h3.opened {
+  text-decoration: underline;
+  padding-top: 0.5em;
+}
+
+p.opened {
+  padding: 1em;
+  display: block;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .blurb {
+    display: flex;
   }
 }
