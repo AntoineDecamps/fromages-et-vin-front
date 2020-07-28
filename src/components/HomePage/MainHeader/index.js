@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import 'animate.css/animate.css';
 
 import Connexion from 'src/components/Connexion';
 
 import './styles.scss';
-import mainImage from 'src/assets/images/glass-plate-small.jpg';
 import logo from 'src/assets/images/logo.png';
 
 const MainHeader = () => (
   <div className="mainHeader">
-    <img src={mainImage} alt="" className="mainHeader__image" />
-    <div className="mainHeader__logo">
+    <div className="mainHeader__connexion">
+      <Connexion />
+    </div>
+    <div className="mainHeader__logo animate__animated animate__slideInDown">
       <img src={logo} alt="" className="mainHeader__logoImage" />
     </div>
-    <Connexion />
-    <nav className="mainHeader__nav">
+    <nav className="mainHeader__nav animate__animated animate__slideInRight">
       <Link
         to="/"
         className="mainHeader__link"

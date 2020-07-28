@@ -55,6 +55,8 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "animate.css": "^4.1.0",
+    "animate.css-react": "^1.0.0",
     "axios": "^0.19.2",
     "prop-types": "*",
     "react": "*",
