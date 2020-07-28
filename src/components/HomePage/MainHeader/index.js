@@ -15,7 +15,7 @@ const MainHeader = () => (
       <div className="mainHeader__connexion">
         <Connexion />
       </div>
-      <img src={logo} alt="" className="mainHeader__logoImage animate__animated animate__slideInDown" />   
+      <img src={logo} alt="" className="mainHeader__logoImage animate__animated animate__slideInDown" />
       <nav className="mainHeader__nav animate__animated animate__slideInRight">
         <NavLink
           to="/"
