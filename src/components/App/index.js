@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 import HomePage from 'src/components/HomePage';
 import List from 'src/components/List';
@@ -13,11 +14,22 @@ import './styles.scss';
 // == Composant
 const App = () => (
   <div className="app">
-    <HomePage />
-    <List />
-    <ProductDetail />
-    <LoginForm />
-    <BackOffice />
+    <Route exact path="/">
+      <HomePage />
+    </Route>
+    <Route exact path="/vins">
+      <List />
+    </Route>
+    <Route exact path="/fromages">
+      <List />
+    </Route>
+    {/* <ProductDetail /> */}
+    <Route exact path="/connexion">
+      <LoginForm />
+    </Route>
+    <Route exact path="/admin">
+      <BackOffice />
+    </Route>
 
   </div>
 );
