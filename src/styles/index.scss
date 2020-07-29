@@ -7,10 +7,31 @@
 
 
 // or you can import your own font
-@font-face {
-  font-family: 'Roboto';
-  src: url('../assets/fonts/Roboto-Regular.ttf');
-}
+// @font-face {
+//   font-family: 'Roboto';
+//   src: url('../assets/fonts/Roboto-Regular.ttf');
+// }
 body {
-  font-family: 'Roboto', sans-serif;
+  background-color: vars.$main-color;
+}
+
+p, button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+h1, h2, h3, a {
+  font-family: 'Quattrocento', serif;
+}
+
+#root {
+  margin: auto;
+  box-shadow: 1px 1px 40px #000;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #root {
+    width: 80%;
+  }
 }

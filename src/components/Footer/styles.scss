@@ -1,41 +1,60 @@
 @use 'src/styles/vars';
 
 .footer {
-  width: 100%;
-  margin-top: 5rem;
+  margin: vars.$gutter * 2 vars.$gutter * 4;
+  margin-bottom: 0;
+  padding: vars.$gutter vars.$gutter * 2;
   &__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: #2C3E50;
-    height: 100px;
+    background-color: vars.$secondary-color;
+    text-align: center;
   }
   &__logo {
-    width: 100px;
-    justify-self: center;
-    align-self: center;
+    width: 5em;
+    margin: vars.$gutter;
   }
   &__div {
-    color: white;
-    justify-self: center;
-    align-self: center;
-  }
-  &__div__title {
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  &__div__content {
-    font-size: 1rem;
-    text-align: center;
+    display: none;
   }
   &__information {
-    background-color: #233140;
-    height: 50px;
+    background-color: vars.$secondary-color;
+    padding: vars.$gutter;
   }
   &__information__content {
-    color: white;
     text-align: center;
-    padding-top: 10px;
-    font-size: 12px;
+    padding-top: vars.$gutter / 2;
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: vars.$gutter * 2 vars.$gutter * 4;
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 100px;
+    }
+    &__logo {
+      justify-self: center;
+      align-self: center;
+    }
+    &__div {
+      display: block;
+      justify-self: center;
+      align-self: center;
+    }
+    &__div__title {
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    &__div__content {
+      font-size: 1rem;
+      text-align: center;
+    }
+  &__information {
+    background-color: vars.$secondary-color;
+    padding: vars.$gutter 0;
+  }
   }
 }

@@ -1,14 +1,14 @@
+@use 'src/styles/vars';
+
 $cheeses: url('cheese-bread-small.jpg');
 $wines: url('bouchons-small.jpg');
 
 .blurb {
   width: 100%;
-  color: #fff;
+  color: vars.$secondary-color;
   &__cheeses, &__wines {
     width: 100%;
     height: 20vh;
-    // position: relative;
-    // z-index: 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0 15%;
@@ -28,7 +28,7 @@ $wines: url('bouchons-small.jpg');
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #fff;
+    color: vars.$secondary-color;
     &--title {
       font-weight: bold;
       text-transform: uppercase;
@@ -42,22 +42,16 @@ $wines: url('bouchons-small.jpg');
     }
   }
   &__button {
-    border: 2px solid #fff;
+    border: 2px solid vars.$secondary-color;
     padding: 0.5em;
-    color: #fff;
+    color: vars.$secondary-color;
     background-color: transparent;
     &:hover {
-      border: 2px solid rgb(27, 180, 27);
-      color: rgb(27, 180, 27);
+      border: 2px solid vars.$alt-color;
+      color: vars.$alt-color;
     }
   }
 }
-
-// div.opened {
-//   height: 40vh;
-//   position: absolute;
-//   z-index: 1;
-// }
 
 h3.opened {
   text-decoration: underline;
@@ -73,5 +67,8 @@ p.opened {
 @media (min-width: 768px) {
   .blurb {
     display: flex;
+    &__cheeses, &__wines {
+      height: 40vh;
+    }
   }
 }

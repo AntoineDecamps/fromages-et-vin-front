@@ -1,20 +1,32 @@
 @use 'src/styles/vars';
 
 .concept {
-  height: 200px;
-  width: 100%;
-  background-color: #2C3E50;
-  padding: 1rem;
+  background-color: vars.$secondary-color;
+  margin: vars.$gutter * 2 vars.$gutter * 4;
+  padding: vars.$gutter vars.$gutter * 2;
+  position: relative;
   &__title {
-    color: rgb(219, 211, 211);
+    position: absolute;
+    font-style: italic;
+    top: 5px;
+    left: -1.5em;
+    color: vars.$alt-color;
     font-size: 2rem;
-    text-align: center;
-
   }
   &__content {
-    color: white;
     font-size: 1rem;
-    text-align: center;
-    padding: 2rem;
+    padding: 2em;
+    line-height: 1.5em;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .concept {
+    margin: vars.$gutter * 6 vars.$gutter * 12;
+    padding: vars.$gutter * 2 vars.$gutter * 4;
+    &__title {
+      left: -2em;
+    }
   }
 }

@@ -11,7 +11,7 @@ const Footer = () => (
         <h2 className="footer__div__title">Les vins</h2>
         <p className="footer__div__content">Nos suggestions</p>
       </div>
-      <img src={logo} alt="" className="footer__logo" />
+      <img src={logo} alt="Logo" className="footer__logo" />
       <div className="footer__div">
         <h2 className="footer__div__title">Les fromages</h2>
         <p className="footer__div__content">Nos suggestions</p>
