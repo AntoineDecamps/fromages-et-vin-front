@@ -15,14 +15,14 @@ const Blurb = () => {
     const buttonClicked = event.target;
     const textToDisplay = buttonClicked.previousSibling;
     const titleToUnderline = textToDisplay.previousSibling;
-    // const targetedBlock = buttonClicked.closest('div');
+    const targetedBlock = buttonClicked.closest('div');
 
     if (buttonClicked.classList.contains('cheeses')) {
       openCheeses = !openCheeses;
       buttonClicked.textContent = (openCheeses === false) ? 'Lire plus' : 'Réduire';
       textToDisplay.className = (openCheeses === false) ? 'blurb__article--text' : 'blurb__article--text opened';
       titleToUnderline.className = (openCheeses === false) ? 'blurb__article--title' : 'blurb__article--title opened';
-      // targetedBlock.className = (openCheeses === false) ? 'blurb__cheeses' : 'blurb__cheeses opened';
+      targetedBlock.className = (openCheeses === false) ? 'blurb__cheeses' : 'blurb__cheeses opened';
     }
 
     if (buttonClicked.classList.contains('wines')) {
@@ -30,7 +30,7 @@ const Blurb = () => {
       buttonClicked.textContent = (openWines === false) ? 'Lire plus' : 'Réduire';
       textToDisplay.className = (openWines === false) ? 'blurb__article--text' : 'blurb__article--text opened';
       titleToUnderline.className = (openWines === false) ? 'blurb__article--title' : 'blurb__article--title opened';
-      // targetedBlock.className = (openWines === false) ? 'blurb__wines' : 'blurb__wines opened';
+      targetedBlock.className = (openWines === false) ? 'blurb__wines' : 'blurb__wines opened';
     }
   };
 
@@ -40,7 +40,7 @@ const Blurb = () => {
         <article className="blurb__article">
           <h3 className="blurb__article--title">Fromages de France</h3>
           <p className="blurb__article--text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque, laboriosam ipsam magni qui! Distinctio, corporis quibusdam!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque.
           </p>
           <button
             type="button"
@@ -56,7 +56,7 @@ const Blurb = () => {
         <article className="blurb__article">
           <h3 className="blurb__article--title">Vins de France</h3>
           <p className="blurb__article--text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque, laboriosam ipsam magni qui! Distinctio, corporis quibusdam!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque.
           </p>
           <button
             type="button"

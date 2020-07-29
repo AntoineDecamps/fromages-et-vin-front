@@ -9,6 +9,7 @@ $wines: url('bouchons-small.jpg');
   &__cheeses, &__wines {
     width: 100%;
     height: 20vh;
+    transition: 0.3s;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0 15%;
@@ -29,16 +30,22 @@ $wines: url('bouchons-small.jpg');
     align-items: center;
     flex-direction: column;
     color: vars.$secondary-color;
+    &:hover {
+      background-color: rgba(46, 44, 44, 0.4);
+    }
     &--title {
       font-weight: bold;
+      font-size: 1.5em;
       text-transform: uppercase;
       margin-bottom: 0.5em;
+      transition: 0.3s;
     }
     &--text {
-      padding-top: 0.5em;
-      width: 80%;
-      height: 100%;
-      display: none;
+      // display: none;
+      text-align: center;
+      padding: 0.8em;
+      visibility: hidden;
+      transition: 0.3s;
     }
   }
   &__button {
@@ -54,13 +61,23 @@ $wines: url('bouchons-small.jpg');
 }
 
 h3.opened {
-  text-decoration: underline;
   padding-top: 0.5em;
+  transition: 0.3s;
 }
 
 p.opened {
-  padding: 1em;
-  display: block;
+  padding: 1.5em;
+  // display: block;
+  visibility: visible;
+  text-align: center;
+  height: auto;
+  transition: 0.3s;
+}
+
+div.opened {
+  // width: 200%;
+  height: 30vh;
+  transition: 0.3s;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -69,6 +86,18 @@ p.opened {
     display: flex;
     &__cheeses, &__wines {
       height: 40vh;
+      transition: 0.3s;
     }
+  }
+
+  p.opened {
+    width: 60%;
+    transition: 0.3s;
+  }
+
+  div.opened {
+    height: 40vh;
+    width: 300%;
+    transition: 0.3s;
   }
 }

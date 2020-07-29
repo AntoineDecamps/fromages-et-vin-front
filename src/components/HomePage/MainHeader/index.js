@@ -10,7 +10,7 @@ import logo from 'src/assets/images/logo-grey.png';
 
 const MainHeader = () => (
   <div className="mainHeader">
-    <div className="test">
+    <div className="mainHeader__container">
 
       <div className="mainHeader__connexion">
         <Connexion />
@@ -27,25 +27,25 @@ const MainHeader = () => (
         </NavLink>
         <NavLink
           to="/vins"
-          className="mainHeader__link"
+          className="mainHeader__link wine"
           exact
         >
           Vins
         </NavLink>
         <NavLink
           to="/fromages"
-          className="mainHeader__link"
+          className="mainHeader__link cheese"
           exact
         >
           Fromages
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/contacts"
           className="mainHeader__link"
           exact
         >
           Contacts
-        </NavLink>
+        </NavLink> */}
       </nav>
     </div>
   </div>

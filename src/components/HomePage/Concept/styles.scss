@@ -15,7 +15,8 @@
   }
   &__content {
     font-size: 1rem;
-    padding: 2em;
+    margin: 1em;
+    padding: 1em;
     line-height: 1.5em;
   }
 }
@@ -27,6 +28,10 @@
     padding: vars.$gutter * 2 vars.$gutter * 4;
     &__title {
       left: -2em;
+    }
+    &__content {
+      border-left: 4px solid vars.$main-color;
+      border-radius: 0 0 0 15px;
     }
   }
 }

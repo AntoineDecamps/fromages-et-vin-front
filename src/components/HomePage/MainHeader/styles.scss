@@ -1,18 +1,26 @@
 @use 'src/styles/vars';
 
+$main: url("./glass-plate-medium.jpg");
+$cheese: url('./cheeses-small.jpg');
+$wine: url('./vignes-small.jpg');
+
 .mainHeader {
-  // width: 100%;
   height: 60vh;
-  background-image: url("./glass-plate-small.jpg");
+  background-image: $main;
   background-repeat: no-repeat;
   background-size: cover;
-
+  &__container {
+    background-color: rgba(124, 118, 118, 0.6);
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
   &__connexion {
     justify-self: end;
     margin: 1rem 1rem 0 0;
   }
   &__logoImage {
-    width: 15em;
+    width: 30%;
     padding-top: 10px; 
     justify-self: center;
     text-align: center;
@@ -25,19 +33,58 @@
   }
   &__link {
     margin-left: 30px;
+    transition: 0.2s;
     padding: 5px;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
-  }
-  &__link--active {
-    text-decoration: underline;
+    &:hover {
+      color: vars.$alt-color;
+      border-bottom: 3px solid vars.$alt-color;
+    }
+    &--active {
+      color: vars.$alt-color;
+      border-bottom: 3px solid vars.$alt-color;
+    }
   }
 }
-.test {
-  background-color: rgba(124, 118, 118, 0.5);
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+
+// @if (cheese:hover == true) {
+//   .mainHeader {
+//     
+//   }
+// }
+
+// @if (wine:hover == true) {
+//   .mainHeader {
+//     background-image: $wine;
+//   }
+// }
+
+@media (min-width: 1024px) {
+  .mainHeader {
+    height: 70vh;
+    &__nav {
+      align-self: start;
+      justify-self: start;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    &__link {
+      margin-bottom: vars.$gutter * 1.5;
+      transition: 0.2s;
+      font-size: 1.5em;
+      &:hover {
+        border-bottom: none;
+        border-left: 3px solid vars.$alt-color;
+      }
+      &--active {
+        border-bottom: none;
+        border-left: 3px solid vars.$alt-color;
+      }
+    }
+  }
 }
