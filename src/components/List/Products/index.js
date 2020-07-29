@@ -1,20 +1,23 @@
+/* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import Product from './Product';
 
+import cheeses from '../data';
+
 import './styles.scss';
 
-const Products = () => (
-  <div className="products">
-    <Product title="Tôme des Pyrénées" />
-    <Product title="Camembert" />
-    <Product title="Comté" />
-    <Product title="Reblochon" />
-    <Product title="Livarot" />
-    <Product title="Pont-l'évêque" />
-  </div>
-);
+const Products = () => {
+  const cheeseCard = cheeses.map(({ name }) => <Product key={name} name={name} />);
+  // console.log(cheeseCard);
+
+  return (
+    <div className="products">
+      {cheeseCard}
+    </div>
+  );
+};
 
 Products.propTypes = {};
 
