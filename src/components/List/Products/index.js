@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -9,7 +10,7 @@ import cheeses from '../data';
 import './styles.scss';
 
 const Products = () => {
-  const cheeseCard = cheeses.map(({ name }) => <Product key={name} name={name} />);
+  const cheeseCard = cheeses.map(({ name, picture }) => <Product key={name} name={name} picture={picture} />);
   // console.log(cheeseCard);
 
   return (
