@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 
 import HomePage from 'src/components/HomePage';
@@ -8,33 +8,43 @@ import ProductDetail from 'src/components/ProductDetail';
 import LoginForm from 'src/components/LoginForm';
 import BackOffice from 'src/components/BackOffice';
 
+import PropTypes from 'prop-types';
+
 // == Import
 import './styles.scss';
 
 // == Composant
-const App = () => (
-  <div className="app">
-    <Route exact path="/">
-      <HomePage />
-    </Route>
-    <Route exact path="/vins">
-      <List />
-    </Route>
-    <Route exact path="/fromages">
-      <List />
-    </Route>
-    <Route exact path="/detail">
-      <ProductDetail />
-    </Route>
-    <Route exact path="/connexion">
-      <LoginForm />
-    </Route>
-    <Route exact path="/admin">
-      <BackOffice />
-    </Route>
+const App = ({ getCheeses }) => {
+  useEffect(() => {
+    getCheeses();
+  }, []);
+  return (
+    <div className="app">
+      <Route exact path="/">
+        <HomePage />
+      </Route>
+      <Route exact path="/vins">
+        <List />
+      </Route>
+      <Route exact path="/fromages">
+        <List />
+      </Route>
+      <Route exact path="/detail">
+        <ProductDetail />
+      </Route>
+      <Route exact path="/connexion">
+        <LoginForm />
+      </Route>
+      <Route exact path="/admin">
+        <BackOffice />
+      </Route>
+    </div>
+  );
+};
 
-  </div>
-);
+App.propTypes = {
+  getCheeses: PropTypes.func.isRequired,
+};
 
 // == Export
 export default App;
