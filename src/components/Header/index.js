@@ -7,7 +7,6 @@ import './styles.scss';
 
 const Header = () => (
   <div className="header">
-    Header
     <Nav />
   </div>
 );

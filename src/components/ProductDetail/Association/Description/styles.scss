@@ -1,0 +1,11 @@
+@use 'src/styles/vars';
+
+.description {
+  margin-top: vars.$gutter*3;
+  padding-bottom: vars.$gutter*3;
+  padding: 0 vars.$gutter*2 vars.$gutter*3 vars.$gutter*2;
+  &__content {
+    text-align: center;
+    line-height: 1.2;
+  }
+}

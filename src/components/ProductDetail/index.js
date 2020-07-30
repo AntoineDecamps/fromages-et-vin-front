@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
 import Detail from 'src/components/ProductDetail/Detail';
-import Association from 'src/components/ProductDetail/Association';
+import Association from 'src/containers/Association';
 import Footer from 'src/components/Footer';
 
 import './styles.scss';

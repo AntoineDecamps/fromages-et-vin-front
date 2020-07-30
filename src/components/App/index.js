@@ -23,7 +23,9 @@ const App = () => (
     <Route exact path="/fromages">
       <List />
     </Route>
-    {/* <ProductDetail /> */}
+    <Route exact path="/detail">
+      <ProductDetail />
+    </Route>
     <Route exact path="/connexion">
       <LoginForm />
     </Route>
