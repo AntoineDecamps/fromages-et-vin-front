@@ -1,0 +1,12 @@
+@use 'src/styles/vars';
+
+.menu {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: grey;
+  &__link {
+    margin-left: 2rem;
+  }
+}

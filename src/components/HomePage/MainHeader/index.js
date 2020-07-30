@@ -6,7 +6,7 @@ import 'animate.css/animate.css';
 import Connexion from 'src/components/Connexion';
 
 import './styles.scss';
-import logo from 'src/assets/images/logo.png';
+import logo from './Logo Cheese & Wine grey.png';
 
 const MainHeader = () => (
   <div className="mainHeader">
