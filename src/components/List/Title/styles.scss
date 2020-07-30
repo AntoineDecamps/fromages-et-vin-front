@@ -1,0 +1,8 @@
+@use 'src/styles/vars';
+
+h2.title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #fff;
+  padding-bottom: vars.$gutter * 2;
+}

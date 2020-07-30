@@ -9,7 +9,7 @@
     position: absolute;
     font-style: italic;
     top: 5px;
-    left: -1.5em;
+    left: 5px;
     color: vars.$alt-color;
     font-size: 2rem;
   }
@@ -28,6 +28,11 @@
     padding: vars.$gutter * 2 vars.$gutter * 4;
     &__title {
       left: -2em;
+      top: -2em;
+      // background-color: rgba(29, 31, 54, 0.5);
+      // border-bottom: 1px solid vars.$secondary-color;
+      padding: vars.$gutter / 3;
+      font-size: 2.2em;
     }
     &__content {
       border-left: 4px solid vars.$main-color;
