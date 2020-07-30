@@ -1,0 +1,48 @@
+@use 'src/styles/vars';
+
+// PRODUCTS LIST
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+// CARD PRODUCT
+.product {
+  width: 50%;
+  padding: vars.$gutter / 4;
+  border-radius: 5px;
+}
+.card {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  opacity: 0.75;
+    &:hover {
+      opacity: 1;
+    }
+  &__img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #000;
+  }
+  &__title {
+    position: absolute;
+    z-index: 1;
+    bottom: 15px;
+    left: 1.5em;
+    color: #fff;
+    text-shadow: 1px 1px 2px #666;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 1024px) {
+  .product {
+    width: calc(100% / 3);
+  }
+}

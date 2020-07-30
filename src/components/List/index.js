@@ -9,10 +9,12 @@ import Footer from 'src/components/Footer';
 import './styles.scss';
 
 const List = () => (
-  <div className="list">
+  <div className="listPage">
     <Header />
-    <Title />
-    <Products />
+    <div className="list">
+      <Title />
+      <Products />
+    </div>
     <Footer />
   </div>
 );
