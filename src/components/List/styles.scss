@@ -2,7 +2,7 @@
 
 .list {
   padding: vars.$gutter 0;
-  background-color: #233140;
+  background-color: vars.$main-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
