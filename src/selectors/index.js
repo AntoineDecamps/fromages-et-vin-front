@@ -1,8 +1,13 @@
-import { useParams } from 'react-router-dom';
+import slugify from 'slugify';
 
-const getSlugFromNav = () => {
-  const { slug } = useParams();
+// eslint-disable-next-line import/prefer-default-export
+export const getSlugFromName = (name = '') => {
+  const modifiedTitle = name.replace(/[&]/g, '').replace(/[_]/g, '-');
+
+  const slug = slugify(modifiedTitle, {
+    lower: true,
+    remove: /[*+~.()'"!:@&]/g,
+  });
+
   return slug;
 };
-
-export default getSlugFromNav;

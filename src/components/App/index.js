@@ -37,9 +37,15 @@ const App = ({ getCheeses, getWines, cheeses, wines }) => {
           name="Fromages"
         />
       </Route>
-      <Route exact path="/detail">
-        <ProductDetail />
-      </Route>
+      <Route
+        exact
+        path="/produits/:slug"
+        component={({ match }) => (
+          <ProductDetail
+            slug={match.params.slug}
+          />
+        )}
+      />
       <Route exact path="/connexion">
         <LoginForm />
       </Route>
