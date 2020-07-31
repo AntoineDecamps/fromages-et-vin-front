@@ -14,20 +14,28 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 // == Composant
-const App = ({ getCheeses }) => {
+const App = ({ getCheeses, getWines, cheeses, wines }) => {
   useEffect(() => {
     getCheeses();
+    getWines();
   }, []);
+
   return (
     <div className="app">
       <Route exact path="/">
         <HomePage />
       </Route>
       <Route exact path="/vins">
-        <List />
+        <List
+          product={wines}
+          name="Vins"
+        />
       </Route>
       <Route exact path="/fromages">
-        <List />
+        <List
+          product={cheeses}
+          name="Fromages"
+        />
       </Route>
       <Route exact path="/detail">
         <ProductDetail />
@@ -44,6 +52,7 @@ const App = ({ getCheeses }) => {
 
 App.propTypes = {
   getCheeses: PropTypes.func.isRequired,
+  getWines: PropTypes.func.isRequired,
 };
 
 // == Export

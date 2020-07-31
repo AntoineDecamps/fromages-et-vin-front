@@ -5,17 +5,27 @@ import Product from './Product';
 
 import './styles.scss';
 
-const Products = () => (
-  <div className="products">
-    <Product title="Tôme des Pyrénées" />
-    <Product title="Camembert" />
-    <Product title="Comté" />
-    <Product title="Reblochon" />
-    <Product title="Livarot" />
-    <Product title="Pont-l'évêque" />
-  </div>
-);
+const Products = ({ productList }) => {
+  const Card = productList.map(({ name, picture }) => (
+    <Product
+      key={name}
+      name={name}
+      picture={picture}
+    />
+  ));
+  return (
+    <div className="products">
+      {Card}
+    </div>
+  );
+};
 
-Products.propTypes = {};
+Products.propTypes = {
+  cheeses: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    picture: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default Products;

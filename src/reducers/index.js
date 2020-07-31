@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
 import toggler from './toggler';
+import cheeses from './cheeses';
+import wines from './wines';
 
 export default combineReducers({
-  counter,
   toggler,
+  cheeses,
+  wines,
 });
