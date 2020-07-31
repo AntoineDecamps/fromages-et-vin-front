@@ -1,15 +1,17 @@
 @use 'src/styles/vars';
 
 .menu {
-  padding: vars.$gutter * 3;
-  font-size: 2.2rem;
+  font-size: 1.2rem;
   width: 100%;
   height: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   background-color: rgba(29, 31, 54, 0.5);
   &__link {
-    margin: 0 vars.$gutter * 3;
     color: vars.$secondary-color;
+    padding: vars.$gutter / 2 0;
     &--active {
       color: vars.$alt-color;
     }
@@ -17,6 +19,25 @@
       color: vars.$alt-color;
       border-bottom: 3px solid vars.$alt-color;
       transition: 0.3s;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 426px) {
+  .menu {
+    font-size: 1.8rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .menu {
+    flex-direction: row;
+    font-size: 2rem;
+    padding: vars.$gutter * 3;
+    &__link {
+      margin: 0 vars.$gutter * 3;
     }
   }
 }
