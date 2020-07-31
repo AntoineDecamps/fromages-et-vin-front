@@ -1,24 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import avatar from './avatar-alt.png'
+import Field from './Field';
+
+import avatar from './avatar-alt.png';
 
 import './styles.scss';
 
-const Form = () => (
+const Form = ({ changeField }) => (
   <div className="form">
     <h3 className="form__title">Connectez-vous !</h3>
     <img src={avatar} alt="Avatar" className="form__avatar" />
     <form className="form__input">
-      <input
+      <Field
         type="text"
-        className="form__input--email"
+        name="email"
+        // value={email}
         placeholder="Email"
+        onChange={changeField}
       />
-      <input
+      <Field
         type="text"
-        className="form__input--password"
+        name="password"
+        // value={password}
         placeholder="Mot de passe"
+        onChange={changeField}
       />
       <button
         type="submit"
@@ -30,6 +36,10 @@ const Form = () => (
   </div>
 );
 
-Form.propTypes = {};
+Form.propTypes = {
+  // email: PropTypes.string.isRequired,
+  // password: PropTypes.string.isRequired,
+  changeField: PropTypes.func.isRequired,
+};
 
 export default Form;
