@@ -11,3 +11,7 @@ export const getSlugFromName = (name = '') => {
 
   return slug;
 };
+
+export const getProductBySlug = (productList, slug) => productList.find(
+  (product) => getSlugFromName(product.name) === slug,
+);
