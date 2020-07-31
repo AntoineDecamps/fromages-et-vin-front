@@ -39,7 +39,7 @@ const App = ({ getCheeses, getWines, cheeses, wines }) => {
       </Route>
       <Route
         exact
-        path="/produits/:slug"
+        path="/produit/:slug"
         component={({ match }) => (
           <ProductDetail
             slug={match.params.slug}

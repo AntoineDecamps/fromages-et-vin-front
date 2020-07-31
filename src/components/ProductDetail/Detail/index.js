@@ -8,14 +8,14 @@ import wine from './bottleofwine.jpg';
 
 import './styles.scss';
 
-const Detail = ({ test, slug }) => {
-  console.log(test);
+const Detail = ({ name, picture, description }) => {
+  console.log('coucou');
   return (
     <div className="detail">
       <Parallax speed={-8}>
         <div className="detail__picture">
-          <h2 className="detail__title">Nom du vin</h2>
-          <img src={wine} alt="" className="detail__image animate__animated animate__fadeInLeft animate_delay-1s" />
+          <h2 className="detail__title">{name}</h2>
+          <img src={picture} alt="" className="detail__image animate__animated animate__fadeInLeft animate_delay-1s" />
           <div className="detail__flex">
             <div className="detail__button">
               <Button circular icon="glass martini" />

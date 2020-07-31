@@ -9,7 +9,7 @@ import './styles.scss';
 const Product = ({ name, picture }) => (
   <div className="product">
     <article className="card">
-      <Link to={`/produits/${getSlugFromName(name)}`}>
+      <Link to={`/produit/${getSlugFromName(name)}`}>
         <a href="#" className="card__link">
           <img src={picture} alt={name} className="card__img" />
           <h3 className="card__title">

@@ -10,7 +10,9 @@ const mapStateToProps = (state, ownProps) => {
   // products.push(wines, cheeses);
   const productDetail = getProductBySlug(state.cheeses.cheesesList, ownProps.slug);
   return {
-    test: productDetail,
+    name: productDetail.name,
+    picture: productDetail.picture,
+    description: productDetail.description,
   };
 };
 

@@ -12,7 +12,7 @@ const ProductDetail = ({ slug }) => (
   <div className="productDetail">
     <Header />
     <Detail
-      slug
+      slug={slug}
     />
     <Association />
     <Footer />
