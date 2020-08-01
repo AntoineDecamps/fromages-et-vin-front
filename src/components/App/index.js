@@ -1,12 +1,13 @@
 // == Import npm
 import React, { useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import HomePage from 'src/components/HomePage';
 import List from 'src/components/List';
 import ProductDetail from 'src/components/ProductDetail';
 import LoginForm from 'src/components/LoginForm';
 import BackOffice from 'src/components/BackOffice';
+import NoMatch from 'src/components/NoMatch';
 
 import PropTypes from 'prop-types';
 
@@ -21,36 +22,41 @@ const App = ({ getCheeses, getWines, cheeses, wines }) => {
   }, []);
   return (
     <div className="app">
-      <Route exact path="/">
-        <HomePage />
-      </Route>
-      <Route exact path="/vins">
-        <List
-          product={wines}
-          name="Vins"
-        />
-      </Route>
-      <Route exact path="/fromages">
-        <List
-          product={cheeses}
-          name="Fromages"
-        />
-      </Route>
-      <Route
-        exact
-        path="/produit/:slug"
-        component={({ match }) => (
-          <ProductDetail
-            slug={match.params.slug}
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/vins">
+          <List
+            product={wines}
+            name="Vins"
           />
-        )}
-      />
-      <Route exact path="/connexion">
-        <LoginForm />
-      </Route>
-      <Route exact path="/admin">
-        <BackOffice />
-      </Route>
+        </Route>
+        <Route exact path="/fromages">
+          <List
+            product={cheeses}
+            name="Fromages"
+          />
+        </Route>
+        <Route
+          exact
+          path="/produit/:slug"
+          component={({ match }) => (
+            <ProductDetail
+              slug={match.params.slug}
+            />
+          )}
+        />
+        <Route exact path="/connexion">
+          <LoginForm />
+        </Route>
+        <Route exact path="/admin">
+          <BackOffice />
+        </Route>
+        <Route>
+          <NoMatch />
+        </Route>
+      </Switch>
     </div>
   );
 };

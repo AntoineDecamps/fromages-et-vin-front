@@ -1,0 +1,48 @@
+@use 'src/styles/vars';
+
+.noMatch {
+  color: vars.$alt-color;
+  height: 100vh; 
+  padding-top: vars.$gutter*3;
+  &__404 {
+    text-align: center;
+    color: vars.$alt-color;
+    font-size: 3rem;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__image {
+    width: 250px;
+    display: block;
+    margin: vars.$gutter auto vars.$gutter*6 auto;
+  }
+  &__button {
+    color: vars.$alt-color;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid vars.$alt-color;
+    padding: vars.$gutter/2;
+    font-weight: bold;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: vars.$gutter*15;
+    &:hover {
+      background-color: vars.$alt-color;
+      color: black;
+    }
+  }
+}
+.rotate {
+  animation: rotation 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
