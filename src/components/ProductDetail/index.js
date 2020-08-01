@@ -19,6 +19,8 @@ const ProductDetail = ({ slug }) => (
   </div>
 );
 
-ProductDetail.propTypes = {};
+ProductDetail.propTypes = {
+  slug: PropTypes.string.isRequired,
+};
 
 export default ProductDetail;

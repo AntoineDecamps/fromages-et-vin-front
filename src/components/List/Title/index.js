@@ -7,6 +7,8 @@ const Title = ({ name }) => (
   <h2 className="title">Nos {name}</h2>
 );
 
-Title.propTypes = {};
+Title.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 export default Title;

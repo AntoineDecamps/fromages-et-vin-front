@@ -19,7 +19,6 @@ const App = ({ getCheeses, getWines, cheeses, wines }) => {
     getCheeses();
     getWines();
   }, []);
-
   return (
     <div className="app">
       <Route exact path="/">
@@ -59,6 +58,8 @@ const App = ({ getCheeses, getWines, cheeses, wines }) => {
 App.propTypes = {
   getCheeses: PropTypes.func.isRequired,
   getWines: PropTypes.func.isRequired,
+  cheeses: PropTypes.array.isRequired,
+  wines: PropTypes.array.isRequired,
 };
 
 // == Export

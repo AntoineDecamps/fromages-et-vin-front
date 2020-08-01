@@ -6,9 +6,9 @@ import Product from './Product';
 import './styles.scss';
 
 const Products = ({ productList }) => {
-  const Card = productList.map(({ name, picture }) => (
+  const Card = productList.map(({ name, picture, id }) => (
     <Product
-      key={name}
+      key={id}
       name={name}
       picture={picture}
     />
@@ -21,11 +21,13 @@ const Products = ({ productList }) => {
 };
 
 Products.propTypes = {
-  cheeses: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    picture: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-  }).isRequired,
+  productList: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default Products;

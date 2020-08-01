@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useParams } from 'react-router-dom';
-
 import Header from 'src/components/Header';
 import Title from 'src/components/List/Title';
 import Products from 'src/components/List/Products';
@@ -25,6 +23,9 @@ const List = ({ product, name }) => (
   </div>
 );
 
-List.propTypes = {};
+List.propTypes = {
+  name: PropTypes.string.isRequired,
+  product: PropTypes.array.isRequired,
+};
 
 export default List;
