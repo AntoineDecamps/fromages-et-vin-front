@@ -53,6 +53,9 @@ const App = ({ getCheeses, getWines, cheeses, wines }) => {
         <Route exact path="/admin">
           <BackOffice />
         </Route>
+        <Route exact path="/admin">
+          <BackOffice />
+        </Route>
         <Route>
           <NoMatch />
         </Route>
