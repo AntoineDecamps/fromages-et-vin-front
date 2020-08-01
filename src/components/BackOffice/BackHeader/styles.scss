@@ -1,0 +1,15 @@
+@use 'src/styles/vars';
+
+.backHeader {
+  border-bottom: 2px solid vars.$alt-color;
+  margin-top: vars.$gutter*2;
+  &__title {
+    color: vars.$alt-color;
+    font-size: 1.5em;
+    margin-bottom: vars.$gutter/2;
+  }
+  &__secondTitle {
+    padding-bottom: vars.$gutter/2;
+    font-size: 1.2em;
+  }
+}

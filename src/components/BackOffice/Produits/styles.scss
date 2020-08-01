@@ -1,0 +1,11 @@
+@use 'src/styles/vars';
+
+.produits {
+  &__flexButton {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__button {
+    margin-top: vars.$gutter;
+  }
+}

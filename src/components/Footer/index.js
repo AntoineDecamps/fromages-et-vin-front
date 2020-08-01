@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import logo from './logo.png';
-
 import { Link } from 'react-router-dom';
+
+import logo from './logo.png';
 
 import './styles.scss';
 
