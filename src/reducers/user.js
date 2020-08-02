@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
 // Reducer user
-import { CHANGE_FIELD } from 'src/actions/user';
+import { CHANGE_FIELD, LOGIN, SAVE_USER } from 'src/actions/user';
 
 const initialState = {
-  email: 'admin@admin.com',
-  password: 'admin',
+  // email: 'admin@admin.com',
+  // password: 'admin',
+  email: '',
+  password: '',
 };
 
 const user = (state = initialState, action = {}) => {
@@ -15,6 +17,20 @@ const user = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       };
+    case LOGIN: {
+      console.log(state, 'reducer case LOGIN');
+      return {
+        ...state,
+      };
+    }
+    case SAVE_USER: {
+      console.log('reducer case SAVE USER');
+      return {
+        ...state,
+        email: '',
+        password: '',
+      };
+    }
     default:
       return state;
   }

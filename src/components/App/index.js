@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import HomePage from 'src/components/HomePage';
 import List from 'src/components/List';
 import ProductDetail from 'src/components/ProductDetail';
-import LoginForm from 'src/containers/LoginForm';
+import LoginForm from 'src/components/LoginForm';
 import BackOffice from 'src/components/BackOffice';
 
 import PropTypes from 'prop-types';
