@@ -1,11 +1,48 @@
 @use 'src/styles/vars';
 
 .produits {
+  color: white;
   &__flexButton {
     display: flex;
     justify-content: flex-end;
   }
   &__button {
+    color: vars.$alt-color;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid vars.$alt-color;
+    padding: vars.$gutter/2;
+    font-weight: bold;
     margin-top: vars.$gutter;
+    &:hover {
+      background-color: vars.$alt-color;
+      color: black;
+    }
+  }
+  &__table {
+    margin-top: vars.$gutter*2;
+    margin-right: vars.$gutter/2;
+    border: 2px solid vars.$alt-color;
+    width: 100%;
+    &__button {
+      color: vars.$alt-color;
+      background-color: rgba(0, 0, 0, 0);
+      border: 2px solid vars.$alt-color;
+      padding: vars.$gutter/2;
+      font-weight: bold;
+      &:hover {
+        background-color: vars.$alt-color;
+        color: black;
+      }
+    }
+  }
+  &__table th {
+    background-color: grey;
+    text-align: left;
+    padding: vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2;
+    border: 1px solid vars.$alt-color;
+  }
+  &__table td {
+    padding: vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2;
+    border: 1px solid vars.$alt-color;
   }
 }

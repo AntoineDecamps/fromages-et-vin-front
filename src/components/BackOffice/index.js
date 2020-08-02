@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 
 import BackHeader from 'src/components/BackOffice/BackHeader';
 import BackHomePage from 'src/components/BackOffice/BackHomePage';
@@ -10,11 +11,20 @@ import Users from 'src/components/BackOffice/Users';
 
 import './styles.scss';
 
-const BackOffice = () => (
+const BackOffice = ({ cheeses }) => (
   <div className="backOffice">
-    <BackHeader />
-    <BackHomePage />
-    <SideBar />
+    <Route exact path="/admin">
+      <BackHeader />
+      <BackHomePage />
+      <SideBar />
+    </Route>
+    <Route exact path="/admin/fromages">
+      <BackHeader />
+      <Produits
+        cheeses={cheeses}
+      />
+      <SideBar />
+    </Route>
     {/* <Produits /> */}
     {/* <Add /> */}
     {/* <Products /> */}

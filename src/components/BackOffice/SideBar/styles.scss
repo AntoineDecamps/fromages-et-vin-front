@@ -1,7 +1,30 @@
 @use 'src/styles/vars';
 
 .sideBar {
-  position: fixed;
-  left: 10%;
-  width: 25%;
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2rem;
+    &__icon {
+      margin-right: 0.5rem;
+      align-self: center;
+    }
+    &__information {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__text {
+    margin-bottom: 0.5rem;
+  }
+  &__nav {
+    list-style-type: none;
+    margin-left: 0.5rem;
+    margin-top: 4rem;
+    &__link {
+      margin-bottom: 0.5rem;
+    }
+  }
 }

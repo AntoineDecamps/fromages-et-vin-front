@@ -1,5 +1,23 @@
 @use 'src/styles/vars';
 
 .backHomePage {
-  
+  margin-top: 2rem;
+  &__text {
+    margin-bottom: 1rem;
+  }
+  &__button {
+    color: vars.$alt-color;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid vars.$alt-color;
+    padding: vars.$gutter/2;
+    font-weight: bold;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: vars.$gutter*15;
+    &:hover {
+      background-color: vars.$alt-color;
+      color: black;
+    }
+  }
 }

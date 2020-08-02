@@ -3,12 +3,25 @@
 .backOffice {
   color: white;
   height: 100vh;
+  padding-right: 1rem;
 }
 .sideBar {
   position: fixed;
   left: 10%;
-  width: 18%;
+  width: 225px;
   min-height: 100vh;
   top: 0;
   background-color: vars.$alt-color;
+}
+
+.backHeader {
+  margin-left: 250px;
+}
+
+.backHomePage {
+  margin-left: 250px;
+}
+
+.produits {
+  margin-left: 250px;
 }
