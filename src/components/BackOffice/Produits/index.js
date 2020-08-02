@@ -1,22 +1,54 @@
 import React from 'react';
 
-import Products from 'src/components/List/Products';
+import { Header, Modal, Image, Button } from 'semantic-ui-react';
 
 import PropTypes from 'prop-types';
-
 import './styles.scss';
 
-const Produits = ({ wines, cheeses }) => {
-  console.log(cheeses);
+const Produits = ({ wines, cheeses, open, openModal, closeModal }) => {
+  const modalInformation = (cheese) => (
+    <>
+      <Modal.Header>Gestion du produit</Modal.Header>
+      <Modal.Content image>
+        <Image size="medium" src={cheese.picture} wrapped />
+        <Modal.Description>
+          <Header>{cheese.name}</Header>
+          <p>
+            Infos du produit
+          </p>
+        </Modal.Description>
+      </Modal.Content>
+    </>
+  );
   const tableInformation = cheeses.map((cheese) => (
     <tr>
       <td>{cheese.name}</td>
       <td>{cheese.id}</td>
       <td>{cheese.description}</td>
       <td>
-        <button type="button" className="produits__table__button">
-          modifier
-        </button>
+        <Modal
+          onClose={() => closeModal()}
+          onOpen={() => openModal()}
+          open={open}
+          trigger={(
+            <button type="button" className="produits__table__button">
+              modifier
+            </button>
+            )}
+        >
+          {modalInformation(cheese)}
+          <Modal.Actions>
+            <Button color="yellow">Editer</Button>
+            <Button color="red">Supprimer</Button>
+            <Button
+              content="OK"
+              labelPosition="right"
+              icon="checkmark"
+              onClick={() => closeModal()}
+              positive
+            />
+          </Modal.Actions>
+        </Modal>
       </td>
     </tr>
   ));
