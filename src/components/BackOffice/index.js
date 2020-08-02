@@ -14,7 +14,7 @@ const BackOffice = () => (
   <div className="backOffice">
     <BackHeader />
     <BackHomePage />
-    {/* <SideBar /> */}
+    <SideBar />
     {/* <Produits /> */}
     {/* <Add /> */}
     {/* <Products /> */}

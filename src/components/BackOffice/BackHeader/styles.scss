@@ -2,7 +2,8 @@
 
 .backHeader {
   border-bottom: 2px solid vars.$alt-color;
-  margin-top: vars.$gutter*2;
+  padding-top: vars.$gutter*2;
+  left: 18%;
   &__title {
     color: vars.$alt-color;
     font-size: 1.5em;
