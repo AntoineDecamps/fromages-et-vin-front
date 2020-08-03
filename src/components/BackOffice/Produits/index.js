@@ -8,14 +8,14 @@ import './styles.scss';
 const Produits = ({ wines, cheeses, open, openModal, closeModal }) => {
   const modalInformation = (cheese) => (
     <>
-      <Modal.Header>Gestion du produit</Modal.Header>
+      <Modal.Header>{cheese.name}</Modal.Header>
       <Modal.Content image>
         <Image size="medium" src={cheese.picture} wrapped />
         <Modal.Description>
-          <Header>{cheese.name}</Header>
-          <p>
-            Infos du produit
-          </p>
+          <h1>Infos du produit</h1>
+          <p>Nom</p>
+          <p>Id</p>
+          <p>description</p>
         </Modal.Description>
       </Modal.Content>
     </>
