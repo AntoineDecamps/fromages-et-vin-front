@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
-import Form from 'src/components/LoginForm/Form';
+import Form from 'src/containers/Form';
 
 import './styles.scss';
 
@@ -13,6 +13,6 @@ const LoginForm = () => (
   </div>
 );
 
-LoginForm.propTypes = {};
+// LoginForm.propTypes = {};
 
 export default LoginForm;
