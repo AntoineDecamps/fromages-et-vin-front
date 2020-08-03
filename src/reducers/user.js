@@ -5,6 +5,7 @@ import { CHANGE_FIELD, LOGIN, SAVE_USER } from 'src/actions/user';
 const initialState = {
   // email: 'admin@admin.com',
   // password: 'admin',
+  isLogged: false,
   email: '',
   password: '',
 };
@@ -12,7 +13,7 @@ const initialState = {
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHANGE_FIELD:
-      console.log(state, 'change field action reducer');
+      // console.log(state, 'change field action reducer');
       return {
         ...state,
         [action.name]: action.value,
@@ -21,6 +22,7 @@ const user = (state = initialState, action = {}) => {
       console.log(state, 'reducer case LOGIN');
       return {
         ...state,
+        isLogged: true,
       };
     }
     case SAVE_USER: {

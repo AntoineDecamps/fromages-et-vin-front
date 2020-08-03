@@ -7,13 +7,22 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {
       const state = store.getState();
-      console.log(state, 'middleware LOGIN');
-      console.log(state.email);
-      console.log(state.password);
-    }
+      const { email, password } = state.user;
+      axios.post('http://localhost/APOTHEOSE/BACK/fromages-et-vin/Cheese-and-Wine/public/api/login', {
+        email,
+        password,
+      })
+        .then((response) => {
+          console.log(response.email, response.password);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       break;
+    }
     default:
       next(action);
       break;
   }
 };
+
