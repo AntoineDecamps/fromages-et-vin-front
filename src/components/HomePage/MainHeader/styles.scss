@@ -18,6 +18,11 @@ $wine: url('./vignes-small.jpg');
   &__connexion {
     justify-self: end;
     margin: 1rem 1rem 0 0;
+    & a {
+      &:hover {
+      color: vars.$alt-color;
+      }
+    }
   }
   &__logoImage {
     width: 30%;

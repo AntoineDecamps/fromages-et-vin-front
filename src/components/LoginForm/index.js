@@ -9,7 +9,6 @@ import './styles.scss';
 const LoginForm = () => (
   <div className="loginForm">
     <Header />
-    <img src="" alt="" className="loginFormImage" />
     <Form />
   </div>
 );
