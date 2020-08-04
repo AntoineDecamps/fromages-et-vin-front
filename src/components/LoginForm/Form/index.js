@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -15,7 +16,7 @@ const Form = ({
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log('submit login ok');
+    console.log('submit login ok (component)');
     handleLogin();
   };
 

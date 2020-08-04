@@ -11,11 +11,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   changeField: (value, name) => {
-    console.log(value, name);
+    // console.log(value, name);
     dispatch(changeField(value, name));
   },
   handleLogin: () => {
-    console.log('je veux me connecter');
+    console.log('je veux me connecter (container)');
     dispatch(login());
   },
 });
