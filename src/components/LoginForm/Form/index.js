@@ -20,7 +20,6 @@ const Form = ({
   const handleOnSubmit = (event) => {
     event.preventDefault();
     console.log('submit login ok (component)');
-    console.log(username);
     handleLogin();
   };
 

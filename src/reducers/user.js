@@ -3,8 +3,6 @@
 import { CHANGE_FIELD, SAVE_USER, LOGOUT } from 'src/actions/user';
 
 const initialState = {
-  // email: 'admin@admin.com',
-  // password: 'admin',
   isLogged: false,
   username: '',
   password: '',
@@ -19,7 +17,7 @@ const user = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case SAVE_USER: {
-      console.log('reducer case SAVE USER', state);
+      console.log('Save User (reducer)', state);
       return {
         ...state,
         username: '',
@@ -28,11 +26,13 @@ const user = (state = initialState, action = {}) => {
         isLogged: true,
       };
     }
-    case LOGOUT:
+    case LOGOUT: {
+      console.log('Logout (reducer)', state);
       return {
         ...state,
         isLogged: false,
       };
+    }
     default:
       return state;
   }
