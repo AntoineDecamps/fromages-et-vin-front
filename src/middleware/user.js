@@ -10,9 +10,9 @@ export default (store) => (next) => (action) => {
       console.log('middlware Login');
       const state = store.getState();
       console.log(state.user);
-      const { email, password } = state.user;
+      const { username, password } = state.user;
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/login', {
-        email,
+        username,
         password,
       })
         .then((response) => {

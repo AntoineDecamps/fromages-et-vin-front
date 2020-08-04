@@ -9,7 +9,7 @@ import avatar from './avatar-alt.png';
 import './styles.scss';
 
 const Form = ({
-  email,
+  username,
   password,
   changeField,
   handleLogin,
@@ -27,8 +27,8 @@ const Form = ({
       <form className="form__input" onSubmit={handleOnSubmit}>
         <Field
           type="text"
-          name="email"
-          value={email}
+          name="username"
+          value={username}
           placeholder="Email"
           onChange={changeField}
         />
@@ -51,7 +51,7 @@ const Form = ({
 };
 
 Form.propTypes = {
-  email: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,

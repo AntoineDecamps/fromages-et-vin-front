@@ -6,7 +6,7 @@ const initialState = {
   // email: 'admin@admin.com',
   // password: 'admin',
   isLogged: false,
-  email: '',
+  username: '',
   password: '',
 };
 
@@ -22,7 +22,7 @@ const user = (state = initialState, action = {}) => {
       console.log('reducer case SAVE USER');
       return {
         ...state,
-        email: '',
+        username: '',
         password: '',
         isLogged: true,
       };

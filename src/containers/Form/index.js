@@ -5,8 +5,9 @@ import Form from 'src/components/LoginForm/Form';
 import { changeField, login } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
-  email: state.user.email,
+  username: state.user.username,
   password: state.user.password,
+  name: state.user.name,
 });
 
 const mapDispatchToProps = (dispatch) => ({

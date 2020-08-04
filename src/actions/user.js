@@ -16,6 +16,7 @@ export const login = () => ({
   type: LOGIN,
 });
 
-export const saveUser = () => ({
+export const saveUser = (username) => ({
   type: SAVE_USER,
+  username,
 });
