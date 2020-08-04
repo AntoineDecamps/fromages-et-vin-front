@@ -4,6 +4,7 @@
 export const CHANGE_FIELD = 'CHANGE_FIELD';
 export const LOGIN = 'LOGIN';
 export const SAVE_USER = 'SAVE_USER';
+export const LOGOUT = 'LOGOUT';
 
 // Action Creators
 export const changeField = (value, name) => ({
@@ -16,7 +17,11 @@ export const login = () => ({
   type: LOGIN,
 });
 
-export const saveUser = (username) => ({
+export const saveUser = (name) => ({
   type: SAVE_USER,
-  username,
+  name,
+});
+
+export const logout = () => ({
+  type: LOGOUT,
 });

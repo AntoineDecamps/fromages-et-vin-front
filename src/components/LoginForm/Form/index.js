@@ -11,12 +11,16 @@ import './styles.scss';
 const Form = ({
   username,
   password,
+  pseudo,
   changeField,
   handleLogin,
+  handleLogout,
+  isLogged,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     console.log('submit login ok (component)');
+    console.log(username);
     handleLogin();
   };
 
@@ -46,6 +50,15 @@ const Form = ({
           Se connecter
         </button>
       </form>
+      {isLogged && (
+        <button
+          type="submit"
+          className="form__button"
+          onClick={handleLogout}
+        >
+          {`${pseudo} - Déconnexion`}
+        </button>
+      )}
     </div>
   );
 };
@@ -53,8 +66,16 @@ const Form = ({
 Form.propTypes = {
   username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
+  pseudo: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
+  handleLogout: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool,
+};
+
+Form.defaultProps = {
+  isLogged: false,
+  pseudo: '',
 };
 
 export default Form;

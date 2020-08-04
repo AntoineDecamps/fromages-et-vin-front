@@ -15,7 +15,12 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 // == Composant
-const App = ({ getCheeses, getWines, cheeses, wines }) => {
+const App = ({
+  getCheeses,
+  getWines,
+  cheeses,
+  wines,
+}) => {
   useEffect(() => {
     getCheeses();
     getWines();
