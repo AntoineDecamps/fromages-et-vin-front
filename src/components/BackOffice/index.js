@@ -5,9 +5,10 @@ import { Route, Switch } from 'react-router-dom';
 import BackHeader from 'src/components/BackOffice/BackHeader';
 import BackHomePage from 'src/components/BackOffice/BackHomePage';
 import SideBar from 'src/components/BackOffice/SideBar';
-import Add from 'src/components/BackOffice/Add';
+// import Add from 'src/components/BackOffice/Add';
 import Produits from 'src/containers/Produits';
-import Users from 'src/components/BackOffice/Users';
+// import Users from 'src/components/BackOffice/Users';
+import ModalPage from 'src/containers/ModalPage';
 import NoMatch from 'src/components/NoMatch';
 
 import './styles.scss';
@@ -27,6 +28,15 @@ const BackOffice = ({ cheeses }) => (
         />
         <SideBar />
       </Route>
+      <Route
+        exact
+        path="/admin/:slug"
+        component={({ match }) => (
+          <ModalPage
+            slug={match.params.slug}
+          />
+        )}
+      />
       <Route>
         <NoMatch />
       </Route>
