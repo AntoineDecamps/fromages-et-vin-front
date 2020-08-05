@@ -1,0 +1,45 @@
+@use 'src/styles/vars';
+
+.addCheese__title {
+  font-size: vars.$gutter*1.5;
+  padding-top: vars.$gutter*2;
+  color: vars.$alt-color;
+}
+.add {
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+    font-weight: bold;
+    font-size: vars.$gutter;
+    margin-top: vars.$gutter/2;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    margin-top: vars.$gutter/2;
+    margin-bottom: vars.$gutter/2;
+    &__description {
+      height: 100px;
+      margin-top: vars.$gutter/2;
+      display: block;
+      width: 100%;
+    }
+  }
+  &__button {
+    color: vars.$alt-color;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid vars.$alt-color;
+    padding: vars.$gutter/2;
+    font-weight: bold;
+    width: 100px;
+    border-radius: 20%;
+    margin: vars.$gutter auto 0 auto;
+  
+    &:hover {
+      background-color: vars.$alt-color;
+      color: black;
+    }
+  }
+}

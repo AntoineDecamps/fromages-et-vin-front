@@ -1,7 +1,7 @@
 // Middelware user
 
 import axios from 'axios';
-import { LOGIN } from 'src/actions/user';
+import { LOGIN, GET_USERS, saveUsers } from 'src/actions/user';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
@@ -14,6 +14,17 @@ export default (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response.email, response.password);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    }
+    case GET_USERS: {
+      axios.get('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/browse')
+        .then((response) => {
+          console.log('users', response);
+          store.dispatch(saveUsers(response.data));
         })
         .catch((error) => {
           console.log(error);

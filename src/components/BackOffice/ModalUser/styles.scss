@@ -1,0 +1,20 @@
+@use 'src/styles/vars';
+
+.modal {
+  &__table {
+    border: 2px solid black;
+    width: 40vw;
+  }
+  &__title {
+    border: 1px solid black;
+    padding: vars.$gutter/2;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &__content {
+    border: 1px solid black;
+    padding-left: vars.$gutter/3;
+    vertical-align: middle;
+  }
+}

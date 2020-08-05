@@ -58,6 +58,7 @@
     "animate.css": "^4.1.0",
     "animate.css-react": "^1.0.0",
     "axios": "^0.19.2",
+    "formik": "^2.1.5",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",

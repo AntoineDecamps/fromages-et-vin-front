@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // Reducer user
-import { CHANGE_FIELD, LOGIN, SAVE_USER } from 'src/actions/user';
+import { CHANGE_FIELD, LOGIN, SAVE_USER, SAVE_USERS } from 'src/actions/user';
 
 const initialState = {
   // email: 'admin@admin.com',
@@ -8,6 +8,7 @@ const initialState = {
   isLogged: false,
   email: '',
   password: '',
+  usersList: [],
 };
 
 const user = (state = initialState, action = {}) => {
@@ -31,6 +32,12 @@ const user = (state = initialState, action = {}) => {
         ...state,
         email: '',
         password: '',
+      };
+    }
+    case SAVE_USERS: {
+      return {
+        ...state,
+        usersList: action.users,
       };
     }
     default:

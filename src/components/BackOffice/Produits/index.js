@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 import { getSlugFromName } from 'src/selectors';
 import './styles.scss';
 
-const Produits = ({ wines, cheeses }) => {
-  const tableInformation = cheeses.map((cheese) => (
+const Produits = ({ products, name, url }) => {
+  const tableInformation = products.map((product) => (
     <tr>
-      <td>{cheese.name}</td>
-      <td>{cheese.id}</td>
-      <td>{cheese.description}</td>
+      <td>{product.name}</td>
+      <td>{product.id}</td>
+      <td>{product.description}</td>
       <td>
-        <Link exact to={`/admin/${getSlugFromName(cheese.name)}`}>
+        <Link exact to={`/admin/${getSlugFromName(product.name)}`}>
           <button type="button" className="produits__button">Modifier</button>
         </Link>
       </td>
@@ -21,11 +21,13 @@ const Produits = ({ wines, cheeses }) => {
   return (
     <div className="produits">
       <div className="produits__flexButton">
-        <button type="button" className="produits__button">
-          Ajouter un fromage
-        </button>
+        <Link to={`/admin/ajouter-${url}`}>
+          <button type="button" className="produits__button">
+            {`Ajouter un ${url}`}
+          </button>
+        </Link>
       </div>
-      <h2 className="produits__title">Liste des fromages en ligne</h2>
+      <h2 className="produits__title">{`Liste des ${name} en ligne`}</h2>
       <table className="produits__table">
         <tr>
           <th>Nom</th>

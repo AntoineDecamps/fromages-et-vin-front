@@ -23,8 +23,12 @@ const SideBar = () => (
       <NavLink exact to="/admin/fromages">
         <li className="sideBar__nav__link">Fromages</li>
       </NavLink>
-      <li className="sideBar__nav__link">Vins</li>
-      <li className="sideBar__nav__link">Gestion des utilisateurs</li>
+      <NavLink exact to="/admin/vins">
+        <li className="sideBar__nav__link">Vins</li>
+      </NavLink>
+      <NavLink exact to="/admin/utilisateurs">
+        <li className="sideBar__nav__link">Gestion des utilisateurs</li>
+      </NavLink>
     </div>
   </div>
 );
