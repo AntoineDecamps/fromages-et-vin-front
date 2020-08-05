@@ -23,41 +23,45 @@ const Form = ({
     handleLogin();
   };
 
+  if (!isLogged) {
+    return (
+      <div className="form">
+        <h3 className="form__title">Connectez-vous !</h3>
+        <img src={avatar} alt="Avatar" className="form__avatar" />
+        <form className="form__input" onSubmit={handleOnSubmit}>
+          <Field
+            type="text"
+            name="username"
+            value={username}
+            placeholder="Email"
+            onChange={changeField}
+          />
+          <Field
+            type="text"
+            name="password"
+            value={password}
+            placeholder="Mot de passe"
+            onChange={changeField}
+          />
+          <button
+            type="submit"
+            className="form__button"
+          >
+            Se connecter
+          </button>
+        </form>
+      </div>
+    );
+  }
   return (
     <div className="form">
-      <h3 className="form__title">Connectez-vous !</h3>
-      <img src={avatar} alt="Avatar" className="form__avatar" />
-      <form className="form__input" onSubmit={handleOnSubmit}>
-        <Field
-          type="text"
-          name="username"
-          value={username}
-          placeholder="Email"
-          onChange={changeField}
-        />
-        <Field
-          type="text"
-          name="password"
-          value={password}
-          placeholder="Mot de passe"
-          onChange={changeField}
-        />
-        <button
-          type="submit"
-          className="form__button"
-        >
-          Se connecter
-        </button>
-      </form>
-      {isLogged && (
-        <button
-          type="submit"
-          className="form__button"
-          onClick={handleLogout}
-        >
-          {`${pseudo} - Déconnexion`}
-        </button>
-      )}
+      <button
+        type="submit"
+        className="form__button"
+        onClick={handleLogout}
+      >
+        {`${pseudo} - Déconnexion`}
+      </button>
     </div>
   );
 };

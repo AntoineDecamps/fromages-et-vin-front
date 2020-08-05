@@ -2,7 +2,12 @@
 // Middelware user
 
 import axios from 'axios';
-import { LOGIN, saveUser, LOGOUT } from 'src/actions/user';
+import {
+  LOGIN,
+  saveUser,
+  LOGOUT,
+  // CHECK_IS_LOGGED,
+} from 'src/actions/user';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
@@ -18,11 +23,21 @@ export default (store) => (next) => (action) => {
           console.log(response);
           store.dispatch(saveUser(response.data.name));
         })
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => console.log(error));
       break;
     }
+    // case CHECK_IS_LOGGED: {
+    //   console.log('middlware check is logged');
+    //   axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/isLogged', {}, { withCredentials: true })
+    //     .then((response) => {
+    //       console.log(response);
+    //       if (response.data.logged) {
+    //         store.dispatch(saveUser(response.data.name));
+    //       }
+    //     })
+    //     .catch((error) => console.log(error));
+    //   break;
+    // }
     case LOGOUT: {
       console.log('middlware logout');
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/logout', {}, { withCredentials: true })
