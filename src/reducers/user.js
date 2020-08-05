@@ -24,6 +24,7 @@ const user = (state = initialState, action = {}) => {
         password: '',
         pseudo: action.name,
         isLogged: true,
+        apiToken: action.token,
       };
     }
     case LOGOUT: {

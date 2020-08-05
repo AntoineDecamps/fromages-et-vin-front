@@ -21,7 +21,7 @@ export default (store) => (next) => (action) => {
       }, { withCredentials: true })
         .then((response) => {
           console.log(response);
-          store.dispatch(saveUser(response.data.name));
+          store.dispatch(saveUser(response.data.name, response.data.apiToken));
         })
         .catch((error) => console.log(error));
       break;
