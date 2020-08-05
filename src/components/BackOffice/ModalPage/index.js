@@ -6,7 +6,18 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const ModalPage = ({ open, openModal, closeModal, name, description, picture, id }) => {
+const ModalPage = ({
+  open,
+  openModal,
+  closeModal,
+  edit,
+  openEdit,
+  closeEdit,
+  name,
+  description,
+  picture,
+  id,
+}) => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -29,6 +40,7 @@ const ModalPage = ({ open, openModal, closeModal, name, description, picture, id
         <Modal.Content image scrolling>
           <Image size="medium" src={picture} wrapped />
           <Modal.Description>
+            {edit && (
             <div className="addCheese">
               <h1 className="addCheese__title">Ajouter un fromage</h1>
               <form className="add__form">
@@ -44,14 +56,14 @@ const ModalPage = ({ open, openModal, closeModal, name, description, picture, id
                 <label htmlFor="description" className="add__label">Description
                   <input type="text" id="description" name="description" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} />
                 </label>
-
                 <button type="button" className="add__button">Envoyer</button>
               </form>
             </div>
+            )}
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Button color="yellow">Modifier</Button>
+          <Button color="yellow" onClick={() => openEdit()}>Modifier</Button>
           <Button color="red">Supprimer</Button>
           <Button color="green">
             <Link to="/admin/fromages">
@@ -64,7 +76,7 @@ const ModalPage = ({ open, openModal, closeModal, name, description, picture, id
         </Modal.Actions>
       </Modal>
     </div>
-  )
+  );
 };
 
 ModalPage.propTypes = {};

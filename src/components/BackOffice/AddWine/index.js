@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import { useFormik } from 'formik';
 
 import './styles.scss';
@@ -19,12 +20,21 @@ const AddWine = () => {
       image: '',
       description: '',
     },
+    onSubmit: (values) => {
+      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/wine/add', { values })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   });
   console.log('Form value', formik.values);
   return (
     <div className="addWine">
       <h1 className="addWine__title">Ajouter un vin</h1>
-      <form className="add__form">
+      <form className="add__form" onSubmit={formik.handleSubmit}>
         <label htmlFor="name" className="add__label">Nom
           <input type="text" placeholder="Le nom du vin" id="name" name="name" className="add__input" onChange={formik.handleChange} value={formik.values.name} />
         </label>
@@ -41,7 +51,7 @@ const AddWine = () => {
           <input type="text" id="description" name="description" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} />
         </label>
 
-        <button type="button" className="add__button">Envoyer</button>
+        <button type="submit" className="add__button">Envoyer</button>
       </form>
     </div>
   );
