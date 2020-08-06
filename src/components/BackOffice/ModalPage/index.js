@@ -2,7 +2,8 @@ import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { Modal, Image, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import DeleteModal from 'src/containers/DeleteModal';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
@@ -103,8 +104,10 @@ const ModalPage = ({
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
+          <Button color="red">
+            <DeleteModal />
+          </Button>
           <Button color="yellow" onClick={() => openEdit()}>Modifier</Button>
-          <Button color="red">Supprimer</Button>
           <Button color="green">
             <Link to="/admin/fromages" onClick={() => closeEdit()}>
               Retour liste des fromages

@@ -16,6 +16,7 @@ import AddCheese from 'src/components/BackOffice/AddCheese';
 import AddWine from 'src/components/BackOffice/AddWine';
 import AddUser from 'src/components/BackOffice/AddUser';
 import Users from 'src/containers/Users';
+import DeleteModal from 'src/containers/DeleteModal';
 
 import './styles.scss';
 
@@ -102,6 +103,9 @@ const BackOffice = ({ cheeses, wines }) => (
           />
         )}
       />
+      {/* <Route exact path="/admin/supprimer/fromage">
+        <DeleteModal />
+      </Route> */}
       <Route>
         <NoMatch />
       </Route>
