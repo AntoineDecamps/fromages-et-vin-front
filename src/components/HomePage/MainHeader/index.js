@@ -8,13 +8,19 @@ import Connexion from 'src/components/Connexion';
 import './styles.scss';
 import logo from 'src/assets/images/logo-grey.png';
 
-const MainHeader = () => (
+const MainHeader = ({ isLogged, handleLogout }) => (
   <div className="mainHeader">
     <div className="mainHeader__container">
-
-      <div className="mainHeader__connexion">
-        <Connexion />
-      </div>
+      {!isLogged && (
+        <div className="mainHeader__connexion">
+          <Connexion />
+        </div>
+      )}
+      {isLogged && (
+        <div className="mainHeader__connexion">
+          <button type="button" onClick={handleLogout}>Déconnexion</button>
+        </div>
+      )}
       <img src={logo} alt="" className="mainHeader__logoImage animate__animated animate__slideInDown" />
       <nav className="mainHeader__nav animate__animated animate__slideInRight">
         <NavLink
@@ -51,6 +57,13 @@ const MainHeader = () => (
   </div>
 );
 
-MainHeader.propTypes = {};
+MainHeader.propTypes = {
+  isLogged: PropTypes.bool,
+  handleLogout: PropTypes.func.isRequired,
+};
+
+MainHeader.defaultProps = {
+  isLogged: false,
+};
 
 export default MainHeader;

@@ -19,11 +19,12 @@ const Form = ({
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log('submit login ok (component)');
+    // console.log('submit login ok (component)');
     handleLogin();
   };
 
-  console.log(localStorage);
+  console.log('FORM', localStorage);
+  console.log(pseudo);
 
   if (!isLogged) {
     return (

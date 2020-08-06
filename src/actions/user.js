@@ -18,10 +18,9 @@ export const login = () => ({
   type: LOGIN,
 });
 
-export const saveUser = (name, token) => ({
+export const saveUser = (name) => ({
   type: SAVE_USER,
   name,
-  token,
 });
 
 export const logout = () => ({

@@ -6,13 +6,13 @@ import {
   LOGIN,
   saveUser,
   LOGOUT,
-  CHECK_IS_LOGGED,
+  // CHECK_IS_LOGGED,
 } from 'src/actions/user';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {
-      console.log('middlware Login');
+      // console.log('MIDDLEWARE LOGIN');
       const state = store.getState();
       const { username, password } = state.user;
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/login', {
@@ -20,33 +20,38 @@ export default (store) => (next) => (action) => {
         password,
       })
         .then((response) => {
-          console.log(response);
+          console.log('MIDDLEWARE LOGIN', response);
           localStorage.setItem('token', response.data.apiToken);
+          console.log('LOGIN', localStorage);
           store.dispatch(saveUser(response.data.name));
         })
         .catch((error) => console.log(error));
       break;
     }
-    case CHECK_IS_LOGGED: {
-      console.log('middlware check is logged');
-      const token = localStorage.getItem('token');
-      axios.get('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/islogged', {
-        token,
-      }, { headers: { 'Content-Type': 'application/json' } })
-        .then((response) => {
-          console.log(response);
-          if (response.data.logged) {
-            store.dispatch(saveUser(response.data.name));
-          }
-        })
-        .catch((error) => console.log(error));
-      break;
-    }
+    // case CHECK_IS_LOGGED: {
+    //   console.log('MIDDLEWARE CHECKISLOGGED');
+    //   const token = localStorage.getItem('token');
+    //   console.log('TOKEN', token);
+    //   axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/islogged', {
+    //     token,
+    //   }, { headers: { 'Content-Type': 'application/json' } })
+    //     .then((response) => {
+    //       // console.log(response);
+    //       console.log('LOGGED', response.data.logged);
+    //       if (token) {
+    //         store.dispatch(saveUser(response.data.name));
+    //       }
+    //     })
+    //     .catch((error) => console.log(error));
+    //   break;
+    // }
     case LOGOUT: {
-      console.log('middlware logout');
+      console.log('MIDDLEWARE LOGOUT');
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/logout', {})
         .then((response) => {
-          console.log(response);
+          console.log('MIDDLEWARE LOGOUT', response);
+          console.log('LOGOUT', localStorage);
+          localStorage.removeItem('token');
           next(action);
         });
       break;
