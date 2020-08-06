@@ -33,7 +33,7 @@ const AddCheese = () => {
   return (
     <div className="addUser">
       <h1 className="addUser__title">Ajouter un utilisateur</h1>
-      <form className="add__form" onSumbit={formik.handleSubmit}>
+      <form className="add__form" onSubmit={formik.handleSubmit}>
         <label htmlFor="name" className="add__label">Nom
           <input type="text" placeholder="Le nom de l'utilisateur" id="name" name="name" className="add__input" onChange={formik.handleChange} value={formik.values.name} />
         </label>

@@ -9,6 +9,7 @@ import SideBar from 'src/components/BackOffice/SideBar';
 import Produits from 'src/containers/Produits';
 // import Users from 'src/components/BackOffice/Users';
 import ModalPage from 'src/containers/ModalPage';
+import ModalWine from 'src/containers/ModalWine';
 import ModalUser from 'src/containers/ModalUser';
 import NoMatch from 'src/components/NoMatch';
 import AddCheese from 'src/components/BackOffice/AddCheese';
@@ -71,12 +72,22 @@ const BackOffice = ({ cheeses, wines }) => (
         <AddUser />
         <SideBar />
       </Route>
-      {/* ModalPage to see detail of the product(cheese/wine)+ access to edit and delete option */}
+      {/* ModalPage to see detail of cheese selected + access to edit and delete option */}
       <Route
         exact
-        path="/admin/:slug"
+        path="/admin/fromage/:slug"
         component={({ match }) => (
           <ModalPage
+            slug={match.params.slug}
+          />
+        )}
+      />
+      {/* ModalPage to see detail of wine selected + access to edit and delete option */}
+      <Route
+        exact
+        path="/admin/vin/:slug"
+        component={({ match }) => (
+          <ModalWine
             slug={match.params.slug}
           />
         )}

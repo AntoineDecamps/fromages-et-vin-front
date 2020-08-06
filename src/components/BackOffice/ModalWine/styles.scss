@@ -1,10 +1,9 @@
 @use 'src/styles/vars';
 
-.modal__user {
-  margin-top: vars.$gutter*6;
+.modal {
+  margin-top: 2rem;
   &__table {
     border: 2px solid black;
-    width: 40vw;
   }
   &__title {
     border: 1px solid black;
@@ -21,8 +20,8 @@
   }
 }
 
-.editUser {
-  min-width: 40vw;
+.editWine {
+  width: 40vw;
   &__title {
     margin-bottom: vars.$gutter;
     text-decoration: underline;
@@ -38,14 +37,14 @@
   &__label {
     font-weight: bold;
     font-size: vars.$gutter;
-    // margin-top: vars.$gutter/2;
+    margin-top: vars.$gutter/2;
   }
   &__input {
     display: block;
     width: 100%;
-    // margin-top: vars.$gutter/2;
-    // margin-bottom: vars.$gutter/2;
-    padding: vars.$gutter/2;
+    margin-top: vars.$gutter/2;
+    margin-bottom: vars.$gutter/2;
+    padding: vars.$gutter / 2;
     &__description {
       height: 100px;
       margin-top: vars.$gutter/2;

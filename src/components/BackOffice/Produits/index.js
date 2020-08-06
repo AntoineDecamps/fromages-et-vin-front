@@ -12,7 +12,7 @@ const Produits = ({ products, name, url }) => {
       <td>{product.id}</td>
       <td>{product.description}</td>
       <td>
-        <Link exact to={`/admin/${getSlugFromName(product.name)}`}>
+        <Link exact to={`/admin/${url}/${getSlugFromName(product.name)}`}>
           <button type="button" className="produits__button">Modifier</button>
         </Link>
       </td>
