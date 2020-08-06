@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import MainHeader from 'src/components/HomePage/MainHeader';
+import MainHeader from 'src/containers/MainHeader';
 import Blurb from 'src/components/HomePage/Blurb';
 import Concept from 'src/components/HomePage/Concept';
-import Footer from 'src/components/Footer';
+import Footer from 'src/containers/Footer';
 
 import './styles.scss';
 

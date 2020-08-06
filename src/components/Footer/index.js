@@ -6,7 +6,7 @@ import logo from './logo.png';
 
 import './styles.scss';
 
-const Footer = () => (
+const Footer = ({ isLogged }) => (
   <div className="footer">
     <div className="footer__grid">
       <div className="footer__div">
@@ -23,14 +23,22 @@ const Footer = () => (
       <p className="footer__information__content">L'abus d'alcool est dangereux pour la santé</p>
       <p className="footer__information__content">&copy; 2020 Cheese&Wine</p>
     </div>
-    <Link exact to="/admin">
-      <button type="button" className="footer__button">
-        BackOffice
-      </button>
-    </Link>
+    {isLogged && (
+      <Link exact to="/admin">
+        <button type="button" className="footer__button">
+          BackOffice
+        </button>
+      </Link>
+    )}
   </div>
 );
 
-Footer.propTypes = {};
+Footer.propTypes = {
+  isLogged: PropTypes.bool,
+};
+
+Footer.defaultProps = {
+  isLogged: false,
+};
 
 export default Footer;

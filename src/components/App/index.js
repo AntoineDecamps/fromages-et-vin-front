@@ -15,12 +15,22 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 // == Composant
-const App = ({ getCheeses, getWines, cheeses, wines, getUsers }) => {
+const App = ({
+  getCheeses,
+  getWines,
+  cheeses,
+  wines,
+  checkIsLogged,
+  getUsers,
+}) => {
   useEffect(() => {
     getCheeses();
     getWines();
     getUsers();
   }, []);
+
+  useEffect(checkIsLogged, []);
+
   return (
     <div className="app">
       <Switch>
@@ -69,6 +79,7 @@ App.propTypes = {
   getUsers: PropTypes.func.isRequired,
   cheeses: PropTypes.array.isRequired,
   wines: PropTypes.array.isRequired,
+  checkIsLogged: PropTypes.func.isRequired,
 };
 
 // == Export

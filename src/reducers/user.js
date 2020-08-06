@@ -1,37 +1,62 @@
 /* eslint-disable no-console */
 // Reducer user
-import { CHANGE_FIELD, LOGIN, SAVE_USER, SAVE_USERS } from 'src/actions/user';
+import {
+  CHANGE_FIELD,
+  SAVE_USER,
+  LOGOUT,
+  CHECK_IS_LOGGED,
+  SAVE_USERS,
+} from 'src/actions/user';
 
 const initialState = {
-  // email: 'admin@admin.com',
-  // password: 'admin',
   isLogged: false,
-  email: '',
+  username: '',
   password: '',
   usersList: [],
+  pseudo: '',
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHANGE_FIELD:
-      // console.log(state, 'change field action reducer');
+      // console.log('CHANGE FIELD REDUCER', state');
       return {
         ...state,
         [action.name]: action.value,
       };
-    case LOGIN: {
-      console.log(state, 'reducer case LOGIN');
+    case SAVE_USER: {
+      console.log('SAVE USER REDUCER', state);
       return {
         ...state,
+        username: '',
+        password: '',
+        pseudo: action.name,
         isLogged: true,
       };
     }
-    case SAVE_USER: {
-      console.log('reducer case SAVE USER');
+    case CHECK_IS_LOGGED: {
+      console.log('REDUCER CHECKISLOGGED', state);
+      const token = localStorage.getItem('token');
+      const pseudo = localStorage.getItem('pseudo');
+      console.log('TOKEN', token);
+
+      if (token) {
+        return {
+          ...state,
+          pseudo,
+          isLogged: true,
+        };
+      }
+
       return {
         ...state,
-        email: '',
-        password: '',
+      };
+    }
+    case LOGOUT: {
+      console.log('LOGOUT REDUCER', state);
+      return {
+        ...state,
+        isLogged: false,
       };
     }
     case SAVE_USERS: {

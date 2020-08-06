@@ -12,7 +12,7 @@ const Field = ({
   onChange,
 }) => {
   const handleOnChange = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     onChange(event.target.value, name);
   };
 
