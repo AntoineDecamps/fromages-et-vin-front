@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import BackHeader from 'src/components/BackOffice/BackHeader';
 import BackHomePage from 'src/components/BackOffice/BackHomePage';
-import SideBar from 'src/components/BackOffice/SideBar';
+import SideBar from 'src/containers/SideBar';
 // import Add from 'src/components/BackOffice/Add';
 import Produits from 'src/containers/Produits';
 // import Users from 'src/components/BackOffice/Users';

@@ -18,7 +18,7 @@ const Form = ({
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    // console.log('submit login ok (component)');
+    console.log('SUBMIT', event.target);
     handleLogin();
   };
 
@@ -52,9 +52,6 @@ const Form = ({
             Se connecter
           </button>
         </form>
-        {/* {isLogged && (
-          <Link exact to="/" />
-        )} */}
       </div>
     );
   }

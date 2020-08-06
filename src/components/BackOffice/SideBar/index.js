@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
-const SideBar = () => (
+const SideBar = ({ handleLogout }) => (
   <div className="sideBar">
     <div className="sideBar__top">
       <div className="sideBar__top__icon">
@@ -13,7 +13,13 @@ const SideBar = () => (
       </div>
       <div className="sideBar__top__information">
         <p className="sideBar__text">Bonjour petit Aigle !</p>
-        <button type="button" className="sideBar__button">Se déconnecter</button>
+        <button
+          type="button"
+          className="sideBar__button"
+          onClick={handleLogout}
+        >
+          Se déconnecter
+        </button>
       </div>
     </div>
     <div className="sideBar__nav">
@@ -33,6 +39,8 @@ const SideBar = () => (
   </div>
 );
 
-SideBar.propTypes = {};
+SideBar.propTypes = {
+  handleLogout: PropTypes.func.isRequired,
+};
 
 export default SideBar;

@@ -28,6 +28,9 @@ export default (store) => (next) => (action) => {
           console.log('LOGIN', localStorage);
           store.dispatch(saveUser(response.data.name));
         })
+        .then(() => {
+          document.location.href = '/';
+        })
         .catch((error) => console.log(error));
       break;
     }
@@ -57,6 +60,9 @@ export default (store) => (next) => (action) => {
           localStorage.removeItem('token');
           localStorage.removeItem('pseudo');
           next(action);
+        })
+        .then(() => {
+          document.location.href = '/connexion';
         });
       break;
     }
