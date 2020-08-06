@@ -6,7 +6,7 @@ const cheese = (store) => (next) => (action) => {
     case GET_CHEESES:
       axios.get('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/cheeses/')
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(saveCheeses(response.data));
         })
         .catch((error) => {

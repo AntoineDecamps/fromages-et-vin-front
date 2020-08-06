@@ -6,7 +6,7 @@ import {
   LOGIN,
   saveUser,
   LOGOUT,
-  // CHECK_IS_LOGGED,
+  CHECK_IS_LOGGED,
 } from 'src/actions/user';
 
 export default (store) => (next) => (action) => {
@@ -18,29 +18,33 @@ export default (store) => (next) => (action) => {
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/login', {
         username,
         password,
-      }, { withCredentials: true })
+      })
         .then((response) => {
           console.log(response);
-          store.dispatch(saveUser(response.data.name, response.data.apiToken));
+          localStorage.setItem('token', response.data.apiToken);
+          store.dispatch(saveUser(response.data.name));
         })
         .catch((error) => console.log(error));
       break;
     }
-    // case CHECK_IS_LOGGED: {
-    //   console.log('middlware check is logged');
-    //   axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/isLogged', {}, { withCredentials: true })
-    //     .then((response) => {
-    //       console.log(response);
-    //       if (response.data.logged) {
-    //         store.dispatch(saveUser(response.data.name));
-    //       }
-    //     })
-    //     .catch((error) => console.log(error));
-    //   break;
-    // }
+    case CHECK_IS_LOGGED: {
+      console.log('middlware check is logged');
+      const token = localStorage.getItem('token');
+      axios.get('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/islogged', {
+        token,
+      }, { headers: { 'Content-Type': 'application/json' } })
+        .then((response) => {
+          console.log(response);
+          if (response.data.logged) {
+            store.dispatch(saveUser(response.data.name));
+          }
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
     case LOGOUT: {
       console.log('middlware logout');
-      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/logout', {}, { withCredentials: true })
+      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/logout', {})
         .then((response) => {
           console.log(response);
           next(action);

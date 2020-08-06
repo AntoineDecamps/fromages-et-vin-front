@@ -23,6 +23,8 @@ const Form = ({
     handleLogin();
   };
 
+  console.log(localStorage);
+
   if (!isLogged) {
     return (
       <div className="form">

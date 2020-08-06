@@ -27,7 +27,7 @@ const App = ({
     getWines();
   }, []);
 
-  // useEffect(checkIsLogged, []);
+  useEffect(checkIsLogged, []);
 
   return (
     <div className="app">
@@ -75,7 +75,7 @@ App.propTypes = {
   getWines: PropTypes.func.isRequired,
   cheeses: PropTypes.array.isRequired,
   wines: PropTypes.array.isRequired,
-  // checkIsLogged: PropTypes.func.isRequired,
+  checkIsLogged: PropTypes.func.isRequired,
 };
 
 // == Export
