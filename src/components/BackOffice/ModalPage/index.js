@@ -105,7 +105,11 @@ const ModalPage = ({
         </Modal.Content>
         <Modal.Actions>
           <Button color="red">
-            <DeleteModal />
+            <DeleteModal
+              id={id}
+              apiURL="cheese"
+              redirect="fromages"
+            />
           </Button>
           <Button color="yellow" onClick={() => openEdit()}>Modifier</Button>
           <Button color="green">

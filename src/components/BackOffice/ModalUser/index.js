@@ -3,8 +3,10 @@ import React from 'react';
 import { Modal, Image, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import DeleteModal from 'src/containers/DeleteModal';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import avatar from './avatar.png';
 
 import './styles.scss';
 
@@ -50,7 +52,7 @@ const ModalUser = ({
           {name}
         </Modal.Header>
         <Modal.Content image>
-          <Image src="https://lh3.googleusercontent.com/proxy/7Wb8Gef8ZNL_uXJgR-SqLvCsUFn5pi_tz50ghMNn7gvK4b70ixOFIkAQVPfHwUpks6a574FClGWVmPh8QdWDZ6MZHLb0kGzNmGTlLBKM3acskWRuNw-wJQ" size="medium" rounded wrapped />
+          <Image src={avatar} size="medium" rounded wrapped />
           <Modal.Description>
             {!edit && (
               <div className="modal__user">
@@ -105,8 +107,14 @@ const ModalUser = ({
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
+          <Button color="red">
+            <DeleteModal
+              id={id}
+              apiURL="user"
+              redirect="utilisateurs"
+            />
+          </Button>
           <Button color="yellow" onClick={() => openEdit()}>Modifier</Button>
-          <Button color="red">Supprimer</Button>
           <Button color="green">
             <Link to="/admin/utilisateurs" onClick={() => closeEdit()}>
               Retour liste des utilisateurs

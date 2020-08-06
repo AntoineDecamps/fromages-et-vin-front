@@ -2,6 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { Modal, Image, Button } from 'semantic-ui-react';
+import DeleteModal from 'src/containers/DeleteModal';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -105,8 +106,14 @@ const ModalWine = ({
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
+          <Button color="red">
+            <DeleteModal
+              id={id}
+              apiURL="wine"
+              redirect="vins"
+            />
+          </Button>
           <Button color="yellow" onClick={() => openEdit()}>Modifier</Button>
-          <Button color="red">Supprimer</Button>
           <Button color="green">
             <Link to="/admin/vins" onClick={() => closeEdit()}>
               Retour liste des vins
