@@ -15,10 +15,11 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 // == Composant
-const App = ({ getCheeses, getWines, cheeses, wines }) => {
+const App = ({ getCheeses, getWines, cheeses, wines, getUsers }) => {
   useEffect(() => {
     getCheeses();
     getWines();
+    getUsers();
   }, []);
   return (
     <div className="app">
@@ -52,6 +53,7 @@ const App = ({ getCheeses, getWines, cheeses, wines }) => {
         </Route>
         <BackOffice
           cheeses={cheeses}
+          wines={wines}
         />
         <Route>
           <NoMatch />
@@ -64,6 +66,7 @@ const App = ({ getCheeses, getWines, cheeses, wines }) => {
 App.propTypes = {
   getCheeses: PropTypes.func.isRequired,
   getWines: PropTypes.func.isRequired,
+  getUsers: PropTypes.func.isRequired,
   cheeses: PropTypes.array.isRequired,
   wines: PropTypes.array.isRequired,
 };
