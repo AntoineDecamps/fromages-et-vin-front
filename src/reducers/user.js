@@ -35,11 +35,13 @@ const user = (state = initialState, action = {}) => {
     case CHECK_IS_LOGGED: {
       console.log('REDUCER CHECKISLOGGED', state);
       const token = localStorage.getItem('token');
+      const pseudo = localStorage.getItem('pseudo');
       console.log('TOKEN', token);
 
       if (token) {
         return {
           ...state,
+          pseudo,
           isLogged: true,
         };
       }

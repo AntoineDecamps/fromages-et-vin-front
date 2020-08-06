@@ -6,6 +6,7 @@ import { logout } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
+  pseudo: state.user.pseudo,
 });
 
 const mapDispatchToProps = (dispatch) => ({

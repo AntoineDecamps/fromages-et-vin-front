@@ -22,6 +22,7 @@ export default (store) => (next) => (action) => {
         .then((response) => {
           console.log('MIDDLEWARE LOGIN', response);
           localStorage.setItem('token', response.data.apiToken);
+          localStorage.setItem('pseudo', response.data.name);
           console.log('LOGIN', localStorage);
           store.dispatch(saveUser(response.data.name));
         })
@@ -52,6 +53,7 @@ export default (store) => (next) => (action) => {
           console.log('MIDDLEWARE LOGOUT', response);
           console.log('LOGOUT', localStorage);
           localStorage.removeItem('token');
+          localStorage.removeItem('pseudo');
           next(action);
         });
       break;

@@ -8,7 +8,7 @@ import Connexion from 'src/components/Connexion';
 import './styles.scss';
 import logo from 'src/assets/images/logo-grey.png';
 
-const MainHeader = ({ isLogged, handleLogout }) => (
+const MainHeader = ({ isLogged, handleLogout, pseudo }) => (
   <div className="mainHeader">
     <div className="mainHeader__container">
       {!isLogged && (
@@ -18,7 +18,13 @@ const MainHeader = ({ isLogged, handleLogout }) => (
       )}
       {isLogged && (
         <div className="mainHeader__connexion">
-          <button type="button" onClick={handleLogout}>Déconnexion</button>
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="connexion__button"
+          >
+            {`${pseudo} - Déconnexion`}
+          </button>
         </div>
       )}
       <img src={logo} alt="" className="mainHeader__logoImage animate__animated animate__slideInDown" />
@@ -60,10 +66,12 @@ const MainHeader = ({ isLogged, handleLogout }) => (
 MainHeader.propTypes = {
   isLogged: PropTypes.bool,
   handleLogout: PropTypes.func.isRequired,
+  pseudo: PropTypes.string,
 };
 
 MainHeader.defaultProps = {
   isLogged: false,
+  pseudo: '',
 };
 
 export default MainHeader;
