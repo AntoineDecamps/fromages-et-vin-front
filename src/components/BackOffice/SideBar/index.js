@@ -5,14 +5,14 @@ import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
-const SideBar = ({ handleLogout }) => (
+const SideBar = ({ handleLogout, pseudo }) => (
   <div className="sideBar">
     <div className="sideBar__top">
       <div className="sideBar__top__icon">
         <Icon circular inverted name="users" />
       </div>
       <div className="sideBar__top__information">
-        <p className="sideBar__text">Bonjour petit Aigle !</p>
+        <p className="sideBar__text">{`Bonjour ${pseudo} !`}</p>
         <button
           type="button"
           className="sideBar__button"
@@ -41,6 +41,11 @@ const SideBar = ({ handleLogout }) => (
 
 SideBar.propTypes = {
   handleLogout: PropTypes.func.isRequired,
+  pseudo: PropTypes.string,
+};
+
+SideBar.defaultProps = {
+  pseudo: '',
 };
 
 export default SideBar;
