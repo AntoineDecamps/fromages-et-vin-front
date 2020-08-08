@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Toggler from 'src/components/ProductDetail/Association/Toggler';
+import Toggler from 'src/components/Association/Toggler';
 import { handleToggle } from 'src/actions/toggler';
 
 const mapStateToProps = (state) => ({

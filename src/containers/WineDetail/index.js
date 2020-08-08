@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Detail from 'src/components/ProductDetail/Detail';
+import CheeseDetail from 'src/components/CheeseDetail';
 import { getProductBySlug } from 'src/selectors';
 
 const mapStateToProps = (state, ownProps) => {
@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   // const cheeses = state.cheeses.cheesesList;
   // const products = [];
   // products.push(wines, cheeses);
-  const productDetail = getProductBySlug(state.cheeses.cheesesList, ownProps.slug);
+  const productDetail = getProductBySlug(state.wines.winesList, ownProps.slug);
   return {
     name: productDetail.name,
     picture: productDetail.picture,
@@ -18,4 +18,4 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export default connect(mapStateToProps, mapDispatchToProps)(CheeseDetail);

@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 import { getSlugFromName } from 'src/selectors';
 import './styles.scss';
 
-const Product = ({ name, picture }) => (
+const Product = ({ name, picture, redirectURL }) => (
   <div className="product">
     <article className="card">
-      <Link className="card__link" exact to={`/produit/${getSlugFromName(name)}`}>
+      <Link className="card__link" exact to={`/produit/${redirectURL}/${getSlugFromName(name)}`}>
         <img src={picture} alt={name} className="card__img" />
         <h3 className="card__title">
           {name}
@@ -22,6 +22,7 @@ const Product = ({ name, picture }) => (
 Product.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
+  redirectURL: PropTypes.string.isRequired,
 };
 
 export default Product;

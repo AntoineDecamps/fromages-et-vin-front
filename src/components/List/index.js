@@ -8,7 +8,7 @@ import Footer from 'src/containers/Footer';
 
 import './styles.scss';
 
-const List = ({ product, name }) => (
+const List = ({ product, name, redirectURL }) => (
   <div className="listPage">
     <Header />
     <div className="list">
@@ -17,6 +17,7 @@ const List = ({ product, name }) => (
       />
       <Products
         productList={product}
+        redirectURL={redirectURL}
       />
     </div>
     <Footer />
@@ -26,6 +27,7 @@ const List = ({ product, name }) => (
 List.propTypes = {
   name: PropTypes.string.isRequired,
   product: PropTypes.array.isRequired,
+  redirectURL: PropTypes.string.isRequired,
 };
 
 export default List;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Parallax from 'react-rellax';
 
 import Toggler from 'src/containers/Toggler';
-import Description from 'src/components/ProductDetail/Association/Description';
+import Description from 'src/components/Association/Description';
 
 import fromage from './fromagetest.jpeg';
 import './styles.scss';

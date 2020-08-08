@@ -4,7 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import HomePage from 'src/components/HomePage';
 import List from 'src/components/List';
-import ProductDetail from 'src/components/ProductDetail';
+import CheeseDetail from 'src/containers/CheeseDetail';
+import WineDetail from 'src/containers/WineDetail';
 import LoginForm from 'src/components/LoginForm';
 import BackOffice from 'src/components/BackOffice';
 import NoMatch from 'src/components/NoMatch';
@@ -41,19 +42,30 @@ const App = ({
           <List
             product={wines}
             name="Vins"
+            redirectURL="vin"
           />
         </Route>
         <Route exact path="/fromages">
           <List
             product={cheeses}
             name="Fromages"
+            redirectURL="fromage"
           />
         </Route>
         <Route
           exact
-          path="/produit/:slug"
+          path="/produit/fromage/:slug"
           component={({ match }) => (
-            <ProductDetail
+            <CheeseDetail
+              slug={match.params.slug}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/produit/vin/:slug"
+          component={({ match }) => (
+            <WineDetail
               slug={match.params.slug}
             />
           )}

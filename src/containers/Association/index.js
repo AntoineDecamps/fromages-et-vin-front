@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Association from 'src/components/ProductDetail/Association';
+import Association from 'src/components/Association';
 
 const mapStateToProps = (state) => ({
   open: state.toggler.open,

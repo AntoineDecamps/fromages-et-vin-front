@@ -5,12 +5,13 @@ import Product from './Product';
 
 import './styles.scss';
 
-const Products = ({ productList }) => {
+const Products = ({ productList, redirectURL }) => {
   const Card = productList.map(({ name, picture, id }) => (
     <Product
       key={id}
       name={name}
       picture={picture}
+      redirectURL={redirectURL}
     />
   ));
   return (
@@ -21,6 +22,7 @@ const Products = ({ productList }) => {
 };
 
 Products.propTypes = {
+  redirectURL: PropTypes.string.isRequired,
   productList: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
