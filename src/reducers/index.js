@@ -5,6 +5,7 @@ import wines from './wines';
 import modal from './modal';
 import user from './user';
 import edit from './edit';
+import slider from './slider';
 
 import allProducts from './allProducts';
 
@@ -16,4 +17,5 @@ export default combineReducers({
   user,
   allProducts,
   edit,
+  slider,
 });

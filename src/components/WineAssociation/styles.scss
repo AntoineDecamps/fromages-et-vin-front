@@ -6,9 +6,11 @@
   justify-content: center;
   &__icon1 {
     align-self: center;
+    cursor: pointer;
   }
   &__icon2 {
     align-self: center;
+    cursor: pointer;
   }
 }
 
@@ -44,6 +46,23 @@
       text-transform: uppercase;
       font-weight: bold;
     }
+  }
+}
+
+.userProposal {
+  height: 590px;
+  padding-left: vars.$gutter;
+  padding-right: vars.$gutter;
+  &__title {
+    padding-top: vars.$gutter;
+    padding-bottom: vars.$gutter;
+    border-bottom: 2px solid vars.$alt-color;
+  }
+  &__name {
+    margin-top: vars.$gutter;
+  }
+  &__choice {
+
   }
 }
 

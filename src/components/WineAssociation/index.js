@@ -7,23 +7,39 @@ import { Icon } from 'semantic-ui-react';
 import fromage from './fromagetest.jpeg';
 import './styles.scss';
 
-const WineAssociation = ({ open, associatedProduct }) => (
+const WineAssociation = ({ open, slider, associatedProduct, handleSlider }) => (
   <div className="flexAssociation">
-    <div className="flexAssociation__icon1">
+    <div className="flexAssociation__icon1" onClick={handleSlider}>
       <Icon color="yellow" name="angle left" size="huge" />
     </div>
-    <div className="association">
-      <h2 className="association__title">Mariage proposé</h2>
-      <div className="association__card">
-        <h3 className="association__card__title">{associatedProduct[0].name}</h3>
-        <img src={fromage} alt="" className="association__card__image" />
-        <Toggler />
-        {open && (
-          <Description />
-        )}
+    {slider && (
+      <div className="association">
+        <h2 className="association__title">Mariage proposé</h2>
+        <div className="association__card">
+          <h3 className="association__card__title">{associatedProduct[0].name}</h3>
+          <img src={fromage} alt="" className="association__card__image" />
+          <Toggler />
+          {open && (
+            <Description />
+          )}
+        </div>
       </div>
-    </div>
-    <div className="flexAssociation__icon2">
+    )}
+    {!slider && (
+      <div className="association">
+        <h2 className="association__title">Proposition des utilisateurs</h2>
+        <div className="association__card userProposal">
+          <p className="userProposal__title">Retrouvez ci-dessous les propositions faites par les utilisateurs du site</p>
+          <h2 className="userProposal__name">Proposition faite par Tom :</h2>
+          <p className="userProposal__choice">Chedar</p>
+          <h2 className="userProposal__name">Proposition faite par Jean :</h2>
+          <p className="userProposal__choice">Brie</p>
+          <h2 className="userProposal__name">Proposition faite par Michel :</h2>
+          <p className="userProposal__choice">Fromage de chevre</p>
+        </div>
+      </div>
+    )}
+    <div className="flexAssociation__icon2" onClick={handleSlider}>
       <Icon color="yellow" name="angle right" size="huge" />
     </div>
 
