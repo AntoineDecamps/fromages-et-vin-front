@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Association from 'src/components/Association';
+import WineAssociation from 'src/components/WineAssociation';
 
 const mapStateToProps = (state) => ({
   open: state.toggler.open,
@@ -8,4 +8,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Association);
+export default connect(mapStateToProps, mapDispatchToProps)(WineAssociation);

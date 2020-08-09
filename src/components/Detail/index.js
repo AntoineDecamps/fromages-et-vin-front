@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import 'animate.css/animate.css';
 
 import { Button } from 'semantic-ui-react';
-import Parallax from 'react-rellax';
 
 import './styles.scss';
 

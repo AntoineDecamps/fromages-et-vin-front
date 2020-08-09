@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Toggler from 'src/containers/Toggler';
-import Description from 'src/components/Association/Description';
+import Description from 'src/components/WineAssociation/Description';
 
 import fromage from './fromagetest.jpeg';
 import './styles.scss';
 
-const Association = ({ open, associatedProduct }) => (
+const WineAssociation = ({ open, associatedProduct }) => (
   <div className="association">
     <h2 className="association__title">Mariage proposé</h2>
     <div className="association__card">
@@ -21,8 +21,8 @@ const Association = ({ open, associatedProduct }) => (
   </div>
 );
 
-Association.propTypes = {
+WineAssociation.propTypes = {
   open: PropTypes.bool.isRequired,
 };
 
-export default Association;
+export default WineAssociation;

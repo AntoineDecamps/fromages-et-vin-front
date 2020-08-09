@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
 import Detail from 'src/components/Detail';
-import Association from 'src/containers/Association';
+import WineAssociation from 'src/containers/WineAssociation';
 import Footer from 'src/containers/Footer';
 
 import './styles.scss';
@@ -28,7 +28,7 @@ const CheeseDetail = ({
         picture={picture}
         description={description}
       />
-      <Association
+      <WineAssociation
         associatedProduct={wines}
       />
       <Footer />
