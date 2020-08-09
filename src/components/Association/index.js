@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Toggler from 'src/containers/Toggler';
-import Description from 'src/components/WineAssociation/Description';
+import Description from 'src/components/Association/Description';
 import { Icon } from 'semantic-ui-react';
 import fromage from './fromagetest.jpeg';
 import './styles.scss';

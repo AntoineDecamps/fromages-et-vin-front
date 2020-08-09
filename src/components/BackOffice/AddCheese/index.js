@@ -24,7 +24,7 @@ const AddCheese = () => {
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/add',
         {
           name: values.name,
-          milk: values.mikl,
+          milk: values.milk,
           picture: values.image,
           description: values.description,
         })
