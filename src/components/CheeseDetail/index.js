@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Header from 'src/components/Header';
 import Detail from 'src/components/Detail';
 import Association from 'src/containers/Association';
+import AddProposal from 'src/containers/AddProposal';
 import Footer from 'src/containers/Footer';
 
 import './styles.scss';
@@ -17,23 +18,29 @@ const CheeseDetail = ({
   picture,
   description,
   wines,
-}) => {
-  console.log('check prop', wines);
-  return (
-    <div className="cheeseDetail">
-      <Header />
-      <Detail
-        slug={slug}
-        name={name}
-        picture={picture}
-        description={description}
-      />
-      <Association
-        associatedProduct={wines}
-      />
-      <Footer />
-    </div>
-)};
+  winesList,
+  cheesesList,
+}) => (
+  <div className="cheeseDetail">
+    <Header />
+    <Detail
+      slug={slug}
+      name={name}
+      picture={picture}
+      description={description}
+    />
+    <Association
+      associatedProduct={wines}
+    />
+    <AddProposal
+      name={name}
+      image={picture}
+      product="vin"
+      propositions={winesList}
+    />
+    <Footer />
+  </div>
+);
 
 CheeseDetail.propTypes = {
   slug: PropTypes.string.isRequired,

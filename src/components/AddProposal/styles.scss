@@ -1,0 +1,21 @@
+@use 'src/styles/vars';
+
+.addProposal {
+  display: flex;
+  justify-content: center;
+  margin-top: vars.$gutter*2;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  &__select {
+    margin-top: vars.$gutter/2;
+  }
+  &__label {
+    margin-top: vars.$gutter;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+  }
+}

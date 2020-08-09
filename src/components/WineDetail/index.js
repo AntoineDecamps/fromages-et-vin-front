@@ -16,6 +16,8 @@ const WineDetail = ({
   name,
   picture,
   description,
+  winesList,
+  cheesesList,
 }) => (
   <div className="wineDetail">
     <Header />
