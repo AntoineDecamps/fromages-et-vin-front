@@ -19,8 +19,15 @@ const AddCheese = () => {
       image: '',
       description: '',
     },
+    // eslint-disable-next-line max-len
     onSubmit: (values) => {
-      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/add', { values })
+      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/add',
+        {
+          name: values.name,
+          milk: values.mikl,
+          picture: values.image,
+          description: values.description,
+        })
         .then((response) => {
           console.log(response);
         })

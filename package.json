@@ -66,6 +66,7 @@
     "react-rellax": "^1.0.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "react-snap-scroll": "^0.0.5",
     "redux": "*",
     "semantic-ui-react": "^1.1.0",
     "slugify": "^1.4.5",

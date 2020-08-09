@@ -9,27 +9,23 @@ import './styles.scss';
 
 const Detail = ({ name, picture, description }) => (
   <div className="detail">
-    <Parallax speed={-8}>
-      <div className="detail__picture">
-        <h2 className="detail__title">{name}</h2>
-        <img src={picture} alt="" className="detail__image animate__animated animate__fadeInLeft animate_delay-1s" />
-        <div className="detail__flex">
-          <div className="detail__button">
-            <Button circular icon="glass martini" />
-            <p className="detail__button__text">Année</p>
-          </div>
-          <div className="detail__button">
-            <Button circular icon="home" />
-            <p className="detail__button__text">Origine</p>
-          </div>
+    <div className="detail__picture">
+      <h2 className="detail__title">{name}</h2>
+      <img src={picture} alt="" className="detail__image animate__animated animate__fadeInLeft animate_delay-1s" />
+      <div className="detail__flex">
+        <div className="detail__button">
+          <Button circular icon="glass martini" />
+          <p className="detail__button__text">Année</p>
+        </div>
+        <div className="detail__button">
+          <Button circular icon="home" />
+          <p className="detail__button__text">Origine</p>
         </div>
       </div>
-    </Parallax>
-    <Parallax speed={15}>
-      <div className="detail__product">
-        <p className="detail__description animate__animated animate__fadeInRight animate__delay-1s">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum ut dolores et temporibus fugiat nobis. Neque doloremque earum dolorem labore! Voluptatem temporibus magni nulla, dolor nihil fuga Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ut sit deleniti eaque quo laboriosam q</p>
-      </div>
-    </Parallax>
+    </div>
+    <div className="detail__product">
+      <p className="detail__description animate__animated animate__fadeInRight animate__delay-1s">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum ut dolores et temporibus fugiat nobis. Neque doloremque earum dolorem labore! Voluptatem temporibus magni nulla, dolor nihil fuga Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ut sit deleniti eaque quo laboriosam q</p>
+    </div>
   </div>
 );
 

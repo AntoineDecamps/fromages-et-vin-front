@@ -16,19 +16,24 @@ const CheeseDetail = ({
   name,
   picture,
   description,
-}) => (
-  <div className="cheeseDetail">
-    <Header />
-    <Detail
-      slug={slug}
-      name={name}
-      picture={picture}
-      description={description}
-    />
-    <Association />
-    <Footer />
-  </div>
-);
+  wines,
+}) => {
+  console.log('check prop', wines);
+  return (
+    <div className="cheeseDetail">
+      <Header />
+      <Detail
+        slug={slug}
+        name={name}
+        picture={picture}
+        description={description}
+      />
+      <Association
+        associatedProduct={wines}
+      />
+      <Footer />
+    </div>
+)};
 
 CheeseDetail.propTypes = {
   slug: PropTypes.string.isRequired,

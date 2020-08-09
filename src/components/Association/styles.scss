@@ -2,11 +2,9 @@
 
 .association {
   color: white;
-  margin-top: vars.$gutter*2;
-  margin-bottom: 20rem;
-  max-width: 1400px;
-  margin: auto auto 9.5rem auto;
-  
+  margin: vars.$gutter*2 auto vars.$gutter*10 auto;
+  // max-width: 1400px;
+  // margin: auto auto 9.5rem auto;
   &__title {
     font-weight: bold;
     text-transform: uppercase;
@@ -16,7 +14,7 @@
   }
   &__card {
     margin: auto;
-    width: 50%;
+    width: 40%;
     background-color: rgba(124, 118, 118, 0.1);
     border: 2px solid white;
     border-radius: 5%;
@@ -38,25 +36,25 @@
 @media (min-width: 1200px) {
   .association {
     
-    width: 75%;
+    width: 100%;
     // margin-left: 28rem;
-    margin-right: -10rem;
+    // margin-right: -10rem;
   }
 }
 
 
 @media (min-width: 1600px) {
   .association {
-    width: 70%;
-    max-width: 1200px;
-    margin-right: -5rem;
+    width: 100%;
+    // max-width: 1200px;
+    // margin-right: -5rem;
   }
 }
 
 @media (min-width: 2000px) {
   .association {
-    width: 70%;
-    max-width: 1200px;
-    margin-right: 5rem;
+    width: 100%;
+    // max-width: 1200px;
+    // margin-right: 5rem;
   }
 }

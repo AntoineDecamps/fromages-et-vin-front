@@ -2,13 +2,13 @@
 
 .detail {
   color: white;
-  // display: grid;
-  grid-template-columns: 1fr;
   margin-top: vars.$gutter*3;
   padding-top: vars.$gutter*3;
   padding-bottom: vars.$gutter*3;
-  max-width: 1400px;
   margin: auto;
+  &__picture {
+    text-align: center;
+  }
   &__product {
     width: 75%;
     margin: auto;
@@ -17,6 +17,7 @@
     line-height: 1.3;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    }
 
   }
   &__title {
@@ -33,9 +34,6 @@
     border-left: 2px solid white;
     border-right: 2px solid white;
 
-  }
-  &__picture {
-    text-align: center;
   }
   &__image {
     width: 50%;
@@ -61,7 +59,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     &__image {
-      width: 75%;
+      width: 100%;
       max-width: 400px;
     }
     &__product {
