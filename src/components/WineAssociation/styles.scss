@@ -1,8 +1,22 @@
 @use 'src/styles/vars';
 
+.flexAssociation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  &__icon1 {
+    align-self: center;
+  }
+  &__icon2 {
+    align-self: center;
+  }
+}
+
 .association {
   color: white;
-  margin: vars.$gutter*2 auto vars.$gutter*10 auto;
+  width: 400px;
+  // margin: vars.$gutter*2 auto vars.$gutter*10 auto;
+  // width: 1200px;
   // max-width: 1400px;
   // margin: auto auto 9.5rem auto;
   &__title {
@@ -14,7 +28,7 @@
   }
   &__card {
     margin: auto;
-    width: 40%;
+    // width: 40%;
     background-color: rgba(124, 118, 118, 0.1);
     border: 2px solid white;
     border-radius: 5%;
@@ -36,7 +50,7 @@
 @media (min-width: 1200px) {
   .association {
     
-    width: 100%;
+    width: 400px;
     // margin-left: 28rem;
     // margin-right: -10rem;
   }
@@ -45,7 +59,7 @@
 
 @media (min-width: 1600px) {
   .association {
-    width: 100%;
+    width: 400px;
     // max-width: 1200px;
     // margin-right: -5rem;
   }
@@ -53,7 +67,7 @@
 
 @media (min-width: 2000px) {
   .association {
-    width: 100%;
+    width: 400px;
     // max-width: 1200px;
     // margin-right: 5rem;
   }
