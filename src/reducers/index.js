@@ -7,15 +7,12 @@ import user from './user';
 import edit from './edit';
 import slider from './slider';
 
-import allProducts from './allProducts';
-
 export default combineReducers({
   toggler,
   cheeses,
   wines,
   modal,
   user,
-  allProducts,
   edit,
   slider,
 });
