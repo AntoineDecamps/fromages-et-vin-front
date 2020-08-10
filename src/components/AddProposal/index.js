@@ -25,7 +25,7 @@ const AddProposal = ({ open, openModal, closeModal, name, image, product, propos
                 <input type="text" name="name" />
               </label>
               <label htmlFor="association" className="addProposal__label">
-                {`Quel ${product} souhaitez-vous proposez avec le ${name} ?`}
+                {`Quel ${product} souhaitez-vous proposer avec le ${name} ?`}
                 <select className="addProposal__select" name="association" id="">{selectList}</select>
               </label>
             </form>

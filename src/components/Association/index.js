@@ -7,7 +7,7 @@ import { Icon } from 'semantic-ui-react';
 import fromage from './fromagetest.jpeg';
 import './styles.scss';
 
-const WineAssociation = ({ open, slider, associatedProduct, handleSlider }) => (
+const Association = ({ open, slider, associatedProduct, handleSlider }) => (
   <div className="flexAssociation">
     <div className="flexAssociation__icon1" onClick={handleSlider}>
       <Icon color="yellow" name="angle left" size="huge" />
@@ -31,7 +31,7 @@ const WineAssociation = ({ open, slider, associatedProduct, handleSlider }) => (
         <div className="association__card userProposal">
           <p className="userProposal__title">Retrouvez ci-dessous les propositions faites par les utilisateurs du site</p>
           <h2 className="userProposal__name">Proposition faite par Tom :</h2>
-          <p className="userProposal__choice">Chedar</p>
+          <p className="userProposal__choice">Cheddar</p>
           <h2 className="userProposal__name">Proposition faite par Jean :</h2>
           <p className="userProposal__choice">Brie</p>
           <h2 className="userProposal__name">Proposition faite par Michel :</h2>
@@ -46,8 +46,8 @@ const WineAssociation = ({ open, slider, associatedProduct, handleSlider }) => (
   </div>
 );
 
-WineAssociation.propTypes = {
+Association.propTypes = {
   open: PropTypes.bool.isRequired,
 };
 
-export default WineAssociation;
+export default Association;
