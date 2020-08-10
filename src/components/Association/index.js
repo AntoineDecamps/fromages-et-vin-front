@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Toggler from 'src/containers/Toggler';
 import Description from 'src/components/Association/Description';
 import { Icon } from 'semantic-ui-react';
-import fromage from './fromagetest.jpeg';
+// import fromage from './fromagetest.jpeg';
 import './styles.scss';
 
 const Association = ({
@@ -22,10 +22,12 @@ const Association = ({
         <h2 className="association__title">Mariage proposé</h2>
         <div className="association__card">
           <h3 className="association__card__title">{associatedProduct[0].name}</h3>
-          <img src={fromage} alt="" className="association__card__image" />
+          <img src={associatedProduct[0].picture} alt="" className="association__card__image" />
           <Toggler />
           {open && (
-            <Description />
+            <Description
+              description={associatedProduct[0].description}
+            />
           )}
         </div>
       </div>

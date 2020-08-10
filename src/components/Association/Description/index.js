@@ -4,13 +4,13 @@ import 'animate.css/animate.css';
 
 import './styles.scss';
 
-const Description = () => (
+const Description = ({ description }) => (
   <div className="description">
-    <p className="description__content animate__animated animate__slideInRight">Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, atque. Voluptas, sint. Odit, nihil quas! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis suscipit, ipsa illo unde eaque corrupti molestiae dicta deleniti deserunt obcaecati debitis excepturi facilis quis iure laudantium esse repellendus soluta? Obcaecati.
+    <p className="description__content animate__animated animate__slideInRight">{description}
     </p>
   </div>
 );
 
-// Description.propTypes = {};
+Description.propTypes = {};
 
 export default Description;

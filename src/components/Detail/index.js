@@ -8,7 +8,7 @@ import './styles.scss';
 
 // replace lorem by description
 
-const Detail = ({ name, picture }) => (
+const Detail = ({ name, picture, description }) => (
   <div className="detail">
     <div className="detail__picture">
       <h2 className="detail__title">{name}</h2>
@@ -25,7 +25,7 @@ const Detail = ({ name, picture }) => (
       </div>
     </div>
     <div className="detail__product">
-      <p className="detail__description animate__animated animate__fadeInRight animate__delay-1s">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum ut dolores et temporibus fugiat nobis. Neque doloremque earum dolorem labore! Voluptatem temporibus magni nulla, dolor nihil fuga Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ut sit deleniti eaque quo laboriosam q</p>
+      <p className="detail__description animate__animated animate__fadeInRight animate__delay-1s">{description}</p>
     </div>
   </div>
 );
@@ -33,7 +33,7 @@ const Detail = ({ name, picture }) => (
 Detail.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
-  // description: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default Detail;
