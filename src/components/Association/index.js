@@ -7,7 +7,12 @@ import { Icon } from 'semantic-ui-react';
 import fromage from './fromagetest.jpeg';
 import './styles.scss';
 
-const Association = ({ open, slider, associatedProduct, handleSlider }) => (
+const Association = ({
+  open,
+  slider,
+  associatedProduct,
+  handleSlider,
+}) => (
   <div className="flexAssociation">
     <div className="flexAssociation__icon1" onClick={handleSlider}>
       <Icon color="yellow" name="angle left" size="huge" />
@@ -48,6 +53,9 @@ const Association = ({ open, slider, associatedProduct, handleSlider }) => (
 
 Association.propTypes = {
   open: PropTypes.bool.isRequired,
+  slider: PropTypes.bool.isRequired,
+  associatedProduct: PropTypes.array.isRequired,
+  handleSlider: PropTypes.func.isRequired,
 };
 
 export default Association;

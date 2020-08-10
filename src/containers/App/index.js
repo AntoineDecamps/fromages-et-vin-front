@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import { getCheeses } from 'src/actions/cheese';
 import { getWines } from 'src/actions/wine';
-import { checkIsLogged } from 'src/actions/user';
+import { checkIsLogged, getUsers } from 'src/actions/user';
 
 import App from 'src/components/App';
-import { getUsers } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
   cheeses: state.cheeses.cheesesList,

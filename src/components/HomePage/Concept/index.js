@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import 'animate.css/animate.css';
 import './styles.scss';
@@ -10,7 +9,5 @@ const Concept = () => (
     <p className="concept__content animate__animated animate__fadeInRight animate__delay-1s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, mollitia sequi accusamus earum autem suscipit! Sed quos, quae dolores deserunt illo facere quo soluta recusandae odit harum possimus ut dignissimos, maxime voluptates eveniet exercitationem, veritatis sunt rem totam maiores iure.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, mollitia sequi accusamus earum autem suscipit! Sed quos, quae dolores deserunt illo facere quo soluta recusandae odit harum possimus ut dignissimos, maxime voluptates eveniet exercitationem, veritatis sunt rem totam maiores iure.</p>
   </div>
 );
-
-Concept.propTypes = {};
 
 export default Concept;

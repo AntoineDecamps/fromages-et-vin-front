@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import MainHeader from 'src/containers/MainHeader';
 import Blurb from 'src/components/HomePage/Blurb';
@@ -16,7 +15,5 @@ const HomePage = () => (
     <Footer />
   </div>
 );
-
-HomePage.propTypes = {};
 
 export default HomePage;

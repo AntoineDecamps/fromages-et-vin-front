@@ -51,13 +51,6 @@ const MainHeader = ({ isLogged, handleLogout, pseudo }) => (
         >
           Fromages
         </NavLink>
-        {/* <NavLink
-          to="/contacts"
-          className="mainHeader__link"
-          exact
-        >
-          Contacts
-        </NavLink> */}
       </nav>
     </div>
   </div>
