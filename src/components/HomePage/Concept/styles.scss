@@ -25,19 +25,21 @@
 @media (min-width: 768px) {
   .concept {
     background-color: vars.$secondary-color;
-    margin: vars.$gutter * 4 vars.$gutter * 8;
-    padding: vars.$gutter vars.$gutter * 2;
+    margin: vars.$gutter * 4;
+    padding: vars.$gutter * 2;
     position: relative;
     &__title {
       position: absolute;
-      left: -2em;
-      top: -2em;
+      left: -1.5em;
+      top: -1.5em;
       padding: vars.$gutter / 3;
       font-size: 2.2em;
     }
     &__content {
       border-left: 3px solid vars.$main-color;
       border-radius: 0 0 0 15px;
+      padding: vars.$gutter / 2 vars.$gutter;
+      line-height: 1.5em;
     }
   }
 }

@@ -39,7 +39,6 @@ $wine: url('./bottles-medium.jpg');
   &__link {
     margin: 0 vars.$gutter;
     transition: 0.2s;
-    padding: 5px;
     font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
@@ -50,6 +49,18 @@ $wine: url('./bottles-medium.jpg');
     &--active {
       color: vars.$alt-color;
       border-bottom: 3px solid vars.$alt-color;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .mainHeader {
+    &__link {
+      margin: 0 vars.$gutter * 2;
+      font-size: 1.3em;
+    }
+    &__logoImage {
+      width: 40%;
     }
   }
 }
