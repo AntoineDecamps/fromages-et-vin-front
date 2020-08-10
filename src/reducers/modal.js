@@ -1,4 +1,9 @@
-import { OPEN_MODAL, OPEN_DELETE, CLOSE_MODAL, CLOSE_DELETE } from '../actions/modal';
+import {
+  OPEN_MODAL,
+  OPEN_DELETE,
+  CLOSE_MODAL,
+  CLOSE_DELETE,
+} from '../actions/modal';
 
 const initialState = {
   open: false,
