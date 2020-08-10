@@ -37,6 +37,8 @@ WineDetail.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  winesList: PropTypes.array.isRequired,
+  cheesesList: PropTypes.array.isRequired,
 };
 
 export default WineDetail;

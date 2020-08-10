@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import 'animate.css/animate.css';
 
 import './styles.scss';
@@ -11,6 +11,6 @@ const Description = () => (
   </div>
 );
 
-Description.propTypes = {};
+// Description.propTypes = {};
 
 export default Description;

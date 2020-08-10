@@ -1,12 +1,30 @@
 import React from 'react';
-import { Button, Header, Image, Modal } from 'semantic-ui-react';
+import {
+  Button,
+  Header,
+  Image,
+  Modal,
+} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const AddProposal = ({ open, openModal, closeModal, name, image, product, propositions }) => {
+const AddProposal = ({
+  open,
+  openModal,
+  closeModal,
+  name,
+  image,
+  product,
+  propositions,
+}) => {
   const selectList = propositions.map((proposition) => (
-    <option value={proposition.name}>{proposition.name}</option>
+    <option
+      value={proposition.name}
+      key={proposition.name}
+    >
+      {proposition.name}
+    </option>
   ));
   return (
     <div className="addProposal">
@@ -45,8 +63,17 @@ const AddProposal = ({ open, openModal, closeModal, name, image, product, propos
         </Modal.Actions>
       </Modal>
     </div>
-)};
+  );
+};
 
-AddProposal.propTypes = {};
+AddProposal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  openModal: PropTypes.func.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  product: PropTypes.string.isRequired,
+  propositions: PropTypes.array.isRequired,
+};
 
 export default AddProposal;

@@ -6,7 +6,9 @@ import { Button } from 'semantic-ui-react';
 
 import './styles.scss';
 
-const Detail = ({ name, picture, description }) => (
+// replace lorem by description
+
+const Detail = ({ name, picture }) => (
   <div className="detail">
     <div className="detail__picture">
       <h2 className="detail__title">{name}</h2>
@@ -31,7 +33,7 @@ const Detail = ({ name, picture, description }) => (
 Detail.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  // description: PropTypes.string.isRequired,
 };
 
 export default Detail;

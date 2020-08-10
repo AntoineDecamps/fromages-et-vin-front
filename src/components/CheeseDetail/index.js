@@ -9,9 +9,6 @@ import Footer from 'src/containers/Footer';
 
 import './styles.scss';
 
-// This component should have been called CheeseDetail but as we cant dynamise it for
-// wines and cheeses we decided to let the name but it is only use for cheeses
-// WINES will be display in the WineDetail component
 const CheeseDetail = ({
   slug,
   name,
@@ -19,7 +16,6 @@ const CheeseDetail = ({
   description,
   wines,
   winesList,
-  cheesesList,
 }) => (
   <div className="cheeseDetail">
     <Header />
@@ -47,6 +43,8 @@ CheeseDetail.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  wines: PropTypes.array.isRequired,
+  winesList: PropTypes.array.isRequired,
 };
 
 export default CheeseDetail;
