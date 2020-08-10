@@ -46,10 +46,14 @@ $wines: url('bouchons-medium.jpg');
       padding: 0.8em;
       // visibility: hidden;
       transition: 0.3s;
+      background-color: rgba(29, 31, 54, 0.5);
+      border-radius: 3px;
+      box-shadow: 1px 1px 4px vars.$main-color;
     }
   }
   &__button {
     border: 2px solid vars.$secondary-color;
+    margin-top: 0.5em;
     padding: 0.5em;
     color: vars.$secondary-color;
     background-color: transparent;
@@ -88,12 +92,11 @@ div.opened {
   transition: 0.5s;
 }
 
-// Medium devices (1024px and up)
 @media (min-width: 1024px) {
   .blurb {
     display: flex;
     &__cheeses, &__wines {
-      height: 40vh;
+      height: 45vh;
       transition: 0.3s;
     }
   }
@@ -101,10 +104,11 @@ div.opened {
   p.opened {
     width: 60%;
     transition: 0.3s;
+    padding: vars.$gutter vars.$gutter / 2;
   }
 
   div.opened {
-    height: 40vh;
+    height: 45vh;
     width: 300%;
     transition: 0.3s;
   }

@@ -81,6 +81,7 @@ $wine: url('./bottles-medium.jpg');
       margin-bottom: vars.$gutter * 1.5;
       transition: 0.2s;
       font-size: 1.5em;
+      padding-left: vars.$gutter / 2;
       &:hover {
         border-bottom: none;
         border-left: 3px solid vars.$alt-color;

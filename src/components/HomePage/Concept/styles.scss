@@ -39,18 +39,18 @@
       border-left: 3px solid vars.$main-color;
       border-radius: 0 0 0 15px;
       padding: vars.$gutter / 2 vars.$gutter;
-      line-height: 1.5em;
+      line-height: 1.4em;
     }
   }
 }
 
 @media (min-width: 1024px) {
   .concept {
-    margin: vars.$gutter * 6 vars.$gutter * 10;
-    padding: vars.$gutter * 2 vars.$gutter * 4;
+    margin: vars.$gutter * 6;
+    padding: vars.$gutter * 3;
     &__content {
       font-size: 1.2em;
-      line-height: 1.7em;
+      line-height: 1.6em;
     }
   }
 }
