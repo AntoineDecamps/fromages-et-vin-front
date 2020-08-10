@@ -41,7 +41,7 @@ const Blurb = () => {
         <article className="blurb__article">
           <h3 className="blurb__article--title">Fromages de France</h3>
           <p className="blurb__article--text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque.
+          La France compte près de 1 000 fromages différents dont des pâtes molles, des pâtes persillées, des pâtes pressées et des pâtes cuites non pressées. Parmi cette sacrée liste, 45 fromages bénéficient de l’Appellation d’Origine Contrôlée et 38 d’une Appellation d’Origine Protégée. Les Français sont d’ailleurs parmi les plus gros consommateurs du monde avec 24 kg de fromages consommés par an et par habitant
           </p>
           <button
             type="button"

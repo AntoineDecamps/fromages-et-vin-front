@@ -9,6 +9,13 @@
   color: vars.$secondary-color;
   text-align: center;
   border-radius: 3px;
+  &__error {
+    border: 2px solid vars.$secondary-color;
+    padding: vars.$gutter;
+    // margin-top: vars.$gutter;
+    color: vars.$alt-color;
+    font-weight: bold;
+  }
   &__title {
     font-size: 1.2rem;
   }
@@ -34,6 +41,10 @@
         color: vars.$secondary-color;
         opacity: 0.6;
         font-style: italic;
+      }
+      &:focus {
+        color: vars.$main-color;
+        background-color: vars.$secondary-color;
       }
     }
   }

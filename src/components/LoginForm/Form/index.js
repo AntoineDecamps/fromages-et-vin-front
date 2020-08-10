@@ -27,9 +27,6 @@ const Form = ({
   console.log(pseudo);
 
   if (!isLogged) {
-    if (error) {
-      console.log(error);
-    }
     return (
       <div className="form">
         <h3 className="form__title">Connectez-vous !</h3>
@@ -49,6 +46,9 @@ const Form = ({
             placeholder="Mot de passe"
             onChange={changeField}
           />
+          {error && (
+            <p className="form__error">L'identifiant ou le mot de passe ne correpondent pas. Veuillez réessayer.</p>
+          )}
           <button
             type="submit"
             className="form__button"
@@ -56,14 +56,6 @@ const Form = ({
             Se connecter
           </button>
         </form>
-      </div>
-    );
-  }
-  if (error) {
-    console.log(error);
-    return (
-      <div className="form">
-        <p>Erreur lors de la connexion</p>
       </div>
     );
   }
