@@ -1,9 +1,8 @@
 @use 'src/styles/vars';
 
 .footer {
-  margin: vars.$gutter * 2 vars.$gutter * 4;
-  margin-bottom: 0;
-  padding: vars.$gutter vars.$gutter * 2;
+  // margin: 0 vars.$gutter * 2;
+  padding: vars.$gutter * 2;
   &__grid {
     background-color: vars.$secondary-color;
     text-align: center;
