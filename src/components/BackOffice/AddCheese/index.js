@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 import axios from 'axios';
-
+import { redirectToCheeses } from 'src/selectors';
 import './styles.scss';
 
 const AddCheese = () => {
@@ -31,6 +31,9 @@ const AddCheese = () => {
         .then((response) => {
           console.log(response);
         })
+        .then(() => {
+          redirectToCheeses();
+        })
         .catch((error) => {
           console.log(error);
         });
@@ -54,7 +57,9 @@ const AddCheese = () => {
           <input type="text" id="description" name="description" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} />
         </label>
 
-        <button type="submit" className="add__button">Envoyer</button>
+        <button type="submit" className="add__button">
+          Envoyer
+        </button>
       </form>
     </div>
   );

@@ -15,3 +15,15 @@ export const getSlugFromName = (name = '') => {
 export const getProductBySlug = (productList, slug) => productList.find(
   (product) => getSlugFromName(product.name) === slug,
 );
+
+export const redirectToCheeses = () => {
+  document.location.href = '/admin/fromages';
+};
+
+export const redirectToWines = () => {
+  document.location.href = '/admin/vins';
+};
+
+export const redirectToUsers = () => {
+  document.location.href = '/admin/utilisateurs';
+};

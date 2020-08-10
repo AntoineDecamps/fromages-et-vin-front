@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import DeleteModal from 'src/containers/DeleteModal';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { redirectToUsers } from 'src/selectors';
 import avatar from './avatar.png';
 
 import './styles.scss';
@@ -27,13 +28,21 @@ const ModalUser = ({
     initialValues: {
       name,
       email,
-      role,
+      roles: role,
       password,
     },
     onSubmit: (values) => {
-      axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/edit/${id}`, { values })
+      axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/edit/${id}`, {
+        name: values.name,
+        email: values.email,
+        roles: [values.roles],
+        password: values.password,
+      })
         .then((response) => {
           console.log(response);
+        })
+        .then(() => {
+          redirectToUsers();
         })
         .catch((error) => {
           console.log(error);
@@ -86,15 +95,8 @@ const ModalUser = ({
                   <label htmlFor="email" className="edit__label">Email
                     <input type="email" id="email" name="email" className="edit__input" onChange={formik.handleChange} value={formik.values.email} />
                   </label>
-                  <label htmlFor="role" className="edit__label">Rôle de l'utilisateur
-                    <select className="edit__input" name="pets" id="pet-select">
-                      <option
-                        onChange={formik.handleChange}
-                        value={formik.values.role}
-                      >
-                        {role}
-                      </option>
-                    </select>
+                  <label htmlFor="roles" className="edit__label">Rôle de l'utilisateur
+                    <input type="text" className="edit__input" name="roles" id="roles" onChange={formik.handleChange} value={formik.values.roles} />
                   </label>
                   <label htmlFor="description" className="edit__label">Mot-de-passe
                     <input type="text" id="password" name="password" className="edit__input" onChange={formik.handleChange} value={formik.values.password} />

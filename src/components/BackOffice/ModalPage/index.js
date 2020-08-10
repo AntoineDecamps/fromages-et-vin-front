@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import { Modal, Image, Button } from 'semantic-ui-react';
 import { Route, Link } from 'react-router-dom';
+import { redirectToCheeses } from 'src/selectors';
 import DeleteModal from 'src/containers/DeleteModal';
 import PropTypes from 'prop-types';
 
@@ -32,9 +33,17 @@ const ModalPage = ({
       description,
     },
     onSubmit: (values) => {
-      axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/edit/${id}`, { values })
+      axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/edit/${id}`, {
+        name: values.name,
+        milk: values.milk,
+        picture: values.image,
+        description: values.description,
+      })
         .then((response) => {
           console.log(response);
+        })
+        .then(() => {
+          redirectToCheeses();
         })
         .catch((error) => {
           console.log(error);

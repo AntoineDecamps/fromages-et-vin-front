@@ -5,6 +5,7 @@ import { Modal, Image, Button } from 'semantic-ui-react';
 import DeleteModal from 'src/containers/DeleteModal';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { redirectToWines } from 'src/selectors';
 
 import './styles.scss';
 
@@ -30,9 +31,18 @@ const ModalWine = ({
       type: '',
     },
     onSubmit: (values) => {
-      axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/wine/edit/${id}`, { values })
+      axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/wine/edit/${id}`, {
+        name: values.name,
+        type: values.type,
+        appellation: values.appellation,
+        picture: values.image,
+        description: values.description,
+      })
         .then((response) => {
           console.log(response);
+        })
+        .then(() => {
+          redirectToWines();
         })
         .catch((error) => {
           console.log(error);
@@ -89,8 +99,8 @@ const ModalWine = ({
                   <label htmlFor="description" className="edit__label">Type
                     <input type="text" id="type" name="type" className="edit__input" onChange={formik.handleChange} value={formik.values.type} />
                   </label>
-                  <label htmlFor="appelation" className="edit__label">Appelation
-                    <input type="text" placeholder="L'appelation du vin" id="appelation" name="appelation" className="edit__input" onChange={formik.handleChange} value={formik.values.appelation} />
+                  <label htmlFor="appellation" className="edit__label">appellation
+                    <input type="text" placeholder="L'appellation du vin" id="appellation" name="appellation" className="edit__input" onChange={formik.handleChange} value={formik.values.appellation} />
                   </label>
                   <label htmlFor="image" className="edit__label">Image
                     <input type="text" placeholder="Veuillez entrer une URL" id="image" name="image" className="edit__input" onChange={formik.handleChange} value={formik.values.image} />

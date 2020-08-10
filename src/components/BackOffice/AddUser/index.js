@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useFormik } from 'formik';
-
+import { redirectToUsers } from 'src/selectors';
 import './styles.scss';
 
 const AddCheese = () => {
@@ -16,13 +16,21 @@ const AddCheese = () => {
     initialValues: {
       name: '',
       email: '',
-      role: 'ROLE_ADMIN',
+      roles: 'ROLE_ADMIN',
       password: '',
     },
     onSubmit: (values) => {
-      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/add', { values })
+      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/add', {
+        name: values.name,
+        email: values.email,
+        roles: [values.roles],
+        password: values.password,
+      })
         .then((response) => {
           console.log(response);
+        })
+        .then(() => {
+          redirectToUsers();
         })
         .catch((error) => {
           console.log(error);
@@ -40,11 +48,11 @@ const AddCheese = () => {
         <label htmlFor="email" className="add__label">Email
           <input type="email" placeholder="L'email de l'utilisateur" id="email" name="email" className="add__input" onChange={formik.handleChange} value={formik.values.email} />
         </label>
-        <label htmlFor="role" className="add__label">Rôle de l'utilisateur
-          <input type="text" id="role" name="role" className="add__input__role" onChange={formik.handleChange} value={formik.values.role} />
+        <label htmlFor="roles" className="add__label">Rôle de l'utilisateur
+          <input type="text" id="roles" name="roles" className="add__input__roles" onChange={formik.handleChange} value={formik.values.roles} />
         </label>
         <label htmlFor="description" className="add__label">Mot-de-passe
-          <input type="password" id="password" name="password" className="add__input__password" onChange={formik.handleChange} value={formik.values.password} />
+          <input type="text" id="password" name="password" className="add__input__password" onChange={formik.handleChange} value={formik.values.password} />
         </label>
 
         <button type="submit" className="add__button">Envoyer</button>
