@@ -88,8 +88,8 @@ div.opened {
   transition: 0.5s;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+// Medium devices (1024px and up)
+@media (min-width: 1024px) {
   .blurb {
     display: flex;
     &__cheeses, &__wines {
