@@ -8,7 +8,6 @@ import {
   LOGOUT,
   GET_USERS,
   saveUsers,
-  // CHECK_IS_LOGGED,
 } from 'src/actions/user';
 
 export default (store) => (next) => (action) => {
@@ -34,23 +33,6 @@ export default (store) => (next) => (action) => {
         .catch((error) => console.log(error));
       break;
     }
-    // case CHECK_IS_LOGGED: {
-    //   console.log('MIDDLEWARE CHECKISLOGGED');
-    //   const token = localStorage.getItem('token');
-    //   console.log('TOKEN', token);
-    //   axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/islogged', {
-    //     token,
-    //   }, { headers: { 'Content-Type': 'application/json' } })
-    //     .then((response) => {
-    //       // console.log(response);
-    //       console.log('LOGGED', response.data.logged);
-    //       if (token) {
-    //         store.dispatch(saveUser(response.data.name));
-    //       }
-    //     })
-    //     .catch((error) => console.log(error));
-    //   break;
-    // }
     case LOGOUT: {
       console.log('MIDDLEWARE LOGOUT');
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/logout', {})
