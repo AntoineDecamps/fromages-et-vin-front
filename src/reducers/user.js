@@ -15,7 +15,7 @@ const initialState = {
   password: '',
   usersList: [],
   pseudo: '',
-  error: '',
+  // error: '',
 };
 
 const user = (state = initialState, action = {}) => {

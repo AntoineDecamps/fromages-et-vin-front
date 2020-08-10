@@ -1,8 +1,8 @@
 @use 'src/styles/vars';
 
 $main: url("./glass-plate-medium.jpg");
-$cheese: url('./cheeses-small.jpg');
-$wine: url('./vignes-small.jpg');
+$cheese: url('./cheeses-medium.jpg');
+$wine: url('./bottles-medium.jpg');
 
 .mainHeader {
   height: 60vh;
@@ -53,18 +53,6 @@ $wine: url('./vignes-small.jpg');
     }
   }
 }
-
-// @if (cheese:hover == true) {
-//   .mainHeader {
-//     
-//   }
-// }
-
-// @if (wine:hover == true) {
-//   .mainHeader {
-//     background-image: $wine;
-//   }
-// }
 
 @media (min-width: 1024px) {
   .mainHeader {
