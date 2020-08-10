@@ -15,6 +15,7 @@ const Form = ({
   handleLogin,
   handleLogout,
   isLogged,
+  error,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +27,9 @@ const Form = ({
   console.log(pseudo);
 
   if (!isLogged) {
+    if (error) {
+      console.log(error);
+    }
     return (
       <div className="form">
         <h3 className="form__title">Connectez-vous !</h3>
@@ -55,6 +59,14 @@ const Form = ({
       </div>
     );
   }
+  if (error) {
+    console.log(error);
+    return (
+      <div className="form">
+        <p>Erreur lors de la connexion</p>
+      </div>
+    );
+  }
   return (
     <div className="form">
       <button
@@ -76,11 +88,13 @@ Form.propTypes = {
   handleLogin: PropTypes.func.isRequired,
   handleLogout: PropTypes.func.isRequired,
   isLogged: PropTypes.bool,
+  error: PropTypes.string,
 };
 
 Form.defaultProps = {
   isLogged: false,
   pseudo: '',
+  error: '',
 };
 
 export default Form;

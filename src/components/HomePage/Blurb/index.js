@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-console */
@@ -56,7 +57,7 @@ const Blurb = () => {
         <article className="blurb__article">
           <h3 className="blurb__article--title">Vins de France</h3>
           <p className="blurb__article--text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque.
+          Célèbre dans le monde entier pour ses vins, la France est divisé en 17 régions viticoles aux cépages différents qui offre une grande diversité de vins. Les vins de Bordeaux sont avec les vins de la vallée du Rhône les deux plus grosses régions en terme de production. Les vins de Loire, de Provence et du Languedoc proposent aussi des volumes importants. Les vins de Bourgogne, d’ Alsace, du Sud-Ouest et du Beaujolais ferment la liste des grandes régions françaises.
           </p>
           <button
             type="button"

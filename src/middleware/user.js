@@ -8,6 +8,7 @@ import {
   LOGOUT,
   GET_USERS,
   saveUsers,
+  setError,
 } from 'src/actions/user';
 
 export default (store) => (next) => (action) => {
@@ -30,7 +31,10 @@ export default (store) => (next) => (action) => {
         .then(() => {
           document.location.href = '/';
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          store.dispatch(setError(error));
+        });
       break;
     }
     case LOGOUT: {
