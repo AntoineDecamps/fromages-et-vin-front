@@ -5,7 +5,7 @@ $cheese: url('./cheeses-medium.jpg');
 $wine: url('./bottles-medium.jpg');
 
 .mainHeader {
-  height: 60vh;
+  height: 50vh;
   background-image: $main;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,7 +25,7 @@ $wine: url('./bottles-medium.jpg');
     }
   }
   &__logoImage {
-    width: 30%;
+    width: 50%;
     padding-top: 10px; 
     justify-self: center;
     text-align: center;
@@ -37,7 +37,7 @@ $wine: url('./bottles-medium.jpg');
     padding-bottom: 2rem;
   }
   &__link {
-    margin-left: 30px;
+    margin: 0 vars.$gutter;
     transition: 0.2s;
     padding: 5px;
     font-size: 1em;
