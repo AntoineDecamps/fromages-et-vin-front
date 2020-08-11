@@ -20,13 +20,22 @@ const AddCheese = () => {
       password: '',
     },
     onSubmit: (values) => {
+      const token = localStorage.getItem('token');
+      console.log(values);
+
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/add', {
         name: values.name,
         email: values.email,
         roles: [values.roles],
         password: values.password,
+      }, {
+        headers: {
+          'X-Auth-Token': token,
+          'content-type': 'application/json',
+        },
       })
         .then((response) => {
+          console.log(values);
           console.log(response);
         })
         .then(() => {
@@ -48,8 +57,8 @@ const AddCheese = () => {
         <label htmlFor="email" className="add__label">Email
           <input type="email" placeholder="L'email de l'utilisateur" id="email" name="email" className="add__input" onChange={formik.handleChange} value={formik.values.email} />
         </label>
-        <label htmlFor="roles" className="add__label">Rôle de l'utilisateur
-          <input type="text" id="roles" name="roles" className="add__input__roles" onChange={formik.handleChange} value={formik.values.roles} />
+        <label htmlFor="role" className="add__label">Rôle de l'utilisateur
+          <input type="text" id="roles" name="roles" className="add__input__role" onChange={formik.handleChange} value={formik.values.roles} />
         </label>
         <label htmlFor="description" className="add__label">Mot-de-passe
           <input type="text" id="password" name="password" className="add__input__password" onChange={formik.handleChange} value={formik.values.password} />
