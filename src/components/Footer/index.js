@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import logo from './logo.png';
 
@@ -9,15 +9,23 @@ import './styles.scss';
 const Footer = ({ isLogged }) => (
   <div className="footer">
     <div className="footer__grid">
-      <div className="footer__div">
+      <NavLink
+        to="/vins"
+        className="footer__div"
+        exact
+      >
         <h2 className="footer__div__title">Les vins</h2>
         <p className="footer__div__content">Nos suggestions</p>
-      </div>
+      </NavLink>
       <img src={logo} alt="Logo" className="footer__logo" />
-      <div className="footer__div">
+      <NavLink
+        to="/fromages"
+        className="footer__div"
+        exact
+      >
         <h2 className="footer__div__title">Les fromages</h2>
         <p className="footer__div__content">Nos suggestions</p>
-      </div>
+      </NavLink>
     </div>
     <div className="footer__information">
       <p className="footer__information__content">L'abus d'alcool est dangereux pour la santé</p>

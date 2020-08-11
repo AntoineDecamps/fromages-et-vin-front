@@ -78,7 +78,7 @@ $wine: url('./bottles-medium.jpg');
       justify-content: flex-start;
     }
     &__link {
-      margin-bottom: vars.$gutter * 1.5;
+      margin-bottom: vars.$gutter * 2;
       transition: 0.2s;
       font-size: 1.5em;
       padding-left: vars.$gutter / 2;

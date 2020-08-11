@@ -66,6 +66,9 @@
       display: block;
       justify-self: center;
       align-self: center;
+      &:hover {
+        color: vars.$alt-color;
+      }
     }
     &__div__title {
       font-weight: bold;

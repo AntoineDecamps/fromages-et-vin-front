@@ -3,7 +3,6 @@
 .form {
   margin: vars.$gutter * 2;
   margin-bottom: 0;
-  margin-top: vars.$gutter * 5;
   padding: vars.$gutter * 4 vars.$gutter * 2;
   border: 2px solid vars.$secondary-color;
   color: vars.$secondary-color;
@@ -86,7 +85,8 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .form {
-    margin: vars.$gutter * 4;
+    margin: vars.$gutter * 6;
+    margin-bottom: 0;
     padding: vars.$gutter * 4;
     &__title {
       font-size: 1.8rem;
