@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Header from 'src/components/Header';
 import Detail from 'src/components/Detail';
 import Association from 'src/containers/Association';
-import AddProposal from 'src/containers/AddProposal';
+import AddCheeseProposal from 'src/containers/AddCheeseProposal';
 import Footer from 'src/containers/Footer';
 
 import './styles.scss';
@@ -29,14 +29,15 @@ const WineDetail = ({
       />
       <Association
         associatedProduct={cheeses}
+        slug={slug}
       />
-      <Footer />
-      <AddProposal
+      <AddCheeseProposal
         name={name}
         image={picture}
         product="fromage"
         propositions={cheesesList}
       />
+      <Footer />
     </div>
 )};
 

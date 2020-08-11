@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { Modal, Image, Button } from 'semantic-ui-react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { redirectToCheeses } from 'src/selectors';
 import DeleteModal from 'src/containers/DeleteModal';
 import PropTypes from 'prop-types';

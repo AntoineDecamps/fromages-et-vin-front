@@ -16,6 +16,10 @@ export const getProductBySlug = (productList, slug) => productList.find(
   (product) => getSlugFromName(product.name) === slug,
 );
 
+export const getAssociationBySlug = (associationList, slug) => associationList.filter(
+  (association) => getSlugFromName(association.mainProduct) === slug,
+);
+
 export const redirectToCheeses = () => {
   document.location.href = '/admin/fromages';
 };
