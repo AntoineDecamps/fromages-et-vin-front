@@ -36,6 +36,12 @@ h1, h2, h3, a {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   #root {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #root {
     width: 80%;
   }
 }

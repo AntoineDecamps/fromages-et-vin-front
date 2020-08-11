@@ -2,41 +2,55 @@
 
 .concept {
   background-color: vars.$secondary-color;
-  margin: vars.$gutter * 2 vars.$gutter * 4;
-  padding: vars.$gutter vars.$gutter * 2;
-  position: relative;
+  margin: vars.$gutter * 2;
+  padding: vars.$gutter;
+  // position: relative;
   &__title {
-    position: absolute;
+    // position: absolute;
     font-style: italic;
-    top: 5px;
-    left: 5px;
+    // top: -2em;
+    // left: -2em;
     color: vars.$alt-color;
     font-size: 2rem;
   }
   &__content {
     font-size: 1rem;
-    margin: 1em;
-    padding: 1em;
-    line-height: 1.5em;
+    margin: vars.$gutter / 2;
+    padding: vars.$gutter / 2;
+    line-height: 1.3em;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .concept {
-    margin: vars.$gutter * 6 vars.$gutter * 12;
-    padding: vars.$gutter * 2 vars.$gutter * 4;
+    background-color: vars.$secondary-color;
+    margin: vars.$gutter * 4;
+    padding: vars.$gutter * 2;
+    position: relative;
     &__title {
-      left: -2em;
-      top: -2em;
-      // background-color: rgba(29, 31, 54, 0.5);
-      // border-bottom: 1px solid vars.$secondary-color;
+      position: absolute;
+      left: -1.5em;
+      top: -1.5em;
       padding: vars.$gutter / 3;
       font-size: 2.2em;
     }
     &__content {
-      border-left: 4px solid vars.$main-color;
+      border-left: 3px solid vars.$main-color;
       border-radius: 0 0 0 15px;
+      padding: vars.$gutter / 2 vars.$gutter;
+      line-height: 1.4em;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .concept {
+    margin: vars.$gutter * 6;
+    padding: vars.$gutter * 3;
+    &__content {
+      font-size: 1.2em;
+      line-height: 1.6em;
     }
   }
 }

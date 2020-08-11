@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-console */
@@ -40,7 +41,7 @@ const Blurb = () => {
         <article className="blurb__article">
           <h3 className="blurb__article--title">Fromages de France</h3>
           <p className="blurb__article--text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque.
+          La France compte près de 1 000 fromages différents dont des pâtes molles, des pâtes persillées, des pâtes pressées et des pâtes cuites non pressées. Parmi cette sacrée liste, 45 fromages bénéficient de l’Appellation d’Origine Contrôlée et 38 d’une Appellation d’Origine Protégée. Les Français sont d’ailleurs parmi les plus gros consommateurs du monde avec 24 kg de fromages consommés par an et par habitant.
           </p>
           <button
             type="button"
@@ -56,7 +57,7 @@ const Blurb = () => {
         <article className="blurb__article">
           <h3 className="blurb__article--title">Vins de France</h3>
           <p className="blurb__article--text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In debitis iure tempore soluta! Iure suscipit ducimus debitis, deserunt similique est iste alias neque.
+          Célèbre dans le monde entier pour ses vins, la France est divisée en 17 régions viticoles aux cépages différents qui offrent une grande diversité de vins. Les vins de Bordeaux sont avec les vins de la vallée du Rhône les deux plus grosses régions en terme de production. Les vins de Loire, de Provence et du Languedoc proposent aussi des volumes importants. Les vins de Bourgogne, d’ Alsace, du Sud-Ouest et du Beaujolais ferment la liste des grandes régions françaises.
           </p>
           <button
             type="button"

@@ -8,6 +8,7 @@ export const GET_USERS = 'GET_USERS';
 export const SAVE_USERS = 'SAVE_USERS';
 export const LOGOUT = 'LOGOUT';
 export const CHECK_IS_LOGGED = 'CHECK_IS_LOGGED';
+export const SET_ERROR = 'SET_ERROR';
 
 // Action Creators
 export const changeField = (value, name) => ({
@@ -40,4 +41,9 @@ export const getUsers = () => ({
 export const saveUsers = (users) => ({
   type: SAVE_USERS,
   users,
+});
+
+export const setError = (error) => ({
+  type: SET_ERROR,
+  error,
 });

@@ -41,15 +41,19 @@ $wines: url('bouchons-medium.jpg');
       transition: 0.3s;
     }
     &--text {
-      // display: none;
+      display: none;
       text-align: center;
       padding: 0.8em;
-      visibility: hidden;
+      // visibility: hidden;
       transition: 0.3s;
+      background-color: rgba(29, 31, 54, 0.5);
+      border-radius: 3px;
+      box-shadow: 1px 1px 4px vars.$main-color;
     }
   }
   &__button {
     border: 2px solid vars.$secondary-color;
+    margin-top: 0.5em;
     padding: 0.5em;
     color: vars.$secondary-color;
     background-color: transparent;
@@ -60,32 +64,39 @@ $wines: url('bouchons-medium.jpg');
   }
 }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 h3.opened {
   padding-top: 0.5em;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 p.opened {
   padding: 1.5em;
-  // display: block;
-  visibility: visible;
+  display: block;
+  // visibility: visible;
   text-align: center;
   height: auto;
-  transition: 0.3s;
+  transition: 1s;
+  line-height: 1.1em;
+  -webkit-animation: fadein 0.4s ease-in alternate;
+  -moz-animation: fadein 0.4s ease-in alternate;
+  animation: fadein 0.4s ease-in alternate;
 }
 
 div.opened {
-  // width: 200%;
-  height: 30vh;
-  transition: 0.3s;
+  height: 50vh;
+  transition: 0.5s;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .blurb {
     display: flex;
     &__cheeses, &__wines {
-      height: 40vh;
+      height: 45vh;
       transition: 0.3s;
     }
   }
@@ -93,10 +104,12 @@ div.opened {
   p.opened {
     width: 60%;
     transition: 0.3s;
+    padding: vars.$gutter vars.$gutter / 2;
+    line-height: 1.4em;
   }
 
   div.opened {
-    height: 40vh;
+    height: 45vh;
     width: 300%;
     transition: 0.3s;
   }

@@ -6,6 +6,7 @@ import {
   LOGOUT,
   CHECK_IS_LOGGED,
   SAVE_USERS,
+  SET_ERROR,
 } from 'src/actions/user';
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   password: '',
   usersList: [],
   pseudo: '',
+  // error: '',
 };
 
 const user = (state = initialState, action = {}) => {
@@ -34,11 +36,17 @@ const user = (state = initialState, action = {}) => {
         isLogged: true,
       };
     }
+    case SET_ERROR:
+      return {
+        ...state,
+        error: action.error,
+      };
     case CHECK_IS_LOGGED: {
       console.log('REDUCER CHECKISLOGGED', state);
       const token = localStorage.getItem('token');
       const pseudo = localStorage.getItem('pseudo');
       console.log('TOKEN', token);
+      console.log('PSEUDO', pseudo);
 
       if (token) {
         return {

@@ -15,6 +15,7 @@ const Form = ({
   handleLogin,
   handleLogout,
   isLogged,
+  error,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -45,6 +46,9 @@ const Form = ({
             placeholder="Mot de passe"
             onChange={changeField}
           />
+          {error && (
+            <p className="form__error">L'identifiant ou le mot de passe ne correpondent pas. Veuillez réessayer.</p>
+          )}
           <button
             type="submit"
             className="form__button"
@@ -76,11 +80,13 @@ Form.propTypes = {
   handleLogin: PropTypes.func.isRequired,
   handleLogout: PropTypes.func.isRequired,
   isLogged: PropTypes.bool,
+  error: PropTypes.string,
 };
 
 Form.defaultProps = {
   isLogged: false,
   pseudo: '',
+  error: '',
 };
 
 export default Form;

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-boolean-value */
 // == Import npm
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';

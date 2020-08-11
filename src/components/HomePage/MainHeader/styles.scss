@@ -1,11 +1,11 @@
 @use 'src/styles/vars';
 
 $main: url("./glass-plate-medium.jpg");
-$cheese: url('./cheeses-small.jpg');
-$wine: url('./vignes-small.jpg');
+$cheese: url('./cheeses-medium.jpg');
+$wine: url('./bottles-medium.jpg');
 
 .mainHeader {
-  height: 60vh;
+  height: 50vh;
   background-image: $main;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,7 +25,7 @@ $wine: url('./vignes-small.jpg');
     }
   }
   &__logoImage {
-    width: 30%;
+    width: 50%;
     padding-top: 10px; 
     justify-self: center;
     text-align: center;
@@ -37,9 +37,8 @@ $wine: url('./vignes-small.jpg');
     padding-bottom: 2rem;
   }
   &__link {
-    margin-left: 30px;
+    margin: 0 vars.$gutter;
     transition: 0.2s;
-    padding: 5px;
     font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
@@ -54,17 +53,17 @@ $wine: url('./vignes-small.jpg');
   }
 }
 
-// @if (cheese:hover == true) {
-//   .mainHeader {
-//     
-//   }
-// }
-
-// @if (wine:hover == true) {
-//   .mainHeader {
-//     background-image: $wine;
-//   }
-// }
+@media (min-width: 768px) {
+  .mainHeader {
+    &__link {
+      margin: 0 vars.$gutter * 2;
+      font-size: 1.3em;
+    }
+    &__logoImage {
+      width: 40%;
+    }
+  }
+}
 
 @media (min-width: 1024px) {
   .mainHeader {
@@ -79,9 +78,10 @@ $wine: url('./vignes-small.jpg');
       justify-content: flex-start;
     }
     &__link {
-      margin-bottom: vars.$gutter * 1.5;
+      margin-bottom: vars.$gutter * 2;
       transition: 0.2s;
       font-size: 1.5em;
+      padding-left: vars.$gutter / 2;
       &:hover {
         border-bottom: none;
         border-left: 3px solid vars.$alt-color;

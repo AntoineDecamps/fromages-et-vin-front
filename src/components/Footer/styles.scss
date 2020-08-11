@@ -1,9 +1,8 @@
 @use 'src/styles/vars';
 
 .footer {
-  margin: vars.$gutter * 2 vars.$gutter * 4;
-  margin-bottom: 0;
-  padding: vars.$gutter vars.$gutter * 2;
+  // margin: 0 vars.$gutter * 2;
+  padding: vars.$gutter * 2;
   &__grid {
     background-color: vars.$secondary-color;
     text-align: center;
@@ -45,9 +44,15 @@
   }
 }
 
+@media (min-width: 768px) {
+  .footer {
+    padding: vars.$gutter * 4;
+  }
+}
+
 @media (min-width: 1024px) {
   .footer {
-    padding: vars.$gutter * 2 vars.$gutter * 4;
+    padding: vars.$gutter * 6;
     &__grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -61,6 +66,9 @@
       display: block;
       justify-self: center;
       align-self: center;
+      &:hover {
+        color: vars.$alt-color;
+      }
     }
     &__div__title {
       font-weight: bold;
