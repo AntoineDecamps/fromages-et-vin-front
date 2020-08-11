@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import { redirectToWines } from 'src/selectors';
+import * as Yup from 'yup';
 import './styles.scss';
 
 const AddWine = () => {
@@ -12,6 +13,13 @@ const AddWine = () => {
   // Handling form submission
   // Validation and error messages
   // properties stocked in the initialValues should correspond to attribute name of the input
+  const validationSchema = Yup.object({
+    name: Yup.string().required('Ce champ est requis'),
+    type: Yup.string().required('Ce champ est requis'),
+    appellation: Yup.string().required('Ce champ est requis'),
+    picture: Yup.string().required('Ce champ est requis'),
+    description: Yup.string().required('Ce champ est requis'),
+  });
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -25,7 +33,7 @@ const AddWine = () => {
         name: values.name,
         type: values.type,
         appellation: values.appellation,
-        picture: values.image,
+        picture: values.picture,
         description: values.description,
       })
         .then((response) => {
@@ -38,6 +46,7 @@ const AddWine = () => {
           console.log(error);
         });
     },
+    validationSchema,
   });
   console.log('Form value', formik.values);
   return (
@@ -45,19 +54,24 @@ const AddWine = () => {
       <h1 className="addWine__title">Ajouter un vin</h1>
       <form className="add__form" onSubmit={formik.handleSubmit}>
         <label htmlFor="name" className="add__label">Nom
-          <input type="text" placeholder="Le nom du vin" id="name" name="name" className="add__input" onChange={formik.handleChange} value={formik.values.name} />
+          <input type="text" placeholder="Le nom du vin" id="name" name="name" className="add__input" onChange={formik.handleChange} value={formik.values.name} onBlur={formik.handleBlur} />
+          {formik.touched.name && formik.errors.name ? <div className="form__errors">{formik.errors.name}</div> : null}
         </label>
-        <label htmlFor="description" className="add__label">Type
-          <input type="text" placeholder="Le type du vin" id="type" name="type" className="add__input__type" onChange={formik.handleChange} value={formik.values.type} />
+        <label htmlFor="type" className="add__label">Type
+          <input type="text" placeholder="Le type du vin" id="type" name="type" className="add__input" onChange={formik.handleChange} value={formik.values.type} onBlur={formik.handleBlur} />
+          {formik.touched.type && formik.errors.type ? <div className="form__errors">{formik.errors.type}</div> : null}
         </label>
-        <label htmlFor="appellation" className="add__label">appellation
-          <input type="text" placeholder="L'appellation du vin" id="appellation" name="appellation" className="add__input" onChange={formik.handleChange} value={formik.values.appellation} />
+        <label htmlFor="appellation" className="add__label">Appellation
+          <input type="text" placeholder="L'appellation du vin" id="appellation" name="appellation" className="add__input" onChange={formik.handleChange} value={formik.values.appellation} onBlur={formik.handleBlur} />
+          {formik.touched.appellation && formik.errors.appellation ? <div className="form__errors">{formik.errors.appellation}</div> : null}
         </label>
-        <label htmlFor="image" className="add__label">Image
-          <input type="text" placeholder="Veuillez entrer une URL" id="image" name="image" className="add__input" onChange={formik.handleChange} value={formik.values.image} />
+        <label htmlFor="picture" className="add__label">Image
+          <input type="text" placeholder="Veuillez entrer une URL" id="picture" name="picture" className="add__input" onChange={formik.handleChange} value={formik.values.picture} onBlur={formik.handleBlur} />
+          {formik.touched.picture && formik.errors.picture ? <div className="form__errors">{formik.errors.picture}</div> : null}
         </label>
         <label htmlFor="description" className="add__label">Description
-          <input type="text" id="description" name="description" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} />
+          <input type="text" id="description" name="description" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} onBlur={formik.handleBlur} />
+          {formik.touched.description && formik.errors.description ? <div className="form__errors">{formik.errors.description}</div> : null}
         </label>
 
         <button type="submit" className="add__button">Envoyer</button>
