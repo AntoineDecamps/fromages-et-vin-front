@@ -15,7 +15,7 @@ const ModalUser = ({
   openModal,
   closeModal,
   name,
-  role,
+  roles,
   email,
   password,
   id,
@@ -27,7 +27,7 @@ const ModalUser = ({
     initialValues: {
       name,
       email,
-      role,
+      roles,
       password,
     },
     onSubmit: (values) => {
@@ -67,7 +67,7 @@ const ModalUser = ({
                   </tr>
                   <tr>
                     <th className="modal__user__title">rôle</th>
-                    <td className="modal__user__content">{role}</td>
+                    <td className="modal__user__content">{roles}</td>
                   </tr>
                   <tr>
                     <th className="modal__user__title">email</th>
@@ -90,9 +90,9 @@ const ModalUser = ({
                     <select className="edit__input" name="pets" id="pet-select">
                       <option
                         onChange={formik.handleChange}
-                        value={formik.values.role}
+                        value={formik.values.roles}
                       >
-                        {role}
+                        {roles}
                       </option>
                     </select>
                   </label>
@@ -134,7 +134,7 @@ ModalUser.propTypes = {
   openModal: PropTypes.func.isRequired,
   closeModal: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
+  roles: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,

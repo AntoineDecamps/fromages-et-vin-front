@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   const userDetail = getProductBySlug(state.user.usersList, ownProps.slug);
   return {
     name: userDetail.name,
-    role: userDetail.roles,
+    roles: userDetail.roles,
     email: userDetail.email,
     password: userDetail.password,
     id: userDetail.id,
