@@ -15,10 +15,9 @@ import main from './glass-plate-medium.jpg';
 
 const MainHeader = ({ isLogged, handleLogout, pseudo }) => {
   const onMouseOver = (event) => {
-    console.log(event.target);
+    // console.log(event.target);
     const navFocused = event.target;
     const header = document.querySelector('.mainHeader');
-    console.log(header);
 
     if (navFocused.classList.contains('cheese')) {
       header.style.backgroundImage = `url(${cheeses})`;

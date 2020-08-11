@@ -15,7 +15,7 @@ const Footer = ({ isLogged }) => (
         exact
       >
         <h2 className="footer__div__title">Les vins</h2>
-        <p className="footer__div__content">Nos suggestions</p>
+        <p className="footer__div__content">Notre liste</p>
       </NavLink>
       <img src={logo} alt="Logo" className="footer__logo" />
       <NavLink
@@ -24,7 +24,7 @@ const Footer = ({ isLogged }) => (
         exact
       >
         <h2 className="footer__div__title">Les fromages</h2>
-        <p className="footer__div__content">Nos suggestions</p>
+        <p className="footer__div__content">Notre liste</p>
       </NavLink>
     </div>
     <div className="footer__information">

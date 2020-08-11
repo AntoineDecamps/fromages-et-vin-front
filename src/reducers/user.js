@@ -46,6 +46,7 @@ const user = (state = initialState, action = {}) => {
       const token = localStorage.getItem('token');
       const pseudo = localStorage.getItem('pseudo');
       console.log('TOKEN', token);
+      console.log('PSEUDO', pseudo);
 
       if (token) {
         return {
