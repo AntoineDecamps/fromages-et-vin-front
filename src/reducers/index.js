@@ -6,6 +6,7 @@ import modal from './modal';
 import user from './user';
 import edit from './edit';
 import slider from './slider';
+import proposals from './proposals';
 
 export default combineReducers({
   toggler,
@@ -15,4 +16,5 @@ export default combineReducers({
   user,
   edit,
   slider,
+  proposals,
 });

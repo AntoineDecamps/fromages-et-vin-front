@@ -7,6 +7,7 @@ import rootReducer from 'src/reducers';
 import cheese from 'src/middleware/cheese';
 import wine from 'src/middleware/wine';
 import user from 'src/middleware/user';
+import proposals from 'src/middleware/proposals';
 
 // == Enhancers
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -16,6 +17,7 @@ const enhancers = composeEnhancers(
     cheese,
     wine,
     user,
+    proposals,
     // logMiddleware,
     // logMiddleware show in the console every actions
     // secondMiddleware,

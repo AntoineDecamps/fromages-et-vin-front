@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import CheeseDetail from 'src/components/CheeseDetail';
+import WineDetail from 'src/components/WineDetail';
 import { getProductBySlug } from 'src/selectors';
 
 const mapStateToProps = (state, ownProps) => {
@@ -9,10 +9,11 @@ const mapStateToProps = (state, ownProps) => {
     name: productDetail.name,
     picture: productDetail.picture,
     description: productDetail.description,
+    cheeses: productDetail.cheeses,
     cheesesList: state.cheeses.cheesesList,
   };
 };
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CheeseDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(WineDetail);

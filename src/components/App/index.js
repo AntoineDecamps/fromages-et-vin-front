@@ -24,11 +24,13 @@ const App = ({
   wines,
   checkIsLogged,
   getUsers,
+  getProposals,
 }) => {
   useEffect(() => {
     getCheeses();
     getWines();
     getUsers();
+    getProposals();
   }, []);
 
   useEffect(checkIsLogged, []);
@@ -93,6 +95,7 @@ App.propTypes = {
   cheeses: PropTypes.array.isRequired,
   wines: PropTypes.array.isRequired,
   checkIsLogged: PropTypes.func.isRequired,
+  getProposals: PropTypes.func.isRequired,
 };
 
 // == Export

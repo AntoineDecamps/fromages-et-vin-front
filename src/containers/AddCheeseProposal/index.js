@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import AddProposal from 'src/components/AddProposal';
+import AddCheeseProposal from 'src/components/AddCheeseProposal';
 import { openModal, closeModal } from 'src/actions/modal';
 
 const mapStateToProps = (state) => ({
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
   closeModal: () => dispatch(closeModal()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddProposal);
+export default connect(mapStateToProps, mapDispatchToProps)(AddCheeseProposal);
