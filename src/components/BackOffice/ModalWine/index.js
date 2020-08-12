@@ -21,6 +21,7 @@ const ModalWine = ({
   appellation,
   picture,
   id,
+  type,
 }) => {
   const formik = useFormik({
     initialValues: {
@@ -28,15 +29,21 @@ const ModalWine = ({
       appellation,
       image: picture,
       description,
-      type: '',
+      type,
     },
     onSubmit: (values) => {
+      const token = localStorage.getItem('token');
       axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/wine/edit/${id}`, {
         name: values.name,
         type: values.type,
         appellation: values.appellation,
         picture: values.image,
         description: values.description,
+      }, {
+        headers: {
+          'X-Auth-Token': token,
+          'content-type': 'application/json',
+        },
       })
         .then((response) => {
           console.log(response);
@@ -65,28 +72,14 @@ const ModalWine = ({
           <Modal.Description>
             {!edit && (
               <div className="modal">
-                <table className="modal__table">
-                  <tr>
-                    <th className="modal__title">Nom</th>
-                    <td className="modal__content">{name}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__title">ID</th>
-                    <td className="modal__content">{id}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__title">Appellation</th>
-                    <td className="modal__content">{appellation}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__title">Description</th>
-                    <td className="modal__content">{description}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__title">Image</th>
-                    <td className="modal__content">{picture}</td>
-                  </tr>
-                </table>
+                <h2 className="modal__title">Nom</h2>
+                <p className="modal__content">{name}</p>
+                <h2 className="modal__title">Appellation</h2>
+                <p className="modal__content">{appellation}</p>
+                <h2 className="modal__title">Type</h2>
+                <p className="modal__content">{type}</p>
+                <h2 className="modal__title">Description</h2>
+                <p className="modal__content">{description}</p>
               </div>
             )}
             {edit && (
@@ -99,14 +92,14 @@ const ModalWine = ({
                   <label htmlFor="description" className="edit__label">Type
                     <input type="text" id="type" name="type" className="edit__input" onChange={formik.handleChange} value={formik.values.type} />
                   </label>
-                  <label htmlFor="appellation" className="edit__label">appellation
+                  <label htmlFor="appellation" className="edit__label">Appellation
                     <input type="text" placeholder="L'appellation du vin" id="appellation" name="appellation" className="edit__input" onChange={formik.handleChange} value={formik.values.appellation} />
                   </label>
-                  <label htmlFor="image" className="edit__label">Image
-                    <input type="text" placeholder="Veuillez entrer une URL" id="image" name="image" className="edit__input" onChange={formik.handleChange} value={formik.values.image} />
-                  </label>
                   <label htmlFor="description" className="edit__label">Description
-                    <input type="text" id="description" name="description" className="edit__input__description" onChange={formik.handleChange} value={formik.values.description} />
+                    <textarea id="description" name="description" className="edit__input__description" onChange={formik.handleChange} value={formik.values.description} />
+                  </label>
+                  <label htmlFor="image" className="edit__label">Image
+                    <textarea placeholder="Veuillez entrer une URL" id="image" name="image" className="edit__input" onChange={formik.handleChange} value={formik.values.image} />
                   </label>
 
                   <button type="submit" className="edit__button">Envoyer</button>
@@ -150,6 +143,7 @@ ModalWine.propTypes = {
   appellation: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default ModalWine;

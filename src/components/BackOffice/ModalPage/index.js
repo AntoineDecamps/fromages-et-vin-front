@@ -33,11 +33,17 @@ const ModalPage = ({
       description,
     },
     onSubmit: (values) => {
+      const token = localStorage.getItem('token');
       axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/edit/${id}`, {
         name: values.name,
         milk: values.milk,
         picture: values.image,
         description: values.description,
+      }, {
+        headers: {
+          'X-Auth-Token': token,
+          'content-type': 'application/json',
+        },
       })
         .then((response) => {
           console.log(response);
@@ -75,29 +81,6 @@ const ModalPage = ({
                 <p className="modal__content">{milk}</p>
                 <h2 className="modal__title">Description</h2>
                 <p className="modal__content">{description}</p>
-                
-                {/* <table className="modal__table">
-                  <tr>
-                    <th className="modal__title">Nom</th>
-                    <td className="modal__content">{name}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__title">ID</th>
-                    <td className="modal__content">{id}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__title">Lait</th>
-                    <td className="modal__content">{milk}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__title">Description</th>
-                    <td className="modal__content">{description}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__title">Image</th>
-                    <td className="modal__content">{picture}</td>
-                  </tr>
-                </table> */}
               </div>
             )}
             {edit && (
@@ -111,10 +94,10 @@ const ModalPage = ({
                   <input type="text" id="milk" name="milk" className="edit__input" onChange={formik.handleChange} value={formik.values.milk} />
                 </label>
                 <label htmlFor="image" className="edit__label">Image
-                  <input type="text" id="image" name="image" className="edit__input" onChange={formik.handleChange} value={formik.values.image} />
+                  <textarea id="image" name="image" className="edit__input edit__input__image" onChange={formik.handleChange} value={formik.values.image} />
                 </label>
                 <label htmlFor="description" className="edit__label">Description
-                  <input type="text" id="description" name="description" className="edit__input edit__input__description" onChange={formik.handleChange} value={formik.values.description} />
+                  <textarea id="description" name="description" className="edit__input edit__input__description" onChange={formik.handleChange} value={formik.values.description} />
                 </label>
                 <button type="submit" className="edit__button">Envoyer</button>
               </form>

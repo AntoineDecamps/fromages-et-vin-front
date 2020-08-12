@@ -29,14 +29,20 @@ const ModalUser = ({
       name,
       email,
       roles,
-      password,
+      password: '',
     },
     onSubmit: (values) => {
+      const token = localStorage.getItem('token');
       axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/edit/${id}`, {
         name: values.name,
         email: values.email,
         roles: [values.roles],
         password: values.password,
+      }, {
+        headers: {
+          'X-Auth-Token': token,
+          'content-type': 'application/json',
+        },
       })
         .then((response) => {
           console.log(response);
@@ -64,25 +70,13 @@ const ModalUser = ({
           <Image src={avatar} size="medium" rounded wrapped />
           <Modal.Description>
             {!edit && (
-              <div className="modal__user">
-                <table className="modal__user__table">
-                  <tr>
-                    <th className="modal__user__title">Nom</th>
-                    <td className="modal__user__content">{name}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__user__title">ID</th>
-                    <td className="modal__user__content">{id}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__user__title">rôle</th>
-                    <td className="modal__user__content">{roles}</td>
-                  </tr>
-                  <tr>
-                    <th className="modal__user__title">email</th>
-                    <td className="modal__user__content">{email}</td>
-                  </tr>
-                </table>
+              <div className="modal">
+                <h2 className="modal__title">Nom</h2>
+                <p className="modal__content">{name}</p>
+                <h2 className="modal__title">Email</h2>
+                <p className="modal__content">{email}</p>
+                <h2 className="modal__title">Rôle</h2>
+                <p className="modal__content">{roles}</p>
               </div>
             )}
             {edit && (
@@ -95,15 +89,8 @@ const ModalUser = ({
                   <label htmlFor="email" className="edit__label">Email
                     <input type="email" id="email" name="email" className="edit__input" onChange={formik.handleChange} value={formik.values.email} />
                   </label>
-                  <label htmlFor="role" className="edit__label">Rôle de l'utilisateur
-                    <select className="edit__input" name="pets" id="pet-select">
-                      <option
-                        onChange={formik.handleChange}
-                        value={formik.values.roles}
-                      >
-                        {roles}
-                      </option>
-                    </select>
+                  <label htmlFor="roles" className="edit__label">Rôle de l'utilisateur
+                    <input type="text" className="edit__input" name="roles" id="roles" onChange={formik.handleChange} value={formik.values.roles} />
                   </label>
                   <label htmlFor="description" className="edit__label">Mot-de-passe
                     <input type="text" id="password" name="password" className="edit__input" onChange={formik.handleChange} value={formik.values.password} />
