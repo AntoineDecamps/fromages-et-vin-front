@@ -27,11 +27,17 @@ const AddCheese = () => {
       password: '',
     },
     onSubmit: (values) => {
+      const token = localStorage.getItem('token');
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/add', {
         name: values.name,
         email: values.email,
         roles: [values.roles],
         password: values.password,
+      }, {
+        headers: {
+          'X-Auth-Token': token,
+          'content-type': 'application/json',
+        },
       })
         .then((response) => {
           console.log(response);
