@@ -16,7 +16,7 @@ const ModalUser = ({
   openModal,
   closeModal,
   name,
-  role,
+  roles,
   email,
   password,
   id,
@@ -28,7 +28,7 @@ const ModalUser = ({
     initialValues: {
       name,
       email,
-      roles: role,
+      roles,
       password,
     },
     onSubmit: (values) => {
@@ -76,7 +76,7 @@ const ModalUser = ({
                   </tr>
                   <tr>
                     <th className="modal__user__title">rôle</th>
-                    <td className="modal__user__content">{role}</td>
+                    <td className="modal__user__content">{roles}</td>
                   </tr>
                   <tr>
                     <th className="modal__user__title">email</th>
@@ -95,8 +95,15 @@ const ModalUser = ({
                   <label htmlFor="email" className="edit__label">Email
                     <input type="email" id="email" name="email" className="edit__input" onChange={formik.handleChange} value={formik.values.email} />
                   </label>
-                  <label htmlFor="roles" className="edit__label">Rôle de l'utilisateur
-                    <input type="text" className="edit__input" name="roles" id="roles" onChange={formik.handleChange} value={formik.values.roles} />
+                  <label htmlFor="role" className="edit__label">Rôle de l'utilisateur
+                    <select className="edit__input" name="pets" id="pet-select">
+                      <option
+                        onChange={formik.handleChange}
+                        value={formik.values.roles}
+                      >
+                        {roles}
+                      </option>
+                    </select>
                   </label>
                   <label htmlFor="description" className="edit__label">Mot-de-passe
                     <input type="text" id="password" name="password" className="edit__input" onChange={formik.handleChange} value={formik.values.password} />
@@ -136,7 +143,7 @@ ModalUser.propTypes = {
   openModal: PropTypes.func.isRequired,
   closeModal: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
+  roles: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,

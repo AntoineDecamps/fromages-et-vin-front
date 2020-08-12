@@ -40,6 +40,7 @@ const AddCheese = () => {
         },
       })
         .then((response) => {
+          console.log(values);
           console.log(response);
         })
         .then(() => {
