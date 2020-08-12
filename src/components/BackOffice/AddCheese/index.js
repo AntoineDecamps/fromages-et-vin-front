@@ -14,10 +14,10 @@ const AddCheese = () => {
   // Validation and error messages
   // properties stocked in the initialValues should correspond to attribute name of the input
   const validationSchema = Yup.object({
-    name: Yup.string().required('Ce champ est requis'),
-    milk: Yup.string().required('Ce champ est requis'),
-    image: Yup.string().required('Ce champ est requis'),
-    description: Yup.string().required('Ce champ est requis'),
+    name: Yup.string().required('Veuillez entrer un nom pour ce fromage'),
+    milk: Yup.string().required('Veuillez préciser le type de lait pour ce produit'),
+    image: Yup.string().url('Veuillez entrer une URL valide').required('Veuillez préciser une image pour ce produit'),
+    description: Yup.string().required('Veuillez entrer une description pour ce produit'),
   });
   const formik = useFormik({
     initialValues: {
@@ -28,12 +28,18 @@ const AddCheese = () => {
     },
     // eslint-disable-next-line max-len
     onSubmit: (values) => {
+      const token = localStorage.getItem('token');
       axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/add',
         {
           name: values.name,
           milk: values.milk,
           picture: values.image,
           description: values.description,
+        }, {
+          headers: {
+            'X-Auth-Token': token,
+            'content-type': 'application/json',
+          },
         })
         .then((response) => {
           console.log(response);
@@ -65,7 +71,7 @@ const AddCheese = () => {
           {formik.touched.image && formik.errors.image ? <div className="form__errors">{formik.errors.image}</div> : null}
         </label>
         <label htmlFor="description" className="add__label">Description
-          <input type="text" id="description" name="description" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} onBlur={formik.handleBlur} />
+          <textarea id="description" name="description" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} onBlur={formik.handleBlur} />
           {formik.touched.description && formik.errors.description ? <div className="form__errors">{formik.errors.description}</div> : null}
         </label>
 
