@@ -64,8 +64,11 @@
   &__name {
     padding-bottom: vars.$gutter / 2;
   }
-  &__choice {
+}
 
+@media (min-width:768px) {
+  .association {
+    width: 70%;
   }
 }
 
