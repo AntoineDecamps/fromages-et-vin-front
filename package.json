@@ -70,6 +70,7 @@
     "redux": "*",
     "semantic-ui-react": "^1.1.0",
     "slugify": "^1.4.5",
-    "styled-components": "*"
+    "styled-components": "*",
+    "yup": "^0.29.3"
   }
 }

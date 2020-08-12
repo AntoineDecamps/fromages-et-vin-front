@@ -45,6 +45,9 @@ const ModalPage = ({
         .then(() => {
           redirectToCheeses();
         })
+        .then(() => {
+          window.alert('Modification ajoutée !');
+        })
         .catch((error) => {
           console.log(error);
         });
@@ -66,7 +69,14 @@ const ModalPage = ({
           <Modal.Description>
             {!edit && (
               <div className="modal">
-                <table className="modal__table">
+                <h2 className="modal__title">Nom</h2>
+                <p className="modal__content">{name}</p>
+                <h2 className="modal__title">Lait</h2>
+                <p className="modal__content">{milk}</p>
+                <h2 className="modal__title">Description</h2>
+                <p className="modal__content">{description}</p>
+                
+                {/* <table className="modal__table">
                   <tr>
                     <th className="modal__title">Nom</th>
                     <td className="modal__content">{name}</td>
@@ -87,7 +97,7 @@ const ModalPage = ({
                     <th className="modal__title">Image</th>
                     <td className="modal__content">{picture}</td>
                   </tr>
-                </table>
+                </table> */}
               </div>
             )}
             {edit && (
@@ -104,7 +114,7 @@ const ModalPage = ({
                   <input type="text" id="image" name="image" className="edit__input" onChange={formik.handleChange} value={formik.values.image} />
                 </label>
                 <label htmlFor="description" className="edit__label">Description
-                  <input type="text" id="description" name="description" className="edit__input__description" onChange={formik.handleChange} value={formik.values.description} />
+                  <input type="text" id="description" name="description" className="edit__input edit__input__description" onChange={formik.handleChange} value={formik.values.description} />
                 </label>
                 <button type="submit" className="edit__button">Envoyer</button>
               </form>

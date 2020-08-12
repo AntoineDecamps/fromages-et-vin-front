@@ -43,3 +43,9 @@
     }
   }
 }
+
+.form__errors {
+  color: red;
+  font-weight: normal;
+  margin-top: vars.$gutter/2;
+}
