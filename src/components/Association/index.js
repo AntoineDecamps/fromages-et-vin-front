@@ -19,8 +19,8 @@ const Association = ({
   let userProposals;
   if (associations.length > 0) {
     userProposals = () => (associations.map((association) => (
-      <div className="userProposal__detail">
-        <div key={association.userName}>
+      <div key={association.userName} className="userProposal__detail">
+        <div>
           <h2 className="userProposal__name">{`${association.userName} vous propose :`}</h2>
           <p className="userProposal__choice">{association.associatedProduct}</p>
         </div>
