@@ -15,6 +15,7 @@ const Association = ({
   associations,
 }) => {
   console.log('blabla', associations);
+  console.log('slider', slider);
   let userProposals;
   if (associations.length > 0) {
     userProposals = () => (associations.map((association) => (
@@ -44,7 +45,7 @@ const Association = ({
       <div className="flexAssociation__icon1" onClick={handleSlider}>
         <Icon color="yellow" name="angle left" size="big" />
       </div>
-      {slider && (
+      {!slider && (
         <div className="association">
           <h2 className="association__title">Mariage proposé</h2>
           <div className="association__card">
@@ -59,7 +60,7 @@ const Association = ({
           </div>
         </div>
       )}
-      {!slider && (
+      {slider && (
         <div className="association">
           <h2 className="association__title">Proposition des utilisateurs</h2>
           <div className="association__card userProposal">
