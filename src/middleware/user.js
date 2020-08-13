@@ -87,7 +87,7 @@ export default (store) => (next) => (action) => {
       break;
     }
     case GET_USERS: {
-      axios.get('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/browse')
+      axios.get('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/users')
         .then((response) => {
           console.log('users', response);
           store.dispatch(saveUsers(response.data));

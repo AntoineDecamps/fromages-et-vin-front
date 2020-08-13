@@ -34,7 +34,7 @@ const ModalWine = ({
     initialValues: {
       name,
       appellation,
-      image: picture,
+      picture,
       description,
       type,
     },
