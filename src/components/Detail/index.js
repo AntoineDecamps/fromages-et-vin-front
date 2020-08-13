@@ -6,8 +6,6 @@ import { Button } from 'semantic-ui-react';
 
 import './styles.scss';
 
-// replace lorem by description
-
 const Detail = ({ name, picture, description }) => (
   <div className="detail">
     <div className="detail__picture">

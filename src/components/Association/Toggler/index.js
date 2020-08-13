@@ -12,7 +12,7 @@ const Toggler = ({ handleToggle, open }) => {
         className={className}
         onClick={handleToggle}
       >
-        =
+        ➔
       </button>
     </div>
   );

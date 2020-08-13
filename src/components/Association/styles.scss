@@ -15,54 +15,60 @@
 }
 
 .association {
-  color: white;
-  width: 400px;
-  // margin: vars.$gutter*2 auto vars.$gutter*10 auto;
-  // width: 1200px;
-  // max-width: 1400px;
-  // margin: auto auto 9.5rem auto;
+  color: vars.$secondary-color;
+  margin: vars.$gutter auto;
+  height: 100%;
+  border-top: 2px solid vars.$alt-color;
   &__title {
     font-weight: bold;
     text-transform: uppercase;
-    text-decoration: underline;
     text-align: center;
-    margin-bottom: vars.$gutter;
+    padding: vars.$gutter * 2 0;
+    font-size: 1.2em;
   }
   &__card {
     margin: auto;
-    // width: 40%;
-    background-color: rgba(124, 118, 118, 0.1);
     border: 2px solid white;
-    border-radius: 5%;
-    &__image {
-      width: 100%;
-      height: 100%;
-    }
+    border-radius: 3px;
+    padding: vars.$gutter;
     &__title {
-      position: relative;
-      top: vars.$gutter*1.5;
       text-align: center;
-      font-size: vars.$gutter*1.5;
+      font-size: 1.4em;
       text-transform: uppercase;
       font-weight: bold;
+    }
+    &__image {
+      width: 100%;
+      margin: vars.$gutter * 2 0;
     }
   }
 }
 
 .userProposal {
-  height: 590px;
-  padding-left: vars.$gutter;
-  padding-right: vars.$gutter;
+  height: 100%;
+  padding: vars.$gutter;
   &__title {
-    padding-top: vars.$gutter;
+    text-align: center;
     padding-bottom: vars.$gutter;
     border-bottom: 2px solid vars.$alt-color;
+    line-height: 1.2em;
+  }
+  &__propositions {
+    padding: vars.$gutter;
+  }
+  &__detail {
+    text-align: center;
+    padding: vars.$gutter 0;
+    border-bottom: 1px dotted vars.$secondary-color;
   }
   &__name {
-    margin-top: vars.$gutter;
+    padding-bottom: vars.$gutter / 2;
   }
-  &__choice {
+}
 
+@media (min-width:768px) {
+  .association {
+    width: 70%;
   }
 }
 

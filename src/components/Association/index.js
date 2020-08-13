@@ -18,15 +18,17 @@ const Association = ({
   let userProposals;
   if (associations.length > 0) {
     userProposals = () => (associations.map((association) => (
-      <div>
-        <h2 className="userProposal__name">{`Proposition faite par ${association.userName} :`}</h2>
-        <p className="userProposal__choice">{association.associatedProduct}</p>
+      <div className="userProposal__detail">
+        <div key={association.userName}>
+          <h2 className="userProposal__name">{`${association.userName} vous propose :`}</h2>
+          <p className="userProposal__choice">{association.associatedProduct}</p>
+        </div>
       </div>
     )));
   }
   else {
     userProposals = () => (
-      <div>
+      <div className="userProposal__detail">
         <p>Pour l'instant aucun utilisateur n'a proposé d'association pour ce produit</p>
         <p>Soyez le premier à en proposer une ! </p>
       </div>
@@ -40,7 +42,7 @@ const Association = ({
   return (
     <div className="flexAssociation">
       <div className="flexAssociation__icon1" onClick={handleSlider}>
-        <Icon color="yellow" name="angle left" size="huge" />
+        <Icon color="yellow" name="angle left" size="big" />
       </div>
       {slider && (
         <div className="association">
@@ -61,23 +63,31 @@ const Association = ({
         <div className="association">
           <h2 className="association__title">Proposition des utilisateurs</h2>
           <div className="association__card userProposal">
-            <p className="userProposal__title">Retrouvez ci-dessous les propositions faites par les utilisateurs du site</p>
-            {userProposals()}
+            <h3 className="userProposal__title">Retrouvez ci-dessous les propositions faites par les utilisateurs du site</h3>
+            <div className="userProposal__propositions">
+              {userProposals()}
+            </div>
           </div>
         </div>
       )}
       <div className="flexAssociation__icon2" onClick={handleSlider}>
-        <Icon color="yellow" name="angle right" size="huge" />
+        <Icon color="yellow" name="angle right" size="big" />
       </div>
     </div>
-)};
+  );
+};
 
 Association.propTypes = {
   open: PropTypes.bool.isRequired,
   slider: PropTypes.bool.isRequired,
   associatedProduct: PropTypes.array.isRequired,
   handleSlider: PropTypes.func.isRequired,
-  length: PropTypes.func.isRequired,
+  length: PropTypes.number,
+  associations: PropTypes.array.isRequired,
+};
+
+Association.defaultProps = {
+  length: 0,
 };
 
 export default Association;
