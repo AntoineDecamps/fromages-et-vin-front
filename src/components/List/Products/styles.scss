@@ -10,7 +10,6 @@
 // CARD PRODUCT
 .product {
   width: 100%;
-  // padding: vars.$gutter / 4;
   border-radius: 5px;
 }
 .card {
@@ -18,7 +17,6 @@
   box-sizing: border-box;
   position: relative;
   background-color: vars.$main-color;
-  // opacity: 0.9;
   margin: vars.$gutter / 2;
     &:hover {
       opacity: 1;
@@ -26,7 +24,6 @@
   &__img {
     max-width: 100%;
     border-radius: 5px;
-    // padding: vars.$gutter * 2;
     box-shadow: 1px 1px 5px #000;
   }
   &__title {

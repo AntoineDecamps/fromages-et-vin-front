@@ -10,6 +10,7 @@
     width: 100%;
     & input, select {
       padding: vars.$gutter / 3;
+      margin-bottom: vars.$gutter;
       border: 2px solid vars.$secondary-color;
       border-radius: 2px;
       background-color: vars.$main-color;
@@ -89,9 +90,13 @@
 @media (min-width: 768px) {
   .addProposal {
     &__form {
-      width: 70%;
       margin: auto;
+      display: flex;
     }
+  }
+
+  .ui.modal>.content>.description {
+    border-left: 3px solid vars.$alt-color;
   }
 
   .ui.modal>.content>.image+.description {
@@ -99,19 +104,22 @@
   }
 
   .ui.image {
-    border-right: 3px solid vars.$alt-color;
     border-bottom: none;
     display: flex !important;
     align-items: center;
     justify-content: center;
+    border: none;
+    margin-right: vars.$gutter * 2;
     & img {
       width: 100%;
-      margin-right: vars.$gutter;
+      margin-right: vars.$gutter * 2;
     }
   }
 
   .ui.modal>.content {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .ui.modal>.actions {
