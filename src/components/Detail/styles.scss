@@ -2,7 +2,6 @@
 
 .detail {
   color: vars.$secondary-color;
-  // padding: vars.$gutter*3 0;
   margin: auto;
   &__picture {
     text-align: center;
@@ -46,6 +45,31 @@
     padding: vars.$gutter;
     border-left: 2px solid vars.$secondary-color;
     border-right: 2px solid vars.$secondary-color;
+  }
+}
+
+@media (min-width: 768px) {
+  .detail {
+    &__title {
+      font-size: 1.8em;
+    }
+    &__description {
+      font-size: 1.2em;
+      padding: vars.$gutter * 2;
+      line-height: 1.5em;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .detail {
+    &__image {
+      width: 80%;
+    }
+    &__product {
+      width: 80%;
+      margin: vars.$gutter * 2 auto;
+    }
   }
 }
 

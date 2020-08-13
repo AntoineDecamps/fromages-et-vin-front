@@ -40,6 +40,8 @@
     &__image {
       width: 100%;
       margin: vars.$gutter * 2 0;
+      border-radius: 2px;
+      box-shadow: 1px 1px 10px black;
     }
   }
 }
@@ -69,6 +71,42 @@
 @media (min-width:768px) {
   .association {
     width: 70%;
+    margin: auto vars.$gutter;
+    &__title {
+      font-size: 1.5em;
+    }
+  }
+
+  .userProposal {
+    padding: vars.$gutter * 2;
+    &__title {
+      font-size: 1.2em;
+      padding-bottom: vars.$gutter * 2;
+    }
+    &__propositions {
+      font-size: 1.2em;
+    }
+    &__detail {
+      padding: vars.$gutter * 1.5 0;
+    }
+    &__name {
+      padding-bottom: vars.$gutter;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .association {
+    width: 75%;
+    &__card {
+      padding: vars.$gutter * 2;
+    }
+  }
+
+  .userProposal {
+    &__detail {
+      padding: vars.$gutter * 2 0;
+    }
   }
 }
 
