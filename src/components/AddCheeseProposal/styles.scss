@@ -10,6 +10,7 @@
     width: 100%;
     & input, select {
       padding: vars.$gutter / 3;
+      margin-bottom: vars.$gutter;
       border: 2px solid vars.$secondary-color;
       border-radius: 2px;
       background-color: vars.$main-color;
@@ -66,4 +67,13 @@
 
 .ui.modal>.actions {
   text-align: center;
+}
+
+@media (min-width: 425px) {
+  .addProposal {
+    &__form {
+      width: 80%;
+      margin: auto;
+    }
+  }
 }
