@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-boolean-value */
 // == Import npm
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 
 import HomePage from 'src/components/HomePage';
 import List from 'src/components/List';
@@ -17,6 +17,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 // == Composant
+
 const App = ({
   getCheeses,
   getWines,

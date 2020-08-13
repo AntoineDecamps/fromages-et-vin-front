@@ -14,10 +14,10 @@ const AddCheese = () => {
   // Validation and error messages
   // properties stocked in the initialValues should correspond to attribute name of the input
   const validationSchema = Yup.object({
-    name: Yup.string().required('Ce champ est requis'),
-    roles: Yup.string().required('Ce champ est requis'),
-    email: Yup.string().email('Format d\'email invalide !').required('Ce champ est requis'),
-    password: Yup.string().required('Ce champ est requis'),
+    name: Yup.string().required('Veuillez indiquer un nom pour cet utilisateur'),
+    roles: Yup.string().matches('^ROLE_ADMIN$|^ROLE_SUP_ADMIN$', 'Veuillez indiquer un rôle qui existe : ROLE_ADMIN ou ROLE_SUP_ADMIN').required('Veuillez indiquer un rôle'),
+    email: Yup.string().email('Format d\'email invalide !').required('Veuillez indiquer un email'),
+    password: Yup.string().required('Veuillez indiquer un mot-de-passe'),
   });
   const formik = useFormik({
     initialValues: {
@@ -69,8 +69,8 @@ const AddCheese = () => {
           <input type="text" id="roles" name="roles" className="add__input" onChange={formik.handleChange} value={formik.values.roles} onBlur={formik.handleBlur} />
           {formik.touched.roles && formik.errors.roles ? <div className="form__errors">{formik.errors.roles}</div> : null}
         </label>
-        <label htmlFor="description" className="add__label">Mot-de-passe
-          <input type="text" id="password" name="password" className="add__input__password" onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
+        <label htmlFor="password" className="add__label">Mot-de-passe
+          <input type="password" id="password" name="password" className="add__input__password" onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
           {formik.touched.password && formik.errors.password ? <div className="form__errors">{formik.errors.password}</div> : null}
         </label>
 

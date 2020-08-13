@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     picture: productDetail.picture,
     description: productDetail.description,
     appellation: productDetail.appellation,
+    type: productDetail.type,
     id: productDetail.id,
     open: state.modal.open,
     edit: state.edit.open,

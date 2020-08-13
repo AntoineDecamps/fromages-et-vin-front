@@ -8,7 +8,13 @@ import './styles.scss';
 
 const DeleteModal = ({ open, openDelete, closeDelete, id, apiURL, redirect }) => {
   const handleDelete = () => {
-    axios.delete(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/${apiURL}/delete/${id}`)
+    const token = localStorage.getItem('token');
+    axios.delete(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/${apiURL}/delete/${id}`, {
+      headers: {
+        'X-Auth-Token': token,
+        'content-type': 'application/json',
+      },
+    })
       .then((response) => {
         console.log(response);
       })
