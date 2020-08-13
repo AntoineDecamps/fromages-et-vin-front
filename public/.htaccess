@@ -1,4 +1,3 @@
-n'importe quoi
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
