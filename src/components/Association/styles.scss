@@ -99,7 +99,7 @@
   .association {
     width: 75%;
     &__card {
-      padding: vars.$gutter * 2;
+      padding: vars.$gutter * 3;
     }
   }
 
@@ -112,26 +112,23 @@
 
 @media (min-width: 1200px) {
   .association {
-    
-    width: 400px;
-    // margin-left: 28rem;
-    // margin-right: -10rem;
+    width: 60%;
+    margin-top: vars.$gutter;
+    &__title {
+      font-size: 1.8em;
+    }
+    &__card {
+      padding: vars.$gutter * 4;
+      font-size: 1.2em;
+    }
   }
-}
 
-
-@media (min-width: 1600px) {
-  .association {
-    width: 400px;
-    // max-width: 1200px;
-    // margin-right: -5rem;
-  }
-}
-
-@media (min-width: 2000px) {
-  .association {
-    width: 400px;
-    // max-width: 1200px;
-    // margin-right: 5rem;
+  .userProposal {
+    &__title {
+      font-size: 1.4em;
+    }
+    &__detail {
+      font-size: 1.2em;
+    }
   }
 }

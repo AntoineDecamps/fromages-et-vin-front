@@ -58,6 +58,9 @@
       padding: vars.$gutter * 2;
       line-height: 1.5em;
     }
+    &__image {
+      width: 75%;
+    }
   }
 }
 
@@ -75,34 +78,21 @@
 
 @media (min-width: 1200px) {
   .detail {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    &__image {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: vars.$gutter * 2;
+    &__picture {
       width: 100%;
-      max-width: 400px;
     }
     &__product {
-      font-size: 1.3rem;
+      width: 90%;
+      margin: vars.$gutter;
+      padding: vars.$gutter;
+      font-size: 1.2em;
     }
-    &__description {
-
-      position: relative;
-      top: 6rem;
-    }
-  }
-} 
-
-@media (min-width: 1600px) {
-  .detail {
-    &__product {
-      font-size: 1.3rem;
-      justify-self: center;
-
-    }
-    &__description {
-
-      position: relative;
-      // top: 7rem;
+    &__image {
+      width: 90%;
     }
   }
 }

@@ -52,7 +52,7 @@ const AddCheeseProposal = ({
         onClose={() => closeModal()}
         onOpen={() => openModal()}
         open={open}
-        trigger={<Button color="yellow">Faire une proposition</Button>}
+        trigger={<Button color="yellow" size="big">Faire une proposition</Button>}
       >
         <Modal.Header>Proposez une association</Modal.Header>
         <Modal.Content image>
