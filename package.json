@@ -22,7 +22,7 @@
     "babel-loader": "*",
     "bundle-stats-webpack-plugin": "*",
     "chai": "*",
-    "clean-webpack-plugin": "/dist",
+    "clean-webpack-plugin": "*",
     "copy-webpack-plugin": "*",
     "cross-env": "*",
     "css-loader": "*",
