@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
