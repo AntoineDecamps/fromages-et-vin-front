@@ -67,3 +67,62 @@
 .ui.modal>.actions {
   text-align: center;
 }
+
+@media (min-width: 425px) {
+  .addProposal {
+    &__form {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .addProposal {
+    &__form {
+      width: 70%;
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .addProposal {
+    &__form {
+      width: 70%;
+      margin: auto;
+    }
+  }
+
+  .ui.modal>.content>.image+.description {
+    padding: 0;
+  }
+
+  .ui.image {
+    border-right: 3px solid vars.$alt-color;
+    border-bottom: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    & img {
+      width: 100%;
+      margin-right: vars.$gutter;
+    }
+  }
+
+  .ui.modal>.content {
+    display: flex;
+  }
+
+  .ui.modal>.actions {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1024px) {
+  .addProposal {
+    &__form {
+      width: 60%;
+    }
+  }
+}

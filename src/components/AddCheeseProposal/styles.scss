@@ -77,3 +77,61 @@
     }
   }
 }
+
+@media (min-width: 600px) {
+  .addProposal {
+    &__form {
+      width: 70%;
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .addProposal {
+    &__form {
+      // width: 70%;
+      margin: auto;
+      display: flex;
+    }
+  }
+
+  .ui.modal>.content>.description {
+    border-left: 3px solid vars.$alt-color;
+  }
+
+  .ui.modal>.content>.image+.description {
+    padding: 0;
+  }
+
+  .ui.image {
+    border-bottom: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-right: vars.$gutter * 2;
+    & img {
+      width: 100%;
+      margin-right: vars.$gutter * 2;
+    }
+  }
+
+  .ui.modal>.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ui.modal>.actions {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1024px) {
+  .addProposal {
+    &__form {
+      width: 60%;
+    }
+  }
+}
