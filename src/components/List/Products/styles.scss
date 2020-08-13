@@ -4,13 +4,13 @@
 .products {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 100%;
 }
 
 // CARD PRODUCT
 .product {
-  width: 50%;
-  padding: vars.$gutter / 4;
+  width: 100%;
+  // padding: vars.$gutter / 4;
   border-radius: 5px;
 }
 .card {
@@ -43,6 +43,12 @@
     &:hover {
       color: vars.$alt-color;
     }
+  }
+}
+
+@media (min-width: 425px) {
+  .product {
+    width: 50%;
   }
 }
 
