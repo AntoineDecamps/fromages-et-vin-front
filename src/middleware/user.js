@@ -75,7 +75,7 @@ export default (store) => (next) => (action) => {
       console.log('MIDDLEWARE LOGOUT');
       localStorage.removeItem('token');
       localStorage.removeItem('pseudo');
-      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/logout', {})
+      axios.get('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/logout', {})
         .then((response) => {
           console.log('MIDDLEWARE LOGOUT', response);
           console.log('LOGOUT', localStorage);
