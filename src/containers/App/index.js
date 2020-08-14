@@ -9,6 +9,8 @@ import App from 'src/components/App';
 const mapStateToProps = (state) => ({
   cheeses: state.cheeses.cheesesList,
   wines: state.wines.winesList,
+  cheeseLoading: state.cheeses.cheeseLoading,
+  wineLoading: state.wines.wineLoading,
 });
 
 const mapDispatchToProps = (dispatch) => ({

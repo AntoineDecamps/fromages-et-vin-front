@@ -16,30 +16,33 @@ const WineDetail = ({
   description,
   cheesesList,
   cheeses,
-}) => {
-  console.log('cheeses?', cheeses);
-  return (
-    <div className="wineDetail">
-      <Header />
-      <Detail
-        slug={slug}
-        name={name}
-        picture={picture}
-        description={description}
-      />
-      <Association
-        associatedProduct={cheeses}
-        slug={slug}
-      />
-      <AddCheeseProposal
-        name={name}
-        image={picture}
-        product="fromage"
-        propositions={cheesesList}
-      />
-      <Footer />
-    </div>
-)};
+  origin,
+}) => (
+  <div className="wineDetail">
+    <Header />
+    <Detail
+      slug={slug}
+      name={name}
+      picture={picture}
+      description={description}
+      product="vin"
+      origin={origin}
+    />
+    <Association
+      associatedProduct={cheeses}
+      slug={slug}
+      link="fromage"
+    />
+    <AddCheeseProposal
+      name={name}
+      image={picture}
+      product="fromage"
+      propositions={cheesesList}
+      slug={slug}
+    />
+    <Footer />
+  </div>
+);
 
 WineDetail.propTypes = {
   slug: PropTypes.string.isRequired,
@@ -48,6 +51,7 @@ WineDetail.propTypes = {
   description: PropTypes.string.isRequired,
   cheeses: PropTypes.array.isRequired,
   cheesesList: PropTypes.array.isRequired,
+  origin: PropTypes.array.isRequired,
 };
 
 export default WineDetail;

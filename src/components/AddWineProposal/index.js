@@ -6,6 +6,7 @@ import {
   Image,
   Modal,
 } from 'semantic-ui-react';
+import { redirectToCheeseSlug } from 'src/selectors';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
@@ -18,6 +19,7 @@ const AddWineProposal = ({
   image,
   product,
   propositions,
+  slug,
 }) => {
   const initialValues = {
     userName: '',
@@ -33,6 +35,9 @@ const AddWineProposal = ({
       })
       .then((response) => {
         console.log(response);
+      })
+      .then(() => {
+        redirectToCheeseSlug(slug);
       })
       .catch((error) => {
         console.log(error);
@@ -100,6 +105,7 @@ AddWineProposal.propTypes = {
   image: PropTypes.string.isRequired,
   product: PropTypes.string.isRequired,
   propositions: PropTypes.array.isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default AddWineProposal;

@@ -2,6 +2,7 @@ import { SAVE_CHEESES } from 'src/actions/cheese';
 
 export const initialState = {
   cheesesList: [],
+  cheeseLoading: true,
 };
 
 const cheeses = (state = initialState, action = {}) => {
@@ -10,6 +11,7 @@ const cheeses = (state = initialState, action = {}) => {
       return {
         ...state,
         cheesesList: action.cheeses,
+        cheeseLoading: false,
       };
     default:
       return state;

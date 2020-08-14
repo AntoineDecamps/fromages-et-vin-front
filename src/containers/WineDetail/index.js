@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     picture: productDetail.picture,
     description: productDetail.description,
     cheeses: productDetail.cheeses,
+    origin: productDetail.origin.name,
     cheesesList: state.cheeses.cheesesList,
   };
 };
