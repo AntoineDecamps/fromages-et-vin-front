@@ -1,67 +1,11 @@
-// @use 'src/styles/vars';
+@use 'src/styles/vars';
 
-// .modal {
-//   width: 450px;
-//   &__title {
-//     padding: vars.$gutter/2;
-//     text-align: center;
-//     font-weight: bold;
-//     font-size: vars.$gutter;
-//     text-transform: uppercase;
-//     background-color: vars.$alt-color;
-//   }
-//   &__content {
-//     padding-left: vars.$gutter/3;
-//     padding-top: vars.$gutter;
-//     padding-bottom: vars.$gutter;
-//     vertical-align: middle;
-
-//   }
-// }
-
-// .editUser {
-//   width: 450px;
-//   margin-top: -2rem;
-//   &__title {
-//     margin-bottom: vars.$gutter;
-//     text-decoration: underline;
-//     font-size: vars.$gutter*1.5;
-//   }
-// }
-
-// .edit {
-//   &__form {
-//     display: flex;
-//     flex-direction: column;
-//     background-color: black;
-//   }
-//   &__label {
-//     font-weight: bold;
-//     font-size: vars.$gutter;
-//     margin-top: vars.$gutter/2;
-//     color: vars.$alt-color;
-    
-//   }
-//   &__input {
-//     display: block;
-//     width: 100%;
-//     margin-top: vars.$gutter/2;
-//     margin-bottom: vars.$gutter/2;
-//     padding: vars.$gutter / 2;
-//   }
-//   &__button {
-//     color: vars.$alt-color;
-//     background-color: rgba(0, 0, 0, 0);
-//     border: 2px solid vars.$alt-color;
-//     padding: vars.$gutter/2;
-//     font-weight: bold;
-//     width: 100px;
-//     border-radius: 20%;
-//     margin: vars.$gutter auto vars.$gutter auto;
-  
-//     &:hover {
-//       background-color: vars.$alt-color;
-//       color: black;
-//     }
-//   }
-// }
+.editUser {
+  width: 450px;
+  margin-left: vars.$gutter;
+  &__title {
+    margin-bottom: vars.$gutter;
+    text-decoration: underline;
+    font-size: vars.$gutter*1.5;
+  }
+}

@@ -1,32 +1,8 @@
 @use 'src/styles/vars';
 
-// .modal {
-//   &__title {
-//     border: 1px solid black;
-//     padding: vars.$gutter/2;
-//     text-align: center;
-//     font-weight: bold;
-//     font-size: vars.$gutter;
-//     text-transform: uppercase;
-//     background-color: vars.$alt-color;
-//   }
-//   &__content {
-//     border: 1px solid black;
-//     padding-left: vars.$gutter/3;
-//     padding-top: vars.$gutter;
-//     padding-bottom: vars.$gutter;
-//     vertical-align: middle;
-
-//   }
-// }
-
-.rounded img {
-  width: 100%;
-}
-
 .editWine {
   width: 450px;
-  margin-top: -2rem;
+  margin-left: vars.$gutter;
   &__title {
     margin-bottom: vars.$gutter;
     text-decoration: underline;
@@ -36,51 +12,16 @@
 
 .edit {
   &__form {
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-  }
-  &__label {
-    font-weight: bold;
-    font-size: vars.$gutter;
-    margin-top: vars.$gutter/2;
-    color: vars.$alt-color;
-    
-  }
-  &__input {
-    display: block;
-    width: 100%;
-    margin-top: vars.$gutter/2;
-    margin-bottom: vars.$gutter/2;
-    padding: vars.$gutter / 2;
-    &__description {
-      height: 150px;
-      margin-top: vars.$gutter/2;
-      display: block;
-      width: 100%;
-      padding: vars.$gutter / 2;
-      overflow: visible;
-    }
-    &__image {
-      height: 100px;
-      margin-top: vars.$gutter/2;
-      display: block;
-      width: 100%;
-    }
-  }
-  &__button {
-    color: vars.$alt-color;
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid vars.$alt-color;
-    padding: vars.$gutter/2;
-    font-weight: bold;
-    width: 100px;
-    border-radius: 20%;
-    margin: vars.$gutter auto vars.$gutter auto;
-  
-    &:hover {
-      background-color: vars.$alt-color;
-      color: black;
+    & textarea {
+      background-color: transparent;
+      color: vars.$secondary-color;
+      border: 2px solid vars.$secondary-color;
+      &:focus {
+        background-color: vars.$secondary-color;
+        color: vars.$main-color;
+        border: none;
+        border-radius: 2px;
+      }
     }
   }
 }
