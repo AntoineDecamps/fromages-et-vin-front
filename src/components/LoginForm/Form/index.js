@@ -40,7 +40,7 @@ const Form = ({
             onChange={changeField}
           />
           <Field
-            type="text"
+            type="password"
             name="password"
             value={password}
             placeholder="Mot de passe"
