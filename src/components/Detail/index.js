@@ -6,7 +6,7 @@ import { Button } from 'semantic-ui-react';
 
 import './styles.scss';
 
-const Detail = ({ name, picture, description, product, origin, milk }) => {
+const Detail = ({ name, picture, description, product, origin, milk, type }) => {
   let buttonToDisplay;
   if (product === 'fromage') {
     buttonToDisplay = () => (
@@ -28,6 +28,10 @@ const Detail = ({ name, picture, description, product, origin, milk }) => {
         <div className="detail__button">
           <Button circular icon="home" />
           <p className="detail__button__text">{origin}</p>
+        </div>
+        <div className="detail__button">
+          <Button circular icon="glass martini" />
+          <p className="detail__button__text">{type}</p>
         </div>
       </>
     );
@@ -54,6 +58,7 @@ Detail.propTypes = {
   product: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
   milk: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default Detail;

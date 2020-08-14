@@ -9,6 +9,7 @@ import {
 } from 'semantic-ui-react';
 import { redirectToWineSlug, buttonSize } from 'src/selectors';
 import PropTypes from 'prop-types';
+import * as Yup from 'yup';
 
 import './styles.scss';
 
@@ -22,6 +23,9 @@ const AddCheeseProposal = ({
   propositions,
   slug,
 }) => {
+  const SignupSchema = Yup.object({
+    userName: Yup.string().required('Veuillez indiquer votre notre prénom'),
+  });
   const initialValues = {
     userName: '',
     associatedProduct: 'Morbier',
@@ -67,20 +71,26 @@ const AddCheeseProposal = ({
             <Formik
               initialValues={initialValues}
               onSubmit={onSubmit}
+              validationSchema={SignupSchema}
             >
-              <Form className="addProposal__form" action="">
-                <label className="addProposal__label" htmlFor="userName"> Quel est votre prénom ?</label>
-                <Field
-                  type="text"
-                  id="userName"
-                  name="userName"
-                />
-                <label htmlFor="associatedProduct" className="addProposal__label">{`Quel ${product} souhaitez-vous proposer avec le ${name} ?`}</label>
-                <Field as="select" id="associatedProduct" name="associatedProduct">
-                  {selectList}
-                </Field>
-                <button className="proposal__button" type="submit">Envoyer</button>
-              </Form>
+              {({ errors, touched }) => (
+                <Form className="addProposal__form" action="">
+                  <label className="addProposal__label" htmlFor="userName"> Quel est votre prénom ?</label>
+                  <Field
+                    type="text"
+                    id="userName"
+                    name="userName"
+                  />
+                  {errors.userName && touched.userName ? (
+                    <div className="form__errors">{errors.userName}</div>
+                  ) : null}
+                  <label htmlFor="associatedProduct" className="addProposal__label">{`Quel ${product} souhaitez-vous proposer avec le ${name} ?`}</label>
+                  <Field as="select" id="associatedProduct" name="associatedProduct">
+                    {selectList}
+                  </Field>
+                  <button className="proposal__button" type="submit">Envoyer</button>
+                </Form>
+              )}
             </Formik>
           </Modal.Description>
         </Modal.Content>
