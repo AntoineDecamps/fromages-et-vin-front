@@ -51,7 +51,13 @@ WineDetail.propTypes = {
   description: PropTypes.string.isRequired,
   cheeses: PropTypes.array.isRequired,
   cheesesList: PropTypes.array.isRequired,
-  origin: PropTypes.array.isRequired,
+  origin: PropTypes.array,
+};
+
+WineDetail.defaultProps = {
+  origin: {
+    name: 'test',
+  },
 };
 
 export default WineDetail;
