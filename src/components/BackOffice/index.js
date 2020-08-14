@@ -12,7 +12,7 @@ import ModalPage from 'src/containers/ModalPage';
 import ModalWine from 'src/containers/ModalWine';
 import ModalUser from 'src/containers/ModalUser';
 import NoMatch from 'src/components/NoMatch';
-import AddCheese from 'src/components/BackOffice/AddCheese';
+import AddCheese from 'src/containers/AddCheese';
 import AddWine from 'src/components/BackOffice/AddWine';
 import AddUser from 'src/components/BackOffice/AddUser';
 import Users from 'src/containers/Users';
