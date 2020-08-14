@@ -17,6 +17,7 @@ const WineDetail = ({
   cheesesList,
   cheeses,
   origin,
+  type,
 }) => (
   <div className="wineDetail">
     <Header />
@@ -27,6 +28,7 @@ const WineDetail = ({
       description={description}
       product="vin"
       origin={origin}
+      type={type}
     />
     <Association
       associatedProduct={cheeses}
@@ -52,6 +54,7 @@ WineDetail.propTypes = {
   cheeses: PropTypes.array.isRequired,
   cheesesList: PropTypes.array.isRequired,
   origin: PropTypes.array.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default WineDetail;
