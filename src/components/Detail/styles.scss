@@ -87,7 +87,7 @@
     }
     &__product {
       width: 90%;
-      margin: vars.$gutter;
+      margin: vars.$gutter * 3;
       padding: vars.$gutter;
       font-size: 1.3em;
     }
