@@ -6,32 +6,54 @@ import { Button } from 'semantic-ui-react';
 
 import './styles.scss';
 
-const Detail = ({ name, picture, description }) => (
-  <div className="detail">
-    <div className="detail__picture">
-      <h2 className="detail__title">{name}</h2>
-      <img src={picture} alt="" className="detail__image animate__animated animate__fadeInLeft animate_delay-1s" />
-      <div className="detail__flex">
+const Detail = ({ name, picture, description, product, origin, milk }) => {
+  let buttonToDisplay;
+  if (product === 'fromage') {
+    buttonToDisplay = () => (
+      <>
         <div className="detail__button">
-          <Button circular icon="glass martini" />
-          <p className="detail__button__text">Année</p>
+          <Button circular icon="paw" />
+          <p className="detail__button__text">{milk}</p>
         </div>
         <div className="detail__button">
           <Button circular icon="home" />
-          <p className="detail__button__text">Origine</p>
+          <p className="detail__button__text">{origin}</p>
+        </div>
+      </>
+    );
+  }
+  else if (product === 'vin') {
+    buttonToDisplay = () => (
+      <>
+        <div className="detail__button">
+          <Button circular icon="home" />
+          <p className="detail__button__text">{origin}</p>
+        </div>
+      </>
+    );
+  }
+  return (
+    <div className="detail">
+      <div className="detail__picture">
+        <h2 className="detail__title">{name}</h2>
+        <img src={picture} alt="" className="detail__image animate__animated animate__fadeInLeft animate_delay-1s" />
+        <div className="detail__flex">
+          {buttonToDisplay()}
         </div>
       </div>
+      <div className="detail__product">
+        <p className="detail__description animate__animated animate__fadeInRight animate__delay-1s">{description}</p>
+      </div>
     </div>
-    <div className="detail__product">
-      <p className="detail__description animate__animated animate__fadeInRight animate__delay-1s">{description}</p>
-    </div>
-  </div>
-);
+)};
 
 Detail.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  product: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  milk: PropTypes.string.isRequired,
 };
 
 export default Detail;

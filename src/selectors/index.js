@@ -31,3 +31,11 @@ export const redirectToWines = () => {
 export const redirectToUsers = () => {
   document.location.href = '/admin/utilisateurs';
 };
+
+export const redirectToCheeseSlug = (slug) => {
+  document.location.href = `/produit/fromage/${slug}`;
+};
+
+export const redirectToWineSlug = (slug) => {
+  document.location.href = `/produit/vin/${slug}`;
+};

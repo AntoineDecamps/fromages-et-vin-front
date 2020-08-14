@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Toggler from 'src/containers/Toggler';
 import Description from 'src/components/Association/Description';
 import { Icon } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { getSlugFromName } from 'src/selectors';
 // import fromage from './fromagetest.jpeg';
 import './styles.scss';
 
@@ -13,9 +15,8 @@ const Association = ({
   associatedProduct,
   handleSlider,
   associations,
+  link,
 }) => {
-  console.log('blabla', associations);
-  console.log('slider', slider);
   let userProposals;
   if (associations.length > 0) {
     userProposals = () => (associations.map((association) => (
@@ -36,10 +37,6 @@ const Association = ({
     );
   }
 
-  // const noProposal = () => (
-  //   <p>Soyez le premier à suggérer un nouvel accord.</p>
-  // );
-
   return (
     <div className="flexAssociation">
       <div className="flexAssociation__icon1" onClick={handleSlider}>
@@ -49,7 +46,11 @@ const Association = ({
         <div className="association">
           <h2 className="association__title">Mariage proposé</h2>
           <div className="association__card">
-            <h3 className="association__card__title">{associatedProduct[0].name}</h3>
+            <h3 className="association__card__title">
+              <Link exact to={`/produit/${link}/${getSlugFromName(associatedProduct[0].name)}`}>
+                {associatedProduct[0].name}
+              </Link>
+            </h3>
             <img src={associatedProduct[0].picture} alt="" className="association__card__image" />
             <Toggler />
             {open && (
@@ -85,6 +86,7 @@ Association.propTypes = {
   handleSlider: PropTypes.func.isRequired,
   length: PropTypes.number,
   associations: PropTypes.array.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 Association.defaultProps = {

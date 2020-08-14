@@ -2,6 +2,7 @@ import { SAVE_WINES } from 'src/actions/wine';
 
 export const initialState = {
   winesList: [],
+  wineLoading: true,
 };
 
 const cheeses = (state = initialState, action = {}) => {
@@ -10,6 +11,7 @@ const cheeses = (state = initialState, action = {}) => {
       return {
         ...state,
         winesList: action.wines,
+        wineLoading: false,
       };
     default:
       return state;

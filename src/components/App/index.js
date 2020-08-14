@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-boolean-value */
 // == Import npm
 import React, { useEffect } from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom';
-
+import { Route, Switch } from 'react-router-dom';
 import HomePage from 'src/components/HomePage';
 import List from 'src/components/List';
 import CheeseDetail from 'src/containers/CheeseDetail';
@@ -10,7 +9,7 @@ import WineDetail from 'src/containers/WineDetail';
 import LoginForm from 'src/components/LoginForm';
 import BackOffice from 'src/components/BackOffice';
 import NoMatch from 'src/components/NoMatch';
-
+import { Dimmer, Loader } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 // == Import
@@ -26,6 +25,8 @@ const App = ({
   checkIsLogged,
   getUsers,
   getProposals,
+  cheeseLoading,
+  wineLoading,
 }) => {
   useEffect(() => {
     getCheeses();
@@ -60,18 +61,36 @@ const App = ({
           exact
           path="/produit/fromage/:slug"
           component={({ match }) => (
-            <CheeseDetail
-              slug={match.params.slug}
-            />
+            <>
+              {cheeseLoading && (
+                <Dimmer active>
+                  <Loader size="large">Loading</Loader>
+                </Dimmer>
+              )}
+              {!cheeseLoading && (
+                <CheeseDetail
+                  slug={match.params.slug}
+                />
+              )}
+            </>
           )}
         />
         <Route
           exact
           path="/produit/vin/:slug"
           component={({ match }) => (
-            <WineDetail
-              slug={match.params.slug}
-            />
+            <>
+              {wineLoading && (
+                <Dimmer active>
+                  <Loader size="large">Loading</Loader>
+                </Dimmer>
+              )}
+              {!wineLoading && (
+                <WineDetail
+                  slug={match.params.slug}
+                />
+              )}
+            </>
           )}
         />
         <Route exact path="/connexion">
@@ -97,6 +116,8 @@ App.propTypes = {
   wines: PropTypes.array.isRequired,
   checkIsLogged: PropTypes.func.isRequired,
   getProposals: PropTypes.func.isRequired,
+  cheeseLoading: PropTypes.bool.isRequired,
+  wineLoading: PropTypes.bool.isRequired,
 };
 
 // == Export
