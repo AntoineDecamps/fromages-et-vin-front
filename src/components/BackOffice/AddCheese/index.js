@@ -46,11 +46,11 @@ const AddCheese = ({ wines }) => {
         picture: values.picture,
         description: values.description,
         origin: { name: values.origin },
-        wines: {
+        wines: [{
           name: values.wine,
           picture: values.winePicture,
           description: values.wineDescription,
-        },
+        }],
       }, {
         headers: {
           'X-Auth-Token': token,
