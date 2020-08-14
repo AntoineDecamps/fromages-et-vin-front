@@ -27,7 +27,7 @@ const ModalUser = ({
 }) => {
   const validationSchema = Yup.object({
     name: Yup.string().required('Veuillez indiquer un nom pour cet utilisateur'),
-    roles: Yup.string().matches('^ROLE_ADMIN$|^ROLE_SUP_ADMIN$', 'Veuillez indiquer un rôle qui existe : ROLE_ADMIN ou ROLE_SUP_ADMIN').required('Veuillez indiquer un rôle'),
+    roles: Yup.string().matches('^ROLE_ADMIN$|^ROLE_SUPER_ADMIN$', 'Veuillez indiquer un rôle qui existe : ROLE_ADMIN ou ROLE_SUPER_ADMIN').required('Veuillez indiquer un rôle'),
     email: Yup.string().email('Format d\'email invalide !').required('Veuillez indiquer un email'),
     password: Yup.string().required('Veuillez indiquer un mot de passe'),
   });
