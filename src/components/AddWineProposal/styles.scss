@@ -3,20 +3,30 @@
 .addProposal {
   display: flex;
   justify-content: center;
-  margin-top: vars.$gutter*2;
+  margin-top: vars.$gutter * 2;
   &__form {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 100%;
+    & input, select {
+      padding: vars.$gutter / 3;
+      margin-bottom: vars.$gutter;
+      border: 2px solid vars.$secondary-color;
+      border-radius: 2px;
+      background-color: vars.$main-color;
+      color: vars.$secondary-color;
+      &:focus {
+        background-color: vars.$secondary-color;
+        color: vars.$main-color;
+      }
+    }
   }
   &__select {
     margin-top: vars.$gutter/2;
   }
   &__label {
-    margin-top: vars.$gutter;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
+    padding-bottom: vars.$gutter;
+    font-size: 1.1em;
   }
 }
 
@@ -38,6 +48,89 @@
   }
 }
 
-.description {
-  margin-top: 0;
+.ui.button {
+  margin: 0;
+}
+
+.ui.modal, .ui.modal>.header, .ui.modal>.content, .ui.modal>.actions {
+  background: vars.$main-color;
+  color: vars.$secondary-color;
+}
+
+.ui.modal {
+  border-radius: 3px;
+}
+
+.ui.image {
+  border-bottom: 3px dashed vars.$alt-color;
+}
+
+.ui.modal>.actions {
+  text-align: center;
+}
+
+@media (min-width: 425px) {
+  .addProposal {
+    &__form {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .addProposal {
+    &__form {
+      width: 70%;
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .addProposal {
+    &__form {
+      margin: auto;
+      display: flex;
+    }
+  }
+
+  .ui.modal>.content>.description {
+    border-left: 3px solid vars.$alt-color;
+  }
+
+  .ui.modal>.content>.image+.description {
+    padding: 0;
+  }
+
+  .ui.image {
+    border-bottom: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-right: vars.$gutter * 2;
+    & img {
+      width: 100%;
+      margin-right: vars.$gutter * 2;
+    }
+  }
+
+  .ui.modal>.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ui.modal>.actions {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1024px) {
+  .addProposal {
+    &__form {
+      width: 60%;
+    }
+  }
 }

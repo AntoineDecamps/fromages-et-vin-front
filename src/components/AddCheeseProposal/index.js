@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
@@ -52,7 +53,7 @@ const AddCheeseProposal = ({
         onClose={() => closeModal()}
         onOpen={() => openModal()}
         open={open}
-        trigger={<Button color="yellow">Faire une proposition</Button>}
+        trigger={<Button color="yellow" size="big">Faire une proposition</Button>}
       >
         <Modal.Header>Proposez une association</Modal.Header>
         <Modal.Content image>

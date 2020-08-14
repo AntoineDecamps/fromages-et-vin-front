@@ -1,9 +1,19 @@
 @use 'src/styles/vars';
 
-.description {
+.productDescription {
   padding: vars.$gutter * 2 0;
   &__content {
     text-align: center;
     line-height: 1.4em;
+  }
+}
+
+@media (min-width: 768px) {
+  .productDescription {
+    padding: vars.$gutter * 3 0;
+    &__content {
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
   }
 }

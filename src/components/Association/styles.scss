@@ -40,6 +40,8 @@
     &__image {
       width: 100%;
       margin: vars.$gutter * 2 0;
+      border-radius: 2px;
+      box-shadow: 1px 1px 10px black;
     }
   }
 }
@@ -69,31 +71,64 @@
 @media (min-width:768px) {
   .association {
     width: 70%;
+    margin: auto vars.$gutter;
+    &__title {
+      font-size: 1.5em;
+    }
+  }
+
+  .userProposal {
+    padding: vars.$gutter * 2;
+    &__title {
+      font-size: 1.2em;
+      padding-bottom: vars.$gutter * 2;
+    }
+    &__propositions {
+      font-size: 1.2em;
+    }
+    &__detail {
+      padding: vars.$gutter * 1.5 0;
+    }
+    &__name {
+      padding-bottom: vars.$gutter;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .association {
+    width: 75%;
+    &__card {
+      padding: vars.$gutter * 3;
+    }
+  }
+
+  .userProposal {
+    &__detail {
+      padding: vars.$gutter * 2 0;
+    }
   }
 }
 
 @media (min-width: 1200px) {
   .association {
-    
-    width: 400px;
-    // margin-left: 28rem;
-    // margin-right: -10rem;
+    width: 60%;
+    margin-top: vars.$gutter;
+    &__title {
+      font-size: 1.8em;
+    }
+    &__card {
+      padding: vars.$gutter * 4;
+      font-size: 1.2em;
+    }
   }
-}
 
-
-@media (min-width: 1600px) {
-  .association {
-    width: 400px;
-    // max-width: 1200px;
-    // margin-right: -5rem;
-  }
-}
-
-@media (min-width: 2000px) {
-  .association {
-    width: 400px;
-    // max-width: 1200px;
-    // margin-right: 5rem;
+  .userProposal {
+    &__title {
+      font-size: 1.4em;
+    }
+    &__detail {
+      font-size: 1.2em;
+    }
   }
 }
