@@ -39,3 +39,15 @@ export const redirectToCheeseSlug = (slug) => {
 export const redirectToWineSlug = (slug) => {
   document.location.href = `/produit/vin/${slug}`;
 };
+
+export const arrowSize = () => {
+  const width = window.innerWidth;
+  const size = width < 768 ? 'large' : 'huge';
+  return size;
+};
+
+export const buttonSize = () => {
+  const width = window.innerWidth;
+  const size = width < 768 ? 'medium' : 'huge';
+  return size;
+};

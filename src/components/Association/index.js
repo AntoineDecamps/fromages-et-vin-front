@@ -5,7 +5,7 @@ import Toggler from 'src/containers/Toggler';
 import Description from 'src/components/Association/Description';
 import { Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { getSlugFromName } from 'src/selectors';
+import { getSlugFromName, arrowSize } from 'src/selectors';
 // import fromage from './fromagetest.jpeg';
 import './styles.scss';
 
@@ -40,14 +40,18 @@ const Association = ({
   return (
     <div className="flexAssociation">
       <div className="flexAssociation__icon1" onClick={handleSlider}>
-        <Icon color="yellow" name="angle left" size="big" />
+        <Icon color="yellow" name="angle left" size={arrowSize()} />
       </div>
       {!slider && (
         <div className="association">
           <h2 className="association__title">Mariage proposé</h2>
           <div className="association__card">
             <h3 className="association__card__title">
-              <Link exact to={`/produit/${link}/${getSlugFromName(associatedProduct[0].name)}`}>
+              <Link
+                exact
+                to={`/produit/${link}/${getSlugFromName(associatedProduct[0].name)}`}
+                className="association__link"
+              >
                 {associatedProduct[0].name}
               </Link>
             </h3>
@@ -73,7 +77,7 @@ const Association = ({
         </div>
       )}
       <div className="flexAssociation__icon2" onClick={handleSlider}>
-        <Icon color="yellow" name="angle right" size="big" />
+        <Icon color="yellow" name="angle right" size={arrowSize()} />
       </div>
     </div>
   );

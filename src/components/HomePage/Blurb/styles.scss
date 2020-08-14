@@ -92,6 +92,12 @@ div.opened {
   transition: 0.5s;
 }
 
+@media (max-height: 667px) {
+  div.opened {
+    height: 70vh;
+  }
+}
+
 @media (min-width: 1024px) {
   .blurb {
     display: flex;

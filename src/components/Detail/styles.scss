@@ -59,7 +59,7 @@
       line-height: 1.5em;
     }
     &__image {
-      width: 75%;
+      width: 70%;
     }
   }
 }
@@ -67,7 +67,7 @@
 @media (min-width: 1024px) {
   .detail {
     &__image {
-      width: 80%;
+      width: 75%;
     }
     &__product {
       width: 80%;
@@ -89,10 +89,10 @@
       width: 90%;
       margin: vars.$gutter;
       padding: vars.$gutter;
-      font-size: 1.2em;
+      font-size: 1.4em;
     }
     &__image {
-      width: 90%;
+      width: 70%;
     }
   }
 }

@@ -26,6 +26,11 @@
     padding: vars.$gutter * 2 0;
     font-size: 1.2em;
   }
+  &__link {
+    &:hover {
+      color: vars.$alt-color;
+    }
+  }
   &__card {
     margin: auto;
     border: 2px solid white;
@@ -97,7 +102,7 @@
 
 @media (min-width: 1024px) {
   .association {
-    width: 75%;
+    width: 70%;
     &__card {
       padding: vars.$gutter * 3;
     }
@@ -112,23 +117,24 @@
 
 @media (min-width: 1200px) {
   .association {
-    width: 60%;
+    width: 50%;
     margin-top: vars.$gutter;
     &__title {
       font-size: 1.8em;
     }
     &__card {
       padding: vars.$gutter * 4;
-      font-size: 1.2em;
+      font-size: 1.3em;
     }
   }
 
   .userProposal {
+    width: 70%;
     &__title {
-      font-size: 1.4em;
+      font-size: 1.3em;
     }
     &__detail {
-      font-size: 1.2em;
+      font-size: 1em;
     }
   }
 }

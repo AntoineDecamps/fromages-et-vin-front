@@ -7,7 +7,7 @@ import {
   Image,
   Modal,
 } from 'semantic-ui-react';
-import { redirectToWineSlug } from 'src/selectors';
+import { redirectToWineSlug, buttonSize } from 'src/selectors';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
@@ -58,7 +58,7 @@ const AddCheeseProposal = ({
         onClose={() => closeModal()}
         onOpen={() => openModal()}
         open={open}
-        trigger={<Button color="yellow" size="big">Faire une proposition</Button>}
+        trigger={<Button color="yellow" size={buttonSize()}>Faire une proposition</Button>}
       >
         <Modal.Header>Proposez une association</Modal.Header>
         <Modal.Content image>
