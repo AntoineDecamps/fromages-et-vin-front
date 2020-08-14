@@ -11,11 +11,15 @@
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid vars.$alt-color;
     padding: vars.$gutter/2;
+    height: 100%;
     font-weight: bold;
     &:hover {
       background-color: vars.$alt-color;
       color: black;
     }
+  }
+  &__title {
+    font-size: 1.5em;
   }
   &__table {
     margin-top: vars.$gutter*2;
@@ -26,7 +30,8 @@
       color: vars.$alt-color;
       background-color: rgba(0, 0, 0, 0);
       border: 2px solid vars.$alt-color;
-      padding: vars.$gutter/2;
+      padding: vars.$gutter / 2;
+      height: 100%;
       font-weight: bold;
       &:hover {
         background-color: vars.$alt-color;
@@ -35,13 +40,24 @@
     }
   }
   &__table th {
-    background-color: grey;
+    background-color: vars.$main-color;
+    color: vars.$alt-color;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: uppercase;
     text-align: left;
-    padding: vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2;
+    padding: vars.$gutter/2;
     border: 1px solid vars.$alt-color;
   }
   &__table td {
-    padding: vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2;
+    padding: vars.$gutter/2;
     border: 1px solid vars.$alt-color;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    vertical-align: middle;
+    text-align: center;
+    &:nth-child(3) {
+      text-align: left;
+    }
   }
 }

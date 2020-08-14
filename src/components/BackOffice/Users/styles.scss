@@ -35,13 +35,24 @@
     }
   }
   &__table th {
-    background-color: grey;
+    background-color: vars.$main-color;
+    color: vars.$alt-color;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: uppercase;
     text-align: left;
-    padding: vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2;
+    padding: vars.$gutter/2;
     border: 1px solid vars.$alt-color;
   }
   &__table td {
-    padding: vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2 vars.$gutter/2;
+    padding: vars.$gutter/2;
     border: 1px solid vars.$alt-color;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    vertical-align: middle;
+    text-align: left;
+    &:last-child {
+      text-align: center;
+    }
   }
 }

@@ -1,26 +1,27 @@
 @use 'src/styles/vars';
 
-.modal {
-  margin-top: -2rem;
-  border:2px solid;
-  width: 450px;
-  &__title {
-    border: 1px solid black;
-    padding: vars.$gutter/2;
-    text-align: center;
-    font-weight: bold;
-    font-size: vars.$gutter;
-    text-transform: uppercase;
-    background-color: vars.$alt-color;
-  }
-  &__content {
-    border: 1px solid black;
-    padding-left: vars.$gutter/3;
-    padding-top: vars.$gutter;
-    padding-bottom: vars.$gutter;
-    vertical-align: middle;
+// .modal {
+//   &__title {
+//     border: 1px solid black;
+//     padding: vars.$gutter/2;
+//     text-align: center;
+//     font-weight: bold;
+//     font-size: vars.$gutter;
+//     text-transform: uppercase;
+//     background-color: vars.$alt-color;
+//   }
+//   &__content {
+//     border: 1px solid black;
+//     padding-left: vars.$gutter/3;
+//     padding-top: vars.$gutter;
+//     padding-bottom: vars.$gutter;
+//     vertical-align: middle;
 
-  }
+//   }
+// }
+
+.rounded img {
+  width: 100%;
 }
 
 .editWine {

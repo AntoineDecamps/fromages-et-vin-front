@@ -7,7 +7,7 @@ import './styles.scss';
 
 const Produits = ({ products, name, url }) => {
   const tableInformation = products.map((product) => (
-    <tr>
+    <tr key={product.url}>
       <td>{product.name}</td>
       <td>{product.id}</td>
       <td>{product.description}</td>
@@ -29,7 +29,7 @@ const Produits = ({ products, name, url }) => {
       </div>
       <h2 className="produits__title">{`Liste des ${name} en ligne`}</h2>
       <table className="produits__table">
-        <tr>
+        <tr key="array">
           <th>Nom</th>
           <th>ID</th>
           <th>Description</th>
@@ -41,6 +41,10 @@ const Produits = ({ products, name, url }) => {
   );
 };
 
-Produits.propTypes = {};
+Produits.propTypes = {
+  products: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
 
 export default Produits;

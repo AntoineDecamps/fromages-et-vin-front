@@ -79,7 +79,7 @@ const ModalPage = ({
           {name}
         </Modal.Header>
         <Modal.Content image>
-          <Image size="medium" rounded src={picture} verticalAlign="middle" wrapped />
+          <Image size="medium" className="modalPage__image" rounded src={picture} verticalAlign="middle" wrapped />
           <Modal.Description>
             {!edit && (
               <div className="modal">

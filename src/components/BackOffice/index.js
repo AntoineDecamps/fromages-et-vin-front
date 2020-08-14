@@ -5,9 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import BackHeader from 'src/components/BackOffice/BackHeader';
 import BackHomePage from 'src/components/BackOffice/BackHomePage';
 import SideBar from 'src/containers/SideBar';
-// import Add from 'src/components/BackOffice/Add';
 import Produits from 'src/containers/Produits';
-// import Users from 'src/components/BackOffice/Users';
 import ModalPage from 'src/containers/ModalPage';
 import ModalWine from 'src/containers/ModalWine';
 import ModalUser from 'src/containers/ModalUser';
@@ -16,7 +14,6 @@ import AddCheese from 'src/components/BackOffice/AddCheese';
 import AddWine from 'src/components/BackOffice/AddWine';
 import AddUser from 'src/components/BackOffice/AddUser';
 import Users from 'src/containers/Users';
-import DeleteModal from 'src/containers/DeleteModal';
 
 import './styles.scss';
 
@@ -117,6 +114,9 @@ const BackOffice = ({ cheeses, wines }) => (
   </div>
 );
 
-BackOffice.propTypes = {};
+BackOffice.propTypes = {
+  cheeses: PropTypes.array.isRequired,
+  wines: PropTypes.array.isRequired,
+};
 
 export default BackOffice;

@@ -2,42 +2,17 @@
 
 .backOffice {
   color: white;
-  height: 100vh;
+  height: 100%;
   padding-right: 1rem;
 }
 .sideBar {
   position: fixed;
-  left: 10%;
-  width: 225px;
+  width: 20%;
   min-height: 100vh;
   top: 0;
   background-color: vars.$alt-color;
 }
 
-.backHeader {
-  margin-left: 250px;
-}
-
-.backHomePage {
-  margin-left: 250px;
-}
-
-.produits {
-  margin-left: 250px;
-}
-
-.users {
-  margin-left: 250px;
-}
-
-.addCheese {
-  margin-left: 250px;
-}
-
-.addWine {
-  margin-left: 250px;
-}
-
-.addUser {
-  margin-left: 250px;
+.backHeader, .backHomePage, .produits, .users, .addCheese, .addWine, .addUser {
+  margin-left: 30%;
 }

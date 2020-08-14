@@ -9,7 +9,7 @@ const SideBar = ({ handleLogout, pseudo }) => (
   <div className="sideBar">
     <div className="sideBar__top">
       <div className="sideBar__top__icon">
-        <Icon circular inverted name="users" />
+        <Icon circular inverted name="users" size="big" />
       </div>
       <div className="sideBar__top__information">
         <p className="sideBar__text">{`Bonjour ${pseudo} !`}</p>

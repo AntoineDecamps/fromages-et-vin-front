@@ -5,6 +5,10 @@
   &__text {
     margin-bottom: 1rem;
   }
+  &__italic {
+    padding-top: vars.$gutter;
+    font-style: italic;
+  }
   &__button {
     color: vars.$alt-color;
     background-color: rgba(0, 0, 0, 0);

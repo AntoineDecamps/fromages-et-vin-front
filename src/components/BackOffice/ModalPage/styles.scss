@@ -1,11 +1,12 @@
 @use 'src/styles/vars';
 
 .modal {
-  margin-top: -2rem;
-  border:2px solid;
+  margin: auto;
+  border-left: none;
+  border-right: 2px solid vars.$alt-color;
+  border-bottom: 2px solid vars.$alt-color;
   width: 450px;
   &__title {
-    border: 1px solid black;
     padding: vars.$gutter/2;
     text-align: center;
     font-weight: bold;
@@ -14,13 +15,14 @@
     background-color: vars.$alt-color;
   }
   &__content {
-    border: 1px solid black;
-    padding-left: vars.$gutter/3;
-    padding-top: vars.$gutter;
-    padding-bottom: vars.$gutter;
+    padding: vars.$gutter;
     vertical-align: middle;
-
   }
+}
+
+.modalPage__image {
+  width: 100%;
+  border: 2px solid vars.$alt-color;
 }
 
 .editCheese {
