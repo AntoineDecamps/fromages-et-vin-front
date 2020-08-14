@@ -8,14 +8,14 @@
   }
   &__button {
     color: vars.$alt-color;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: vars.$main-color;
     border: 2px solid vars.$alt-color;
     padding: vars.$gutter/2;
     height: 100%;
     font-weight: bold;
     &:hover {
       background-color: vars.$alt-color;
-      color: black;
+      color: vars.$main-color;
     }
   }
   &__title {
@@ -28,14 +28,14 @@
     width: 100%;
     &__button {
       color: vars.$alt-color;
-      background-color: rgba(0, 0, 0, 0);
+      background-color: vars.$main-color;
       border: 2px solid vars.$alt-color;
       padding: vars.$gutter / 2;
       height: 100%;
       font-weight: bold;
       &:hover {
         background-color: vars.$alt-color;
-        color: black;
+        color: vars.$main-color;
       }
     }
   }
