@@ -1,51 +1,74 @@
 @use 'src/styles/vars';
 
 .addCheese__title {
-  font-size: vars.$gutter*1.5;
-  padding-top: vars.$gutter*2;
+  font-size: 1.5em;
+  padding: vars.$gutter * 2 0;
   color: vars.$alt-color;
 }
 .add {
   &__form {
     display: flex;
     flex-direction: column;
+    padding-bottom: vars.$gutter * 2;
   }
   &__label {
     font-weight: bold;
     font-size: vars.$gutter;
-    margin-top: vars.$gutter/2;
+    margin: vars.$gutter 0;
+    width: 90%;
   }
   &__input {
     display: block;
     width: 100%;
-    margin-top: vars.$gutter/2;
-    margin-bottom: vars.$gutter/2;
+    margin: vars.$gutter / 2 0;
+    padding: vars.$gutter / 2;
+    border: 2px solid vars.$secondary-color;
+    background-color: transparent;
+    color: vars.$secondary-color;
+    &:focus {
+      background-color: vars.$secondary-color;
+      color: vars.$main-color;
+    }
+    &::placeholder {
+      color: vars.$secondary-color;
+      opacity: 0.8;
+    }
     &__description {
-      height: 100px;
-      margin-top: vars.$gutter/2;
+      height: vars.$gutter * 7;
+      padding: vars.$gutter / 2;
+      margin-top: vars.$gutter / 2;
       display: block;
       width: 100%;
+      border: 2px solid vars.$secondary-color;
+      background-color: transparent;
+      color: vars.$secondary-color;
+      &:focus {
+        background-color: vars.$secondary-color;
+        color: vars.$main-color;
+      }
+      &::placeholder {
+        color: vars.$secondary-color;
+        opacity: 0.8;
+      }
     }
   }
   &__button {
     color: vars.$alt-color;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: vars.$main-color;
     border: 2px solid vars.$alt-color;
-    padding: vars.$gutter/2;
+    padding: vars.$gutter / 2;
     font-weight: bold;
-    width: 100px;
-    border-radius: 20%;
-    margin: vars.$gutter auto 0 auto;
-  
+    border-radius: 2px;
+    margin: vars.$gutter auto;
     &:hover {
       background-color: vars.$alt-color;
-      color: black;
+      color: vars.$main-color;
     }
   }
 }
 
 .form__errors {
   color: red;
-  font-weight: normal;
-  margin-top: vars.$gutter/2;
+  font-size: 0.9em;
+  margin-top: vars.$gutter / 2;
 }
