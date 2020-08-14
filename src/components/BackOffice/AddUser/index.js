@@ -70,7 +70,7 @@ const AddCheese = () => {
           {formik.touched.roles && formik.errors.roles ? <div className="form__errors">{formik.errors.roles}</div> : null}
         </label>
         <label htmlFor="password" className="add__label">Mot-de-passe
-          <input type="password" id="password" name="password" className="add__input__password" onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
+          <input type="password" id="password" name="password" placeholder="Choisissez un mot de passe" className="add__input__password" onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
           {formik.touched.password && formik.errors.password ? <div className="form__errors">{formik.errors.password}</div> : null}
         </label>
 

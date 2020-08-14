@@ -71,7 +71,7 @@ const AddCheese = () => {
           {formik.touched.image && formik.errors.image ? <div className="form__errors">{formik.errors.image}</div> : null}
         </label>
         <label htmlFor="description" className="add__label">Description
-          <textarea id="description" name="description" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} onBlur={formik.handleBlur} />
+          <textarea id="description" name="description" placeholder="Décrivez le produit" className="add__input__description" onChange={formik.handleChange} value={formik.values.description} onBlur={formik.handleBlur} />
           {formik.touched.description && formik.errors.description ? <div className="form__errors">{formik.errors.description}</div> : null}
         </label>
 
