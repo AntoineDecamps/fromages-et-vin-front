@@ -6,18 +6,26 @@ import { Button } from 'semantic-ui-react';
 
 import './styles.scss';
 
-const Detail = ({ name, picture, description, product, origin, milk, type }) => {
+const Detail = ({
+  name,
+  picture,
+  description,
+  product,
+  origin,
+  milk,
+  type,
+}) => {
   let buttonToDisplay;
   if (product === 'fromage') {
     buttonToDisplay = () => (
       <>
         <div className="detail__button">
-          <Button circular icon="paw" />
-          <p className="detail__button__text">{milk}</p>
-        </div>
-        <div className="detail__button">
           <Button circular icon="home" />
           <p className="detail__button__text">{origin}</p>
+        </div>
+        <div className="detail__button">
+          <Button circular icon="tint" />
+          <p className="detail__button__text">{milk}</p>
         </div>
       </>
     );
