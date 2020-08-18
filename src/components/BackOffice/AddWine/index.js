@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import { redirectToWines } from 'src/selectors';
 import * as Yup from 'yup';
+import swal from 'sweetalert';
 import './styles.scss';
 
 const AddWine = () => {
@@ -48,8 +49,12 @@ const AddWine = () => {
         .then(() => {
           redirectToWines();
         })
+        .then(() => {
+          swal('Nouveau vin ajouté !', '', 'success');
+        })
         .catch((error) => {
           console.log(error);
+          swal('Action non autorisée !', 'Vous n\'avez pas les droits pour faire ceci !', 'error');
         });
     },
     validationSchema,

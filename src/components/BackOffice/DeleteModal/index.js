@@ -3,10 +3,11 @@ import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import swal from 'sweetalert';
 
 import './styles.scss';
 
-const DeleteModal = ({ open, openDelete, closeDelete, id, apiURL, redirect }) => {
+const DeleteModal = ({ open, openDelete, closeDelete, id, apiURL, redirect, getCheeses, getWines, getUsers }) => {
   const handleDelete = () => {
     const token = localStorage.getItem('token');
     axios.delete(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/${apiURL}/delete/${id}`, {
@@ -18,8 +19,23 @@ const DeleteModal = ({ open, openDelete, closeDelete, id, apiURL, redirect }) =>
       .then((response) => {
         console.log(response);
       })
+      .then(() => {
+        if (apiURL === 'cheese') {
+          getCheeses();
+        }
+        else if (apiURL === 'wine') {
+          getWines();
+        }
+        else if (apiURL === 'user') {
+          getUsers();
+        }
+      })
+      .then(() => {
+        swal('Suppression enregistrée !', '', 'success');
+      })
       .catch((error) => {
         console.log(error);
+        swal('Action non autorisée !', 'Vous n\'avez pas les droits pour faire ceci !', 'error');
       });
   };
   return (

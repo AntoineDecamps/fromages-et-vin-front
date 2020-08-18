@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { redirectToWines } from 'src/selectors';
 import * as Yup from 'yup';
+import swal from 'sweetalert';
 import './styles.scss';
 
 const ModalWine = ({
@@ -58,8 +59,12 @@ const ModalWine = ({
         .then(() => {
           redirectToWines();
         })
+        .then(() => {
+          swal('Modification prise en compte !', '', 'success');
+        })
         .catch((error) => {
           console.log(error);
+          swal('Action non autorisée !', 'Vous n\'avez pas les droits pour faire ceci !', 'error');
         });
     },
     validationSchema,

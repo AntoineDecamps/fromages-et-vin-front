@@ -71,6 +71,7 @@
     "semantic-ui-react": "^1.1.0",
     "slugify": "^1.4.5",
     "styled-components": "*",
+    "sweetalert": "^2.1.2",
     "yup": "^0.29.3"
   }
 }
