@@ -64,20 +64,20 @@ const MainHeader = ({ isLogged, handleLogout, pseudo }) => {
             Accueil
           </NavLink>
           <NavLink
-            to="/vins"
-            className="mainHeader__link wine"
-            exact
-            onMouseOver={onMouseOver}
-          >
-            Vins
-          </NavLink>
-          <NavLink
             to="/fromages"
             className="mainHeader__link cheese"
             exact
             onMouseOver={onMouseOver}
           >
             Fromages
+          </NavLink>
+          <NavLink
+            to="/vins"
+            className="mainHeader__link wine"
+            exact
+            onMouseOver={onMouseOver}
+          >
+            Vins
           </NavLink>
         </nav>
       </div>

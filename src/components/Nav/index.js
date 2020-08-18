@@ -14,20 +14,20 @@ const Nav = () => (
       Accueil
     </NavLink>
     <NavLink
-      to="/vins"
-      className="menu__link"
-      activeClassName="menu__link--active"
-      exact
-    >
-      Vins
-    </NavLink>
-    <NavLink
       to="/fromages"
       className="menu__link"
       activeClassName="menu__link--active"
       exact
     >
       Fromages
+    </NavLink>
+    <NavLink
+      to="/vins"
+      className="menu__link"
+      activeClassName="menu__link--active"
+      exact
+    >
+      Vins
     </NavLink>
   </nav>
 );
