@@ -5,6 +5,7 @@ import axios from 'axios';
 import { redirectToCheeses } from 'src/selectors';
 import './styles.scss';
 import * as Yup from 'yup';
+import swal from 'sweetalert';
 
 const AddCheese = () => {
   // formik hook takes an object as parameter and return an object that we stock in a variable
@@ -47,8 +48,12 @@ const AddCheese = () => {
         .then(() => {
           redirectToCheeses();
         })
+        .then(() => {
+          swal('Nouveau fromage ajouté !', '', 'success');
+        })
         .catch((error) => {
           console.log(error);
+          swal('Action non autorisée !', 'Vous n\'avez pas les droits pour faire ceci !', 'error');
         });
     },
     validationSchema,

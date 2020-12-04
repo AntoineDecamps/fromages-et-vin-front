@@ -6,7 +6,7 @@ import './styles.scss';
 
 const Description = ({ description }) => (
   <div className="productDescription">
-    <p className="productDescription__content animate__animated animate__slideInRight">{description}
+    <p className="productDescription__content animate__animated animate__fadeInDown">{description}
     </p>
   </div>
 );

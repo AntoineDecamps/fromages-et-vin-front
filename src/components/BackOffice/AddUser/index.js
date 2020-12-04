@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import { redirectToUsers } from 'src/selectors';
 import * as Yup from 'yup';
 import './styles.scss';
+import swal from 'sweetalert';
 
 const AddCheese = () => {
   // formik hook takes an object as parameter and return an object that we stock in a variable
@@ -46,8 +47,12 @@ const AddCheese = () => {
         .then(() => {
           redirectToUsers();
         })
+        .then(() => {
+          swal('Nouvel utilisateur ajouté !', '', 'success');
+        })
         .catch((error) => {
           console.log(error);
+          swal('Action non autorisée !', 'Vous n\'avez pas les droits pour faire ceci !', 'error');
         });
     },
     validationSchema,

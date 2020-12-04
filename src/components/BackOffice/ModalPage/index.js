@@ -7,6 +7,7 @@ import { redirectToCheeses } from 'src/selectors';
 import DeleteModal from 'src/containers/DeleteModal';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
+import swal from 'sweetalert';
 
 import './styles.scss';
 
@@ -59,10 +60,11 @@ const ModalPage = ({
           redirectToCheeses();
         })
         .then(() => {
-          window.alert('Modification ajoutée !');
+          swal('Modification prise en compte !', '', 'success');
         })
         .catch((error) => {
           console.log(error);
+          swal('Action non autorisée !', 'Vous n\'avez pas les droits pour faire ceci !', 'error');
         });
     },
     validationSchema,
