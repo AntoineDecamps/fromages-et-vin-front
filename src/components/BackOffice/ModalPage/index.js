@@ -42,7 +42,7 @@ const ModalPage = ({
     },
     onSubmit: (values) => {
       const token = localStorage.getItem('token');
-      axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/edit/${id}`, {
+      axios.put(`http://34.203.201.178/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/edit/${id}`, {
         name: values.name,
         milk: values.milk,
         picture: values.image,

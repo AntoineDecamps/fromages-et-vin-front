@@ -29,7 +29,7 @@ const AddCheese = () => {
     },
     onSubmit: (values) => {
       const token = localStorage.getItem('token');
-      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/add', {
+      axios.post('http://34.203.201.178/fromages-et-vin/Cheese-and-Wine/public/api/back/user/add', {
         name: values.name,
         email: values.email,
         roles: [values.roles],

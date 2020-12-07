@@ -58,7 +58,7 @@ export default (store) => (next) => (action) => {
     //   console.log('MIDDLEWARE CHECKISLOGGED');
     //   const token = localStorage.getItem('token');
     //   console.log('TOKEN', token);
-    //   axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/islogged', {
+    //   axios.post('http://34.203.201.178/fromages-et-vin/Cheese-and-Wine/public/api/islogged', {
     //     token,
     //   }, { headers: { 'Content-Type': 'application/json' } })
     //     .then((response) => {

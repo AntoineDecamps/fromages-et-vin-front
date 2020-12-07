@@ -30,7 +30,7 @@ const AddCheese = () => {
     // eslint-disable-next-line max-len
     onSubmit: (values) => {
       const token = localStorage.getItem('token');
-      axios.post('http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/add',
+      axios.post('http://34.203.201.178/fromages-et-vin/Cheese-and-Wine/public/api/back/cheese/add',
         {
           name: values.name,
           milk: values.milk,

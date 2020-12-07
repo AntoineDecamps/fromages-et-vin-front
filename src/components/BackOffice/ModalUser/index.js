@@ -41,7 +41,7 @@ const ModalUser = ({
     },
     onSubmit: (values) => {
       const token = localStorage.getItem('token');
-      axios.put(`http://54.152.134.184/fromages-et-vin/Cheese-and-Wine/public/api/back/user/edit/${id}`, {
+      axios.put(`http://34.203.201.178/fromages-et-vin/Cheese-and-Wine/public/api/back/user/edit/${id}`, {
         name: values.name,
         email: values.email,
         roles: [values.roles],
