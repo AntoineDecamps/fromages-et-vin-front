@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Field from './Field';
+import NoPassword from './NoPassword';
 
 import avatar from './avatar-alt.png';
 
@@ -56,6 +57,7 @@ const Form = ({
             Se connecter
           </button>
         </form>
+        <NoPassword />
       </div>
     );
   }

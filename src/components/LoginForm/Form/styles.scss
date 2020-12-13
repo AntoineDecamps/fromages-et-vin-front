@@ -71,6 +71,19 @@
       }
     }
   }
+  &__nopassword {
+    color: vars.$secondary-color;
+    border-bottom: 1px solid vars.$alt-color;
+    transition: 0.3s;
+    &:visited {
+      color: vars.$secondary-color;
+    }
+    &:hover {
+      color: vars.$alt-color;
+      font-size: 1.05rem;
+      transition: 0.3s;
+    }
+  }
 }
 
 // Medium devices (tablets, 768px and up)
