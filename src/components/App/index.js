@@ -7,6 +7,7 @@ import List from 'src/components/List';
 import CheeseDetail from 'src/containers/CheeseDetail';
 import WineDetail from 'src/containers/WineDetail';
 import LoginForm from 'src/components/LoginForm';
+import ForgotForm from 'src/components/ForgotForm';
 import BackOffice from 'src/components/BackOffice';
 import NoMatch from 'src/components/NoMatch';
 import { Dimmer, Loader } from 'semantic-ui-react';
@@ -95,6 +96,9 @@ const App = ({
         />
         <Route exact path="/connexion">
           <LoginForm />
+        </Route>
+        <Route exact path="/reset">
+          <ForgotForm />
         </Route>
         <BackOffice
           cheeses={cheeses}

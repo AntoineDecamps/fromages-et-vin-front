@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
 const NoPassword = () => {
@@ -6,7 +7,13 @@ const NoPassword = () => {
     console.log('if No Password');
 
     return (
-        <a href="#" className="form__nopassword">Mot de passe oublié ?</a>
+        <NavLink
+            to="/reset"
+            className="form__nopassword"
+            exact
+        >
+            Mot de passe oublié ?
+        </NavLink>
     );
 
 };
