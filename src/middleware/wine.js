@@ -4,7 +4,7 @@ import { GET_WINES, saveWines } from 'src/actions/wine';
 const wine = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_WINES:
-      axios.get('http://34.203.201.178/fromages-et-vin/Cheese-and-Wine/public/api/wines/')
+      axios.get('http://34.226.136.30/apotheose/fromages-et-vin/Cheese-and-Wine/public/api/wines/')
         .then((response) => {
           store.dispatch(saveWines(response.data));
         })
