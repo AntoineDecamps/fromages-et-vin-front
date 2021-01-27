@@ -18,7 +18,7 @@ export default (store) => (next) => (action) => {
       // console.log('MIDDLEWARE LOGIN');
       const state = store.getState();
       const { username, password } = state.user;
-      axios.post('http://34.226.136.30/apotheose/fromages-et-vin/Cheese-and-Wine/public/api/login', {
+      axios.post('http://34.226.136.30/api/api/login', {
         username,
         password,
       })
@@ -39,7 +39,7 @@ export default (store) => (next) => (action) => {
             },
           };
 
-          axios.post('http://34.226.136.30/apotheose/fromages-et-vin/Cheese-and-Wine/public/api/islogged', {
+          axios.post('http://34.226.136.30/api/api/islogged', {
             username,
             header,
           });
@@ -58,7 +58,7 @@ export default (store) => (next) => (action) => {
     //   console.log('MIDDLEWARE CHECKISLOGGED');
     //   const token = localStorage.getItem('token');
     //   console.log('TOKEN', token);
-    //   axios.post('http://34.226.136.30/apotheose/fromages-et-vin/Cheese-and-Wine/public/api/islogged', {
+    //   axios.post('http://34.226.136.30/api/api/islogged', {
     //     token,
     //   }, { headers: { 'Content-Type': 'application/json' } })
     //     .then((response) => {
@@ -73,7 +73,7 @@ export default (store) => (next) => (action) => {
     // }
     case LOGOUT: {
       console.log('MIDDLEWARE LOGOUT');
-      axios.post('http://34.226.136.30/apotheose/fromages-et-vin/Cheese-and-Wine/public/api/logout', {})
+      axios.post('http://34.226.136.30/api/api/logout', {})
         .then((response) => {
           console.log('MIDDLEWARE LOGOUT', response);
           console.log('LOGOUT', localStorage);
@@ -87,7 +87,7 @@ export default (store) => (next) => (action) => {
       break;
     }
     case GET_USERS: {
-      axios.get('http://34.226.136.30/apotheose/fromages-et-vin/Cheese-and-Wine/public/api/users')
+      axios.get('http://34.226.136.30/api/api/users')
         .then((response) => {
           console.log('users', response);
           store.dispatch(saveUsers(response.data));
