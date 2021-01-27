@@ -32,7 +32,7 @@ const AddCheeseProposal = ({
     mainProduct: name,
   };
   const onSubmit = ((values) => {
-    axios.post('http://34.203.201.178/fromages-et-vin/Cheese-and-Wine/public/api/userproposal/add',
+    axios.post('http://192.168.56.101/wine-and-cheese/fromages-et-vin/Cheese-and-Wine/public/api/userproposal/add',
       {
         userName: values.userName,
         associatedProduct: values.associatedProduct,

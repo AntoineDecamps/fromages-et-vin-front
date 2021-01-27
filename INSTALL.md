@@ -27,7 +27,7 @@ yarn
 # lance le serveur de developpement
 yarn start 
 
-# rdv sur http://localhost:8080/
+# rdv sur http://192.168.56.101/wine-and-cheese/
 ```
 
 Voilà, le modèle tourne, mais en fait ça ne sert pas à grand chose. L'idée est de se _baser sur_ le modèle, mais de le faire tourner dans un autre projet.

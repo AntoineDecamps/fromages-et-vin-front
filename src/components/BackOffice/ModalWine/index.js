@@ -41,7 +41,7 @@ const ModalWine = ({
     },
     onSubmit: (values) => {
       const token = localStorage.getItem('token');
-      axios.put(`http://34.203.201.178/fromages-et-vin/Cheese-and-Wine/public/api/back/wine/edit/${id}`, {
+      axios.put(`http://192.168.56.101/wine-and-cheese/fromages-et-vin/Cheese-and-Wine/public/api/back/wine/edit/${id}`, {
         name: values.name,
         type: values.type,
         appellation: values.appellation,
