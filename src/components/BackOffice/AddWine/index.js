@@ -31,7 +31,7 @@ const AddWine = () => {
     },
     onSubmit: (values) => {
       const token = localStorage.getItem('token');
-      axios.post('http://34.226.136.30/api/api/back/wine/add', {
+      axios.post('https://www.cheeseandwine-france.fr/api/api/back/wine/add', {
         name: values.name,
         type: values.type,
         appellation: values.appellation,
