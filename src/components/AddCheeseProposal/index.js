@@ -32,7 +32,7 @@ const AddCheeseProposal = ({
     mainProduct: name,
   };
   const onSubmit = ((values) => {
-    axios.post('https://www.cheeseandwine-france.fr/api/api/userproposal/add',
+    axios.post('https://www.cheeseandwine-france.fr/public/api/userproposal/add',
       {
         userName: values.userName,
         associatedProduct: values.associatedProduct,

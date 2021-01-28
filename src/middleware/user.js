@@ -18,7 +18,7 @@ export default (store) => (next) => (action) => {
       // console.log('MIDDLEWARE LOGIN');
       const state = store.getState();
       const { username, password } = state.user;
-      axios.post('https://www.cheeseandwine-france.fr/api/api/login', {
+      axios.post('https://www.cheeseandwine-france.fr/public/api/login', {
         username,
         password,
       })
@@ -39,7 +39,7 @@ export default (store) => (next) => (action) => {
             },
           };
 
-          axios.post('https://www.cheeseandwine-france.fr/api/api/islogged', {
+          axios.post('https://www.cheeseandwine-france.fr/public/api/islogged', {
             username,
             header,
           });
@@ -58,7 +58,7 @@ export default (store) => (next) => (action) => {
     //   console.log('MIDDLEWARE CHECKISLOGGED');
     //   const token = localStorage.getItem('token');
     //   console.log('TOKEN', token);
-    //   axios.post('https://www.cheeseandwine-france.fr/api/api/islogged', {
+    //   axios.post('https://www.cheeseandwine-france.fr/public/api/islogged', {
     //     token,
     //   }, { headers: { 'Content-Type': 'application/json' } })
     //     .then((response) => {
@@ -73,7 +73,7 @@ export default (store) => (next) => (action) => {
     // }
     case LOGOUT: {
       console.log('MIDDLEWARE LOGOUT');
-      axios.post('https://www.cheeseandwine-france.fr/api/api/logout', {})
+      axios.post('https://www.cheeseandwine-france.fr/public/api/logout', {})
         .then((response) => {
           console.log('MIDDLEWARE LOGOUT', response);
           console.log('LOGOUT', localStorage);
@@ -87,7 +87,7 @@ export default (store) => (next) => (action) => {
       break;
     }
     case GET_USERS: {
-      axios.get('https://www.cheeseandwine-france.fr/api/api/users')
+      axios.get('https://www.cheeseandwine-france.fr/public/api/users')
         .then((response) => {
           console.log('users', response);
           store.dispatch(saveUsers(response.data));

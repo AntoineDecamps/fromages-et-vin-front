@@ -31,7 +31,7 @@ const AddWineProposal = ({
     associatedProduct: 'Domaine Jean Perrier & Fils',
   };
   const onSubmit = ((values) => {
-    axios.post('https://www.cheeseandwine-france.fr/api/api/userproposal/add',
+    axios.post('https://www.cheeseandwine-france.fr/public/api/userproposal/add',
       {
         userName: values.userName,
         mainProduct: name,
