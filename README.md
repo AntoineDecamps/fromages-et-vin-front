@@ -19,3 +19,6 @@ Les administrateurs du site auront également accès à un Back-Office, entière
 ### Back (API pour stocker le data de l'application)
 - Symfony  
 - MySQL  
+  
+### Déploiement  
+- AWS EC2 (n'est plus en ligne actuellement)  
